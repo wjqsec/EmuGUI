@@ -469,7 +469,7 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"pre-release", None))
 
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Update", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"xiyang Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"About EmuGUI", None))

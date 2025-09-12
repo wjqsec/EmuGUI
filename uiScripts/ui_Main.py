@@ -626,7 +626,7 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Banner made by Tech-FZ", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"xiayng2 Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
         self.pushButton_25.setText(QCoreApplication.translate("MainWindow", u"Odysee", None))
         self.pushButton_24.setText(QCoreApplication.translate("MainWindow", u"YouTube", None))

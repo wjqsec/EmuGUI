@@ -76,7 +76,7 @@ def translateMainEN(window):
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
-    window.label_7.setText("Built on Python and PyQt technology, licensed under GNU General Public License 3.0")
+    window.label_7.setText("xiyang3 Built on Python and PyQt technology, licensed under GNU General Public License 3.0")
 
     window.label_10.setText(
         """

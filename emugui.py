@@ -187,9 +187,9 @@ class Window(QMainWindow, Ui_MainWindow):
             f"{errors.errCodes.errCodes[41]}: EmuGUI powered by Python {platform.python_version()} {platform.python_branch()}, compiled with {platform.python_compiler()}"
             )
         
-        logman.writeToLogFile(
-            f"{errors.errCodes.errCodes[42]}: CPU is {str(os.cpu_count())}x {platform.uname().processor} @{round((psutil.cpu_freq().max / 1024), 2)} GHz ({platform.machine()})"
-            )
+        # logman.writeToLogFile(
+        #     f"{errors.errCodes.errCodes[42]}: CPU is {str(os.cpu_count())}x {platform.uname().processor} @{round((psutil.cpu_freq().max / 1024), 2)} GHz ({platform.machine()})"
+        #     )
         
         if os.cpu_count() == 1:
             logman.writeToLogFile(
@@ -342,84 +342,7 @@ class Window(QMainWindow, Ui_MainWindow):
             self.label_6.setPixmap(pixmap)
 
     def setLanguage(self, langmode):
-        if langmode == "system" or langmode == None:
-            languageToUse = locale.getlocale()[0]
-            self.languageInUse = "system"
-
-        else:
-            languageToUse = langmode
-
-        if languageToUse.startswith("de"):
-            translations.de.translateMainDE(self)
-
-            if langmode != "system":
-                self.languageInUse = "de"
-
-        elif languageToUse.startswith("uk"):
-            translations.uk.translateMainUK(self)
-
-            if langmode != "system":
-                self.languageInUse = "uk"
-
-        elif languageToUse.startswith("fr"):
-            translations.fr.translateMainFR(self)
-
-            if langmode != "system":
-                self.languageInUse = "fr"
-
-        elif languageToUse.startswith("es"):
-            translations.es.translateMainES(self)
-
-            if langmode != "system":
-                self.languageInUse = "es"
-
-        elif languageToUse.startswith("ro"):
-            translations.ro.translateMainRO(self)
-
-            if langmode != "system":
-                self.languageInUse = "ro"
-
-        elif languageToUse.startswith("be"):
-            translations.be.translateMainBE(self)
-
-            if langmode != "system":
-                self.languageInUse = "be"
-
-        elif languageToUse.startswith("cz"):
-            translations.cz.translateMainCZ(self)
-
-            if langmode != "system":
-                self.languageInUse = "cz"
-
-        elif languageToUse.startswith("ru"):
-            translations.ru.translateMainRU(self)
-
-            if langmode != "system":
-                self.languageInUse = "ru"
-
-        elif languageToUse.startswith("pt"):
-            translations.pt.translateMainPT(self)
-
-            if langmode != "system":
-                self.languageInUse = "pt"
-
-        elif languageToUse.startswith("it"):
-            translations.it.translateMainIT(self)
-
-            if langmode != "system":
-                self.languageInUse = "it"
-
-        elif languageToUse.startswith("pl"):
-            translations.pl.translateMainPL(self)
-
-            if langmode != "system":
-                self.languageInUse = "pl"
-
-        else:
-            translations.en.translateMainEN(self)
-
-            if langmode != "system":
-                self.languageInUse = "en"
+        self.languageInUse = "en"
 
     def prepareDatabase(self, connection):
         # Some SQL statements to initialize EmuGUI

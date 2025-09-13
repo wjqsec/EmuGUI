@@ -10,17 +10,9 @@ if platform.system() == "Windows":
 else:
     import platformSpecific.unixSpecific
     
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
+
 import locale
 
 class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
@@ -129,38 +121,7 @@ class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateVmExistsDE(self)
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateVmExistsUK(self)
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateVmExistsFR(self)
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateVmExistsES(self)
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateVmExistsRO(self)
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateVmExistsRU(self)
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateVmExistsBE(self)
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateVmExistsCZ(self)
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateVmExistsPT(self)
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateVmExistsIT(self)
-
-            else:
-                translations.en.translateVmExistsEN(self)
+            translations.en.translateVmExistsEN(self)
         
         else:
             if platform.system() == "Windows":
@@ -175,38 +136,7 @@ class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateVmExistsDE(self)
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateVmExistsUK(self)
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateVmExistsFR(self)
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateVmExistsES(self)
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateVmExistsRO(self)
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateVmExistsRU(self)
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateVmExistsBE(self)
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateVmExistsCZ(self)
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateVmExistsPT(self)
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateVmExistsIT(self)
-
-                    else:
-                        translations.en.translateVmExistsEN(self)
+                    translations.en.translateVmExistsEN(self)
             
             except:
                 print("Translation can't be figured out. Using English language.")

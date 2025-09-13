@@ -58,18 +58,7 @@ from dialogExecution.errDialog import ErrDialog
 from dialogExecution.settingsRequireRestart import *
 
 try:
-    import translations.de
-    import translations.uk
     import translations.en
-    import translations.fr
-    import translations.es
-    import translations.ro
-    import translations.be
-    import translations.cz
-    import translations.ru
-    import translations.pt
-    import translations.it
-    import translations.pl
     import locale
 
 except:
@@ -730,15 +719,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 i = 0
                 
-                if result[0][1] == "default":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "System default":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1                    
-
-                elif result[0][1] == "en":
+                if result[0][1] == "en":
                     while i < self.comboBox_4.count():
                         if self.comboBox_4.itemText(i) == "English":
                             self.comboBox_4.setCurrentIndex(i)
@@ -748,115 +729,6 @@ class Window(QMainWindow, Ui_MainWindow):
 
                     langmode = "en"
 
-                elif result[0][1] == "de":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Deutsch":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "de"
-
-                elif result[0][1] == "fr":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Français":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "fr"
-
-                elif result[0][1] == "es":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Español":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "es"
-
-                elif result[0][1] == "pt":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Português":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "pt"
-
-                elif result[0][1] == "pl":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Polski":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "pl"
-
-                elif result[0][1] == "it":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Italiano":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "it"
-
-                elif result[0][1] == "ro":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Românã":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "ro"
-
-                elif result[0][1] == "cz":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Čeština":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "cz"
-
-                elif result[0][1] == "ru":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Русский":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "ru"
-
-                elif result[0][1] == "uk":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Українська":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "uk"
-
-                elif result[0][1] == "be":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Беларуская":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
-                    langmode = "be"
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()

@@ -11,12 +11,9 @@ else:
     import platformSpecific.unixSpecific
     
 import sqlite3
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.be
-import translations.cz
-import translations.ru
+
 import locale
 
 class UpdateAvailable(QDialog, Ui_Dialog):

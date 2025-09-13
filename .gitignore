@@ -4,3 +4,10 @@ build/*
 .idea
 platformSpecific/__pycache__/
 .vscode
+dialogExecution/__pycache__/
+errors/__pycache__/
+path/
+plugins/pluginmgr/__pycache__/
+services/__pycache__/
+translations/__pycache__/
+uiScripts/__pycache__/

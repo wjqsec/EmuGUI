@@ -16,18 +16,9 @@ import subprocess
 from PySide6.QtCore import QDateTime
 from random import randint
 import magic
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
-import translations.pl
+
 import locale
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
@@ -190,41 +181,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateStartVmDE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateStartVmUK(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateStartVmFR(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateStartVmES(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateStartVmRO(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateStartVmRU(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateStartVmBE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateStartVmCZ(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateStartVmPT(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pl"):
-                translations.pl.translateStartVmPL(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateStartVmIT(self, self.vmSpecs[0])
-
-            else:
-                translations.en.translateStartVmEN(self, self.vmSpecs[0])
+            translations.en.translateStartVmEN(self, self.vmSpecs[0])
         
         else:
             if platform.system() == "Windows":
@@ -239,41 +196,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateStartVmDE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateStartVmUK(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateStartVmFR(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateStartVmES(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateStartVmRO(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateStartVmRU(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateStartVmBE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateStartVmCZ(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateStartVmPT(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pl"):
-                        translations.pl.translateStartVmPL(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateStartVmIT(self, self.vmSpecs[0])
-
-                    else:
-                        translations.en.translateStartVmEN(self, self.vmSpecs[0])
+                    translations.en.translateStartVmEN(self, self.vmSpecs[0])
             
             except:
                 print("Translation can't be figured out. Using English language.")

@@ -9,18 +9,7 @@ if platform.system() == "Windows":
 else:
     import platformSpecific.unixSpecific
 
-import translations.de
-import translations.uk
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
-import translations.pl
 import locale
 import sqlite3
 import services.pathfinder as pf
@@ -162,41 +151,7 @@ class ErrDialog(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateErrDialogDE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateErrDialogUK(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateErrDialogFR(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateErrDialogES(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateErrDialogRO(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateErrDialogRU(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateErrDialogBE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateErrDialogCZ(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateErrDialogPT(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pl"):
-                translations.pl.translateErrDialogPL(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateErrDialogIT(self, self.vmSpecs[0])
-
-            else:
-                translations.en.translateErrDialogEN(self, self.vmSpecs[0])
+            translations.en.translateErrDialogEN(self, self.vmSpecs[0])
         
         else:
             if platform.system() == "Windows":
@@ -211,41 +166,7 @@ class ErrDialog(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateErrDialogDE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateErrDialogUK(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateErrDialogFR(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateErrDialogES(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateErrDialogRO(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateErrDialogRU(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateErrDialogBE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateErrDialogCZ(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateErrDialogPT(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pl"):
-                        translations.pl.translateErrDialogPL(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateErrDialogIT(self, self.vmSpecs[0])
-
-                    else:
-                        translations.en.translateErrDialogEN(self, self.vmSpecs[0])
+                    translations.en.translateErrDialogEN(self, self.vmSpecs[0])
             
             except:
                 print("Translation can't be figured out. Using English language.")

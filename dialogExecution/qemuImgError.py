@@ -9,17 +9,8 @@ if platform.system() == "Windows":
 else:
     import platformSpecific.unixSpecific
     
-import translations.de
-import translations.uk
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
+
 import locale
 import sqlite3
 
@@ -129,38 +120,7 @@ class QemuImgMissing(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateQemuImgMissingDE(self)
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateQemuImgMissingUK(self)
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateQemuImgMissingFR(self)
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateQemuImgMissingES(self)
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateQemuImgMissingRO(self)
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateQemuImgMissingRU(self)
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateQemuImgMissingBE(self)
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateQemuImgMissingCZ(self)
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateQemuImgMissingPT(self)
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateQemuImgMissingIT(self)
-
-            else:
-                translations.en.translateQemuImgMissingEN(self)
+            translations.en.translateQemuImgMissingEN(self)
         
         else:
             if platform.system() == "Windows":
@@ -175,38 +135,7 @@ class QemuImgMissing(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateQemuImgMissingDE(self)
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateQemuImgMissingUK(self)
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateQemuImgMissingFR(self)
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateQemuImgMissingES(self)
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateQemuImgMissingRO(self)
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateQemuImgMissingRU(self)
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateQemuImgMissingBE(self)
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateQemuImgMissingCZ(self)
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateQemuImgMissingPT(self)
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateQemuImgMissingIT(self)
-
-                    else:
-                        translations.en.translateQemuImgMissingEN(self)
+                    translations.en.translateQemuImgMissingEN(self)
             
             except:
                 print("Translation can't be figured out. Using English language.")

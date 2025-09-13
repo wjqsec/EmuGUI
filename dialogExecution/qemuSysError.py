@@ -9,17 +9,9 @@ if platform.system() == "Windows":
 else:
     import platformSpecific.unixSpecific
 
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
+
 import locale
 import sqlite3
 
@@ -149,38 +141,7 @@ class QemuSysMissing(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateQemuSysMissingDE(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateQemuSysMissingUK(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateQemuSysMissingFR(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateQemuSysMissingES(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateQemuSysMissingRO(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateQemuSysMissingRU(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateQemuSysMissingBE(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateQemuSysMissingCZ(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateQemuSysMissingPT(self, self.vmSpecs[1])
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateQemuSysMissingIT(self, self.vmSpecs[1])
-
-            else:
-                translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
+            translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
         
         else:
             if platform.system() == "Windows":
@@ -195,38 +156,7 @@ class QemuSysMissing(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateQemuSysMissingDE(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateQemuSysMissingUK(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateQemuSysMissingFR(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateQemuSysMissingES(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateQemuSysMissingRO(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateQemuSysMissingRU(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateQemuSysMissingBE(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateQemuSysMissingCZ(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateQemuSysMissingPT(self, self.vmSpecs[1])
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateQemuSysMissingIT(self, self.vmSpecs[1])
-
-                    else:
-                        translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
+                    translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
             
             except:
                 print("Translation can't be figured out. Using English language.")

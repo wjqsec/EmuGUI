@@ -12,18 +12,8 @@ else:
     
 import subprocess
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
-import translations.pl
 import locale
 import errors.logman
 import errors.logID
@@ -184,41 +174,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         print(languageToUse)
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateEditVMDE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateEditVMUK(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateEditVMFR(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateEditVMES(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateEditVMRO(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateEditVMRU(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateEditVMBE(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateEditVMCZ(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateEditVMPT(self, self.vmSpecs[0])
-
-            elif languageToUse.startswith("pl"):
-                translations.pl.translateEditVMPL(self, self.vmSpecs[0])
-            
-            elif languageToUse.startswith("it"):
-                translations.it.translateEditVMIT(self, self.vmSpecs[0])
-
-            else:
-                translations.en.translateEditVMEN(self, self.vmSpecs[0])
+            translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
             self.logman.writeToLogFile(
                 f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
@@ -241,41 +197,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateEditVMDE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateEditVMUK(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateEditVMFR(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateEditVMES(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateEditVMRO(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateEditVMRU(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateEditVMBE(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateEditVMCZ(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateEditVMPT(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("pl"):
-                        translations.pl.translateEditVMPL(self, self.vmSpecs[0])
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateEditVMIT(self, self.vmSpecs[0])
-
-                    else:
-                        translations.en.translateEditVMEN(self, self.vmSpecs[0])
+                    translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
                     self.logman.writeToLogFile(
                         f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."

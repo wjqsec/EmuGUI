@@ -570,17 +570,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
-        self.comboBox_4.setItemText(2, QCoreApplication.translate("MainWindow", u"Deutsch", None))
-        self.comboBox_4.setItemText(3, QCoreApplication.translate("MainWindow", u"Fran\u00e7ais", None))
-        self.comboBox_4.setItemText(4, QCoreApplication.translate("MainWindow", u"Espa\u00f1ol", None))
-        self.comboBox_4.setItemText(5, QCoreApplication.translate("MainWindow", u"Rom\u00e2n\u00e3", None))
-        self.comboBox_4.setItemText(6, QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", None))
-        self.comboBox_4.setItemText(7, QCoreApplication.translate("MainWindow", u"\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f", None))
-        self.comboBox_4.setItemText(8, QCoreApplication.translate("MainWindow", u"\u0420\u0443\u0441\u0441\u043a\u0438\u0439", None))
-        self.comboBox_4.setItemText(9, QCoreApplication.translate("MainWindow", u"\u010ce\u0161tina", None))
-        self.comboBox_4.setItemText(10, QCoreApplication.translate("MainWindow", u"Portugu\u00eas", None))
-        self.comboBox_4.setItemText(11, QCoreApplication.translate("MainWindow", u"Italiano", None))
-        self.comboBox_4.setItemText(12, QCoreApplication.translate("MainWindow", u"Polski", None))
+
 
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))

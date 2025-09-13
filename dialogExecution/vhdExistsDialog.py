@@ -10,17 +10,9 @@ else:
     import platformSpecific.unixSpecific
     
 import sqlite3
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
+
 import locale
 
 class VhdAlreadyExists(QDialog, Ui_Dialog):
@@ -154,38 +146,7 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateVhdExistsDE(self)
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateVhdExistsUK(self)
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateVhdExistsFR(self)
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateVhdExistsES(self)
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateVhdExistsRO(self)
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateVhdExistsRU(self)
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateVhdExistsBE(self)
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateVhdExistsCZ(self)
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateVhdExistsPT(self)
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateVhdExistsIT(self)
-
-            else:
-                translations.en.translateVhdExistsEN(self)
+            translations.en.translateVhdExistsEN(self)
         
         else:
             if platform.system() == "Windows":
@@ -200,38 +161,7 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateVhdExistsDE(self)
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateVhdExistsUK(self)
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateVhdExistsFR(self)
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateVhdExistsES(self)
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateVhdExistsRO(self)
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateVhdExistsRU(self)
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateVhdExistsBE(self)
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateVhdExistsCZ(self)
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateVhdExistsPT(self)
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateVhdExistsIT(self)
-
-                    else:
-                        translations.en.translateVhdExistsEN(self)
+                    translations.en.translateVhdExistsEN(self)
             
             except:
                 print("Translation can't be figured out. Using English language.")

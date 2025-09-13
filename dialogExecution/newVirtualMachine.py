@@ -15,18 +15,9 @@ import errors.logman
 import errors.logID
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
-import translations.de
-import translations.uk
+
 import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
-import translations.pl
+
 import locale
 import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
 import services.pathfinder as pf
@@ -266,41 +257,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             languageToUse = langmode
 
         if languageToUse != None:
-            if languageToUse.startswith("de"):
-                translations.de.translateNewVmDE(self)
-
-            elif languageToUse.startswith("uk"):
-                translations.uk.translateNewVmUK(self)
-
-            elif languageToUse.startswith("fr"):
-                translations.fr.translateNewVmFR(self)
-
-            elif languageToUse.startswith("es"):
-                translations.es.translateNewVmES(self)
-
-            elif languageToUse.startswith("ro"):
-                translations.ro.translateNewVmRO(self)
-
-            elif languageToUse.startswith("ru"):
-                translations.ru.translateNewVmRU(self)
-
-            elif languageToUse.startswith("be"):
-                translations.be.translateNewVmBE(self)
-
-            elif languageToUse.startswith("cz"):
-                translations.cz.translateNewVmCZ(self)
-
-            elif languageToUse.startswith("pt"):
-                translations.pt.translateNewVmPT(self)
-
-            elif languageToUse.startswith("pl"):
-                translations.pl.translateNewVmPL(self)
-
-            elif languageToUse.startswith("it"):
-                translations.it.translateNewVmIT(self)
-
-            else:
-                translations.en.translateNewVmEN(self)
+            translations.en.translateNewVmEN(self)
 
             self.logman.writeToLogFile(
                 f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
@@ -323,41 +280,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                     languageToUse = languageContent[0].replace("\n", "")
                 
                 if languageToUse != None:
-                    if languageToUse.startswith("de"):
-                        translations.de.translateNewVmDE(self)
-
-                    elif languageToUse.startswith("uk"):
-                        translations.uk.translateNewVmUK(self)
-
-                    elif languageToUse.startswith("fr"):
-                        translations.fr.translateNewVmFR(self)
-
-                    elif languageToUse.startswith("es"):
-                        translations.es.translateNewVmES(self)
-
-                    elif languageToUse.startswith("ro"):
-                        translations.ro.translateNewVmRO(self)
-
-                    elif languageToUse.startswith("ru"):
-                        translations.ru.translateNewVmRU(self)
-
-                    elif languageToUse.startswith("be"):
-                        translations.be.translateNewVmBE(self)
-
-                    elif languageToUse.startswith("cz"):
-                        translations.cz.translateNewVmCZ(self)
-
-                    elif languageToUse.startswith("pt"):
-                        translations.pt.translateNewVmPT(self)
-
-                    elif languageToUse.startswith("pl"):
-                        translations.pl.translateNewVmPL(self)
-
-                    elif languageToUse.startswith("it"):
-                        translations.it.translateNewVmIT(self)
-
-                    else:
-                        translations.en.translateNewVmEN(self)
+                    translations.en.translateNewVmEN(self)
 
                     self.logman.writeToLogFile(
                         f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."

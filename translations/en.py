@@ -90,27 +90,30 @@ def translateMainEN(window):
 
 def translateNewVmEN(window):
     #window.setWindowTitle("EmuGUI - Create new VM")
-    window.setWindowTitle("EmuGUI - 创建新VM")
+    # 新建VM对话框标题
+    window.setWindowTitle("EmuGUI-新建VM")
 
     # First page
-    window.lbl_vmname.setText("Name") # Name
-    window.lbl_arch.setText("Architecture") # Architecture
+    # window.lbl_vmname.setText("Name") # Name
+    # window.lbl_arch.setText("Architecture") # Architecture
+    window.lbl_vmname.setText("名称")  # Name
+    window.lbl_arch.setText("架构")  # Architecture
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
-    window.btn_next1.setText("Next >") # Next >
-    window.btn_cancel1.setText("Cancel") # Cancel
+    window.btn_next1.setText("下一步 >") # Next >
+    window.btn_cancel1.setText("取消") # Cancel
 
     # Second page
-    window.lbl_machine.setText("Machine") # Machine
+    window.lbl_machine.setText("机器/Machine") # Machine
     window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_ram.setText("RAM in MB") # RAM in MB
+    window.lbl_ram.setText("RAM / MB") # RAM in MB
 
     window.cb_machine.setPlaceholderText("Please select a machine") # Please select a machine
     window.cb_cpu.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pb_prev2.setText("< Previous") # < Previous
-    window.pb_next2.setText("Next >") # Next >
-    window.pb_cancel2.setText("Cancel") # Cancel
+    window.pb_prev2.setText("< 上一步") # < Previous
+    window.pb_next2.setText("下一步 >") # Next >
+    window.pb_cancel2.setText("取消") # Cancel
 
     # Combo boxes on second page
     i = 0

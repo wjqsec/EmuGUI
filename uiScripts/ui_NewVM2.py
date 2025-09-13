@@ -29,8 +29,9 @@ class Ui_Dialog(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
+        # change the size of the dialog
         Dialog.setMinimumSize(QSize(400, 300))
-        Dialog.setMaximumSize(QSize(400, 300))
+        Dialog.setMaximumSize(QSize(800, 600))
         Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.stackedWidget = QStackedWidget(Dialog)
         self.stackedWidget.setObjectName(u"stackedWidget")

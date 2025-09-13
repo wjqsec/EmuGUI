@@ -110,7 +110,10 @@ class Window(QMainWindow, Ui_MainWindow):
             super().__init__()
         
         self.setupUi(self)
-        # 隐藏 tab_4
+        # 隐藏 tab_6 general
+        if hasattr(self, "tab_6"):
+            self.tabWidget_2.removeTab(self.tabWidget_2.indexOf(self.tab_6))
+        # 隐藏 tab_4 about EmuGUI
         if hasattr(self, "tab_4"):
             self.tabWidget_2.removeTab(self.tabWidget_2.indexOf(self.tab_4))
         self.exec_folder = pf.retrieveExecFolder()

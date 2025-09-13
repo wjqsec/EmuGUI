@@ -110,6 +110,9 @@ class Window(QMainWindow, Ui_MainWindow):
             super().__init__()
         
         self.setupUi(self)
+        # 隐藏 tab_4
+        if hasattr(self, "tab_4"):
+            self.tabWidget_2.removeTab(self.tabWidget_2.indexOf(self.tab_4))
         self.exec_folder = pf.retrieveExecFolder()
         print(self.exec_folder)
         self.connectSignalsSlots()
@@ -118,7 +121,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.10.5621"
+        self.version = ""
 
         self.architectures = [
             ["i386", self.lineEdit_4],

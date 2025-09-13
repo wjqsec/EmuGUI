@@ -17,7 +17,7 @@ def translateMainEN(window):
     window.pushButton_10.setText("编辑选中的VM") # Edit selected virtual machine
     window.pushButton_11.setText("删除选中的VM") # Delete selected virtual machine
     window.pushButton_22.setText("导出选中的VM") # Export selected virtual machine
-    window.pushButton_23.setText("倒入VM") # Import virtual machine
+    window.pushButton_23.setText("导入VM") # Import virtual machine
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "General") # General

@@ -392,6 +392,7 @@ class Ui_Dialog(object):
 
         self.tabWidget.addTab(self.tab_7, "")
         self.tab_4 = QWidget()
+        self.tab_4.hide()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_4 = QWidget(self.tab_4)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")

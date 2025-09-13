@@ -1,3 +1,6 @@
 emugui.spec
 dist/*
 build/*
+.idea
+platformSpecific/__pycache__/
+.vscode

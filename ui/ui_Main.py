@@ -356,6 +356,7 @@ class Ui_MainWindow(object):
 
         self.tabWidget_2.addTab(self.tab_5, "")
         self.tab_4 = QWidget()
+        self.tab_4.hide()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_3 = QWidget(self.tab_4)
         self.gridLayoutWidget_3.setObjectName(u"gridLayoutWidget_3")

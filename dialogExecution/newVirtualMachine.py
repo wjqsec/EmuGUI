@@ -37,7 +37,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             
         self.setupUi(self)
         
-        self.setWindowTitle("EmuGUI - Create new VM")
+        # self.setWindowTitle("EmuGUI - Create new VM")
+        self.setWindowTitle("EmuGUI - 新建VM")
         
         self.langDetect()
         

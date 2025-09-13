@@ -50,6 +50,7 @@ except:
 
 import errors.errCodes
 
+# NewVirtualMachineDialog 对话框
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog

@@ -89,7 +89,8 @@ def translateMainEN(window):
     window.label_21.setText("EmuGUI on social media (in English)") # EmuGUI on social media (in English)
 
 def translateNewVmEN(window):
-    window.setWindowTitle("EmuGUI - Create new VM")
+    #window.setWindowTitle("EmuGUI - Create new VM")
+    window.setWindowTitle("EmuGUI - 创建新VM")
 
     # First page
     window.lbl_vmname.setText("Name") # Name

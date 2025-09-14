@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -392,7 +392,6 @@ class Ui_Dialog(object):
 
         self.tabWidget.addTab(self.tab_7, "")
         self.tab_4 = QWidget()
-        self.tab_4.hide()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_4 = QWidget(self.tab_4)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
@@ -545,9 +544,9 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"EmuGUI - Edit VM", None))
-        self.lbl_name.setText(QCoreApplication.translate("Dialog", u"Name", None))
-        self.lbl_arch.setText(QCoreApplication.translate("Dialog", u"Architecture", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"EmuGUI - \u7f16\u8f91VM", None))
+        self.lbl_name.setText(QCoreApplication.translate("Dialog", u"\u540d\u79f0", None))
+        self.lbl_arch.setText(QCoreApplication.translate("Dialog", u"\u67b6\u6784", None))
         self.cb_arch.setItemText(0, QCoreApplication.translate("Dialog", u"i386", None))
         self.cb_arch.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
         self.cb_arch.setItemText(2, QCoreApplication.translate("Dialog", u"mips", None))
@@ -568,32 +567,32 @@ class Ui_Dialog(object):
         self.lbl_cpu.setText(QCoreApplication.translate("Dialog", u"CPU", None))
         self.lbl_ram.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
         self.lbl_machine.setText(QCoreApplication.translate("Dialog", u"Machine", None))
-        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
 
-        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"Machine", None))
-        self.lbl_vhdp.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
+        self.lbl_vhdp.setText(QCoreApplication.translate("Dialog", u"VHD \u8def\u5f84", None))
         self.lbl_maxsize.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))
         self.lbl_cdc2.setText(QCoreApplication.translate("Dialog", u"CD controller 2", None))
-        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
         self.cb_cdc2.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc2.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc2.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
 
-        self.cb_vhdu.setItemText(0, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
-        self.cb_vhdu.setItemText(1, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
-        self.cb_vhdu.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
+        self.cb_vhdu.setItemText(0, QCoreApplication.translate("Dialog", u"\u6dfb\u52a0\u73b0\u6709\u865a\u62df\u786c\u76d8", None))
+        self.cb_vhdu.setItemText(1, QCoreApplication.translate("Dialog", u"\u65b0\u5efa\u865a\u62df\u786c\u76d8", None))
+        self.cb_vhdu.setItemText(2, QCoreApplication.translate("Dialog", u"\u4e0d\u6dfb\u52a0\u865a\u62df\u786c\u76d8", None))
 
         self.lbl_cdc1.setText(QCoreApplication.translate("Dialog", u"CD controller 1", None))
-        self.btn_vhdp.setText(QCoreApplication.translate("Dialog", u"Browse", None))
-        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.btn_vhdp.setText(QCoreApplication.translate("Dialog", u"\u6d4f\u89c8", None))
+        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
         self.cb_cdc1.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc1.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc1.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
 
-        self.lbl_vhdu.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
-        self.lbl_vhdf.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
+        self.lbl_vhdu.setText(QCoreApplication.translate("Dialog", u"VHD \u4f7f\u7528", None))
+        self.lbl_vhdf.setText(QCoreApplication.translate("Dialog", u"VHD \u6587\u4ef6\u683c\u5f0f", None))
         self.cb_maxsize.setItemText(0, QCoreApplication.translate("Dialog", u"KB", None))
         self.cb_maxsize.setItemText(1, QCoreApplication.translate("Dialog", u"MB", None))
         self.cb_maxsize.setItemText(2, QCoreApplication.translate("Dialog", u"GB", None))
@@ -609,23 +608,23 @@ class Ui_Dialog(object):
         self.cb_vhdf.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
 
         self.lbl_hddc.setText(QCoreApplication.translate("Dialog", u"HDD controller", None))
-        self.cb_hddc.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.cb_hddc.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
         self.cb_hddc.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_hddc.setItemText(2, QCoreApplication.translate("Dialog", u"VirtIO SCSI", None))
         self.cb_hddc.setItemText(3, QCoreApplication.translate("Dialog", u"AHCI", None))
 
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Dialog", u"Virtual hard disks", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Dialog", u"\u865a\u62dfhard disks", None))
         self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"USB Tablet Device (depreciated)", None))
-        self.cb_kbdtype.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
-        self.cb_kbdtype.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
+        self.cb_kbdtype.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u952e\u76d8", None))
+        self.cb_kbdtype.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u952e\u76d8", None))
 
-        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Mouse", None))
-        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB Mouse", None))
+        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u9f20\u6807", None))
+        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u9f20\u6807", None))
         self.cb_mouse.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
 
-        self.lbl_mouse.setText(QCoreApplication.translate("Dialog", u"Mouse type", None))
-        self.lbl_kbdtype.setText(QCoreApplication.translate("Dialog", u"Keyboard type", None))
-        self.lbl_kbdlayout.setText(QCoreApplication.translate("Dialog", u"Keyboard layout", None))
+        self.lbl_mouse.setText(QCoreApplication.translate("Dialog", u"\u9f20\u6807\u7c7b\u578b", None))
+        self.lbl_kbdtype.setText(QCoreApplication.translate("Dialog", u"\u952e\u76d8\u7c7b\u578b", None))
+        self.lbl_kbdlayout.setText(QCoreApplication.translate("Dialog", u"\u952e\u76d8\u5e03\u5c40", None))
         self.cb_kbdlayout.setItemText(0, QCoreApplication.translate("Dialog", u"en-us", None))
         self.cb_kbdlayout.setItemText(1, QCoreApplication.translate("Dialog", u"en-gb", None))
         self.cb_kbdlayout.setItemText(2, QCoreApplication.translate("Dialog", u"de", None))
@@ -640,39 +639,39 @@ class Ui_Dialog(object):
         self.cb_kbdlayout.setItemText(11, QCoreApplication.translate("Dialog", u"fi", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("Dialog", u"Peripherals", None))
-        self.lbl_biosloc.setText(QCoreApplication.translate("Dialog", u"Location of external BIOS file (Leave empty to use the default BIOS)", None))
-        self.lbl_biosf.setText(QCoreApplication.translate("Dialog", u"External BIOS file", None))
-        self.btn_biosf.setText(QCoreApplication.translate("Dialog", u"Browse", None))
+        self.lbl_biosloc.setText(QCoreApplication.translate("Dialog", u"\u5916\u90e8BIOS\u6587\u4ef6\u4f4d\u7f6e(\u7559\u7a7a\u4f7f\u7528\u9ed8\u8ba4BIOS)", None))
+        self.lbl_biosf.setText(QCoreApplication.translate("Dialog", u"\u5916\u90e8BIOS\u6587\u4ef6", None))
+        self.btn_biosf.setText(QCoreApplication.translate("Dialog", u"\u6d4f\u89c8", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("Dialog", u"BIOS", None))
-        self.btn_kernel.setText(QCoreApplication.translate("Dialog", u"Browse", None))
-        self.lbl_initrd.setText(QCoreApplication.translate("Dialog", u"Linux initrd image", None))
-        self.btn_initrd.setText(QCoreApplication.translate("Dialog", u"Browse", None))
-        self.lbl_kernel.setText(QCoreApplication.translate("Dialog", u"Linux kernel", None))
-        self.lbl_cmd.setText(QCoreApplication.translate("Dialog", u"Linux cmd arguments", None))
+        self.btn_kernel.setText(QCoreApplication.translate("Dialog", u"\u6d4f\u89c8", None))
+        self.lbl_initrd.setText(QCoreApplication.translate("Dialog", u"Linux initrd \u6620\u50cf", None))
+        self.btn_initrd.setText(QCoreApplication.translate("Dialog", u"\u6d4f\u89c8", None))
+        self.lbl_kernel.setText(QCoreApplication.translate("Dialog", u"Linux \u5185\u6838", None))
+        self.lbl_cmd.setText(QCoreApplication.translate("Dialog", u"Linux cmd \u53c2\u6570", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("Dialog", u"Linux", None))
         self.lbl_vga.setText(QCoreApplication.translate("Dialog", u"VGA", None))
         self.cb_net.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
 
-        self.lbl_sound.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
-        self.chb_usb.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
-        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
-        self.lbl_addargs.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if necessary)", None))
-        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.lbl_sound.setText(QCoreApplication.translate("Dialog", u"\u58f0\u5361", None))
+        self.chb_usb.setText(QCoreApplication.translate("Dialog", u"\u6dfb\u52a0USB\u652f\u6301", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"\u6211\u60f3\u5b89\u88c5Windows 2000 (\u8fc7\u65f6)", None))
+        self.lbl_addargs.setText(QCoreApplication.translate("Dialog", u"\u9644\u52a0\u7ec4\u4ef6 (\u5982\u679c\u9700\u8981)", None))
+        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"\u8ba9QEMU\u51b3\u5b9a", None))
 
-        self.lbl_net.setText(QCoreApplication.translate("Dialog", u"Network adapter", None))
-        self.cb_sound.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.lbl_net.setText(QCoreApplication.translate("Dialog", u"\u7f51\u7edc\u9002\u914d\u5668", None))
+        self.cb_sound.setItemText(0, QCoreApplication.translate("Dialog", u"\u65e0", None))
 
-        self.lbl_cpuc.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
-        self.lbl_accel.setText(QCoreApplication.translate("Dialog", u"Acceleration", None))
-        self.cb_accel.setItemText(0, QCoreApplication.translate("Dialog", u"None", None))
+        self.lbl_cpuc.setText(QCoreApplication.translate("Dialog", u"CPU \u6838\u6570", None))
+        self.lbl_accel.setText(QCoreApplication.translate("Dialog", u"\u52a0\u901f", None))
+        self.cb_accel.setItemText(0, QCoreApplication.translate("Dialog", u"\u65e0", None))
         self.cb_accel.setItemText(1, QCoreApplication.translate("Dialog", u"TCG", None))
-        self.cb_accel.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM (depreciated)", None))
+        self.cb_accel.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM (\u8fc7\u65f6)", None))
         self.cb_accel.setItemText(3, QCoreApplication.translate("Dialog", u"WHPX", None))
         self.cb_accel.setItemText(4, QCoreApplication.translate("Dialog", u"WHPX (kernel-irqchip off)", None))
         self.cb_accel.setItemText(5, QCoreApplication.translate("Dialog", u"KVM", None))
 
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Dialog", u"Additional components", None))
-        self.btn_cancel.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
-        self.btn_ok.setText(QCoreApplication.translate("Dialog", u"OK", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Dialog", u"\u9644\u52a0\u7ec4\u4ef6", None))
+        self.btn_cancel.setText(QCoreApplication.translate("Dialog", u"\u53d6\u6d88", None))
+        self.btn_ok.setText(QCoreApplication.translate("Dialog", u"\u786e\u8ba4", None))
     # retranslateUi
 

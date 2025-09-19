@@ -1877,7 +1877,7 @@ class Ui_Dialog(object):
 
         self.btn_next4.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.lbl_vga.setText(QCoreApplication.translate("Dialog", u"VGA", None))
-        self.label_18.setText(QCoreApplication.translate("Dialog", u"USB\u8bbe\u5907Tablet", None))
+        self.label_18.setText(QCoreApplication.translate("Dialog", u"USB Device Tablet", None))
         self.lbl_net.setText(QCoreApplication.translate("Dialog", u"network", None))
         self.btn_prev4.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.btn_cancel4.setText(QCoreApplication.translate("Dialog", u"cancel", None))
@@ -2280,7 +2280,7 @@ class Ui_Dialog(object):
         self.comboBox_35.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a file format)", None))
         self.pushButton_67.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.label_60.setText(QCoreApplication.translate("Dialog", u"VGA", None))
-        self.label_61.setText(QCoreApplication.translate("Dialog", u"USB\u8bbe\u5907Tablet", None))
+        self.label_61.setText(QCoreApplication.translate("Dialog", u"USB Device Tablet", None))
         self.label_62.setText(QCoreApplication.translate("Dialog", u"network", None))
         self.pushButton_68.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_69.setText(QCoreApplication.translate("Dialog", u"cancel", None))

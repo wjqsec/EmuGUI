@@ -4,19 +4,17 @@ install QEMU: `sudo apt-get install qemu`
 
 ## Install Dependencies:
 python: `sudo apt install python3 -y`
+
 pip: `python3 -m pip install --upgrade pip`
+
 安装Qemu: `sudo apt install qemu -y` (更高版本的Ubuntu: `sudo apt install qemu-system -y`)
+
 安装 EmuGUI 所需的 Python 包: `pip3 install PyQt6 PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
 
 安装 python3-venv, 为了创建虚拟环境，需要安装 python3-venv(Ubuntu 24.04 及更高版本):
 `sudo apt install python3-venv -y`
 创建虚拟环境(名称为emugui-venv) `python3 -m venv ~/emugui-venv`
 激活虚拟环境: `source ~/emugui-venv/bin/activate`
-
-
-这个错误是 Ubuntu（基于 Debian 的系统）在较新版本（如 Ubuntu 22.04 或更高版本）中引入的 **externally-managed-environment** 限制，防止直接使用 `pip3` 在系统级 Python 环境中安装包。这是为了避免破坏系统依赖的 Python 环境。以下是解决方法，基于错误提示和 EmuGUI 的要求，我推荐使用虚拟环境来安装依赖，这样既安全又不会干扰系统 Python。
-
-### 解决方法：使用虚拟环境安装依赖
 
 1. **确保 Python 和 pip 已安装**
    检查 Python 和 pip 是否已安装：

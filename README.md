@@ -13,7 +13,9 @@ pip: `python3 -m pip install --upgrade pip`
 
 安装 python3-venv, 为了创建虚拟环境，需要安装 python3-venv(Ubuntu 24.04 及更高版本):
 `sudo apt install python3-venv -y`
+
 创建虚拟环境(名称为emugui-venv) `python3 -m venv ~/emugui-venv`
+
 激活虚拟环境: `source ~/emugui-venv/bin/activate`
 
 1. **确保 Python 和 pip 已安装**

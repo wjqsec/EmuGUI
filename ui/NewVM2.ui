@@ -395,17 +395,17 @@
        <widget class="QComboBox" name="cb_vhdU">
         <item>
          <property name="text">
-          <string>创建新虚拟硬盘</string>
+          <string>Create a new virtual hard drive</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>添加现有虚拟硬盘</string>
+          <string>Add an existing virtual hard drive</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>不添加虚拟硬盘</string>
+          <string>Don't add a virtual hard drive</string>
          </property>
         </item>
        </widget>

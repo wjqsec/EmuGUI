@@ -1860,9 +1860,9 @@ class Ui_Dialog(object):
         self.cb_vhdF.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
 
         self.cb_vhdF.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a file format)", None))
-        self.cb_vhdU.setItemText(0, QCoreApplication.translate("Dialog", u"\u521b\u5efa\u65b0\u865a\u62df\u786c\u76d8", None))
-        self.cb_vhdU.setItemText(1, QCoreApplication.translate("Dialog", u"\u6dfb\u52a0\u73b0\u6709\u865a\u62df\u786c\u76d8", None))
-        self.cb_vhdU.setItemText(2, QCoreApplication.translate("Dialog", u"\u4e0d\u6dfb\u52a0\u865a\u62df\u786c\u76d8", None))
+        self.cb_vhdU.setItemText(0, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
+        self.cb_vhdU.setItemText(1, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
+        self.cb_vhdU.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
 
         self.lbl_vhdF.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
         self.lbl_maxsize.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))

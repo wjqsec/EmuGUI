@@ -81,14 +81,14 @@
       <item row="3" column="2">
        <widget class="QPushButton" name="btn_cancel1">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <widget class="QPushButton" name="btn_next1">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
@@ -227,21 +227,21 @@
       <item row="3" column="0">
        <widget class="QPushButton" name="pb_prev2">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <widget class="QPushButton" name="pb_next2">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
       <item row="3" column="2">
        <widget class="QPushButton" name="pb_cancel2">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
@@ -252,7 +252,7 @@
         </property>
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
        </widget>
@@ -264,7 +264,7 @@
         </property>
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
        </widget>
@@ -299,14 +299,14 @@
       <item row="5" column="1">
        <widget class="QPushButton" name="btn_next3">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
        <widget class="QPushButton" name="btn_prev3">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
@@ -335,7 +335,7 @@
       <item row="5" column="2">
        <widget class="QPushButton" name="btn_cancel3">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
@@ -413,7 +413,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_vhdF">
         <property name="text">
-         <string>VHD 文件格式</string>
+         <string>VHD file format</string>
         </property>
        </widget>
       </item>
@@ -440,21 +440,21 @@
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_vhdP">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_vhdU">
         <property name="text">
-         <string>VHD 使用</string>
+         <string>VHD usage</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_vhdP">
         <property name="text">
-         <string>VHD 路径</string>
+         <string>VHD path</string>
         </property>
        </widget>
       </item>
@@ -469,7 +469,7 @@
        <widget class="QComboBox" name="cb_hddC">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -506,7 +506,7 @@
       <item row="4" column="1">
        <widget class="QPushButton" name="btn_next4">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
@@ -527,28 +527,28 @@
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_net">
         <property name="text">
-         <string>网络</string>
+         <string>network</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
        <widget class="QPushButton" name="btn_prev4">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
       <item row="4" column="2">
        <widget class="QPushButton" name="btn_cancel4">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="lbl_mouse">
         <property name="text">
-         <string>鼠标</string>
+         <string>mouse</string>
         </property>
        </widget>
       </item>
@@ -559,7 +559,7 @@
         </property>
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
        </widget>
@@ -571,7 +571,7 @@
         </property>
         <item>
          <property name="text">
-          <string>无</string>
+          <string>none</string>
          </property>
         </item>
        </widget>
@@ -619,21 +619,21 @@
       <item row="2" column="2">
        <widget class="QPushButton" name="btn_cancel5">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="QPushButton" name="btn_next5">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QPushButton" name="btn_prev5">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
@@ -650,7 +650,7 @@
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_biosF">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -694,21 +694,21 @@ default BIOS)</string>
       <item row="4" column="1">
        <widget class="QPushButton" name="btn_next6">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
       <item row="4" column="2">
        <widget class="QPushButton" name="btn_cancel6">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
        <widget class="QPushButton" name="btn_prev6">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
@@ -737,7 +737,7 @@ default BIOS)</string>
        <widget class="QComboBox" name="cb_sound">
         <item>
          <property name="text">
-          <string>无</string>
+          <string>none</string>
          </property>
         </item>
        </widget>
@@ -847,7 +847,7 @@ default BIOS)</string>
       <item row="4" column="1">
        <widget class="QPushButton" name="btn_next7">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
@@ -867,14 +867,14 @@ default BIOS)</string>
       <item row="0" column="2">
        <widget class="QPushButton" name="btn_kernel">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_initrd">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -888,14 +888,14 @@ default BIOS)</string>
       <item row="4" column="2">
        <widget class="QPushButton" name="btn_cancel7">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
        <widget class="QPushButton" name="btn_prev7">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
@@ -966,14 +966,14 @@ default BIOS)</string>
         <item row="2" column="2">
          <widget class="QPushButton" name="pushButton_43">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_44">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
@@ -1075,21 +1075,21 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_45">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_46">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_47">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -1100,7 +1100,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -1125,7 +1125,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
          </widget>
@@ -1137,7 +1137,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -1400,21 +1400,21 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_48">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_49">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_50">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -1425,7 +1425,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -1460,7 +1460,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
           <item>
@@ -1507,7 +1507,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -1927,21 +1927,21 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_51">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_52">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_53">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -1952,7 +1952,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -1987,7 +1987,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
           <item>
@@ -2004,7 +2004,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -2209,21 +2209,21 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_54">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_55">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_56">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -2234,7 +2234,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -2314,7 +2314,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
           <item>
@@ -2331,7 +2331,7 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -2520,7 +2520,7 @@ default BIOS)</string>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_57">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
@@ -2541,14 +2541,14 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_58">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_59">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -2556,7 +2556,7 @@ default BIOS)</string>
          <widget class="QComboBox" name="comboBox_31">
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -2606,7 +2606,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
          </widget>
@@ -2635,7 +2635,7 @@ default BIOS)</string>
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_60">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
@@ -2656,14 +2656,14 @@ default BIOS)</string>
         <item row="3" column="0">
          <widget class="QPushButton" name="pushButton_61">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QPushButton" name="pushButton_62">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -2671,7 +2671,7 @@ default BIOS)</string>
          <widget class="QComboBox" name="comboBox_32">
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
@@ -2691,7 +2691,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
          </widget>
@@ -2720,7 +2720,7 @@ default BIOS)</string>
         <item row="4" column="0">
          <widget class="QPushButton" name="pushButton_63">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
@@ -2730,7 +2730,7 @@ default BIOS)</string>
         <item row="4" column="2">
          <widget class="QPushButton" name="pushButton_64">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -2747,7 +2747,7 @@ default BIOS)</string>
         <item row="1" column="0">
          <widget class="QLabel" name="label_56">
           <property name="text">
-           <string>VHD 路径</string>
+           <string>VHD path</string>
           </property>
          </widget>
         </item>
@@ -2761,7 +2761,7 @@ default BIOS)</string>
         <item row="1" column="2">
          <widget class="QPushButton" name="pushButton_65">
           <property name="text">
-           <string>浏览</string>
+           <string>browse</string>
           </property>
          </widget>
         </item>
@@ -2787,21 +2787,21 @@ default BIOS)</string>
         <item row="4" column="1">
          <widget class="QPushButton" name="pushButton_66">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_58">
           <property name="text">
-           <string>VHD 文件格式</string>
+           <string>VHD file format</string>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_59">
           <property name="text">
-           <string>VHD 使用</string>
+           <string>VHD usage</string>
           </property>
          </widget>
         </item>
@@ -2893,7 +2893,7 @@ default BIOS)</string>
         <item row="4" column="1">
          <widget class="QPushButton" name="pushButton_67">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
@@ -2914,28 +2914,28 @@ default BIOS)</string>
         <item row="1" column="0">
          <widget class="QLabel" name="label_62">
           <property name="text">
-           <string>网络</string>
+           <string>network</string>
           </property>
          </widget>
         </item>
         <item row="4" column="0">
          <widget class="QPushButton" name="pushButton_68">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
         <item row="4" column="2">
          <widget class="QPushButton" name="pushButton_69">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
         <item row="3" column="0">
          <widget class="QLabel" name="label_63">
           <property name="text">
-           <string>鼠标</string>
+           <string>mouse</string>
           </property>
          </widget>
         </item>
@@ -2946,12 +2946,12 @@ default BIOS)</string>
           </property>
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
           <item>
@@ -3148,7 +3148,7 @@ default BIOS)</string>
           </item>
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
          </widget>
@@ -3196,21 +3196,21 @@ default BIOS)</string>
         <item row="2" column="2">
          <widget class="QPushButton" name="pushButton_70">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_71">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
          <widget class="QPushButton" name="pushButton_72">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
@@ -3227,7 +3227,7 @@ default BIOS)</string>
         <item row="1" column="2">
          <widget class="QPushButton" name="pushButton_73">
           <property name="text">
-           <string>浏览</string>
+           <string>browse</string>
           </property>
          </widget>
         </item>
@@ -3271,21 +3271,21 @@ default BIOS)</string>
         <item row="4" column="1">
          <widget class="QPushButton" name="pushButton_74">
           <property name="text">
-           <string>下一步 &gt;</string>
+           <string>next &gt;</string>
           </property>
          </widget>
         </item>
         <item row="4" column="2">
          <widget class="QPushButton" name="pushButton_75">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
         <item row="4" column="0">
          <widget class="QPushButton" name="pushButton_76">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
@@ -3314,7 +3314,7 @@ default BIOS)</string>
          <widget class="QComboBox" name="comboBox_39">
           <item>
            <property name="text">
-            <string>无</string>
+            <string>none</string>
            </property>
           </item>
           <item>
@@ -3473,7 +3473,7 @@ default BIOS)</string>
         <item row="5" column="1">
          <widget class="QPushButton" name="pushButton_83">
           <property name="text">
-           <string>取消</string>
+           <string>cancel</string>
           </property>
          </widget>
         </item>
@@ -3488,7 +3488,7 @@ default BIOS)</string>
         <item row="4" column="0">
          <widget class="QPushButton" name="pushButton_84">
           <property name="text">
-           <string>&lt; 上一步</string>
+           <string>&lt; previous</string>
           </property>
          </widget>
         </item>
@@ -3550,21 +3550,21 @@ default BIOS)</string>
       <item row="4" column="2">
        <widget class="QPushButton" name="btn_cancel8">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
       <item row="4" column="1">
        <widget class="QPushButton" name="btn_next8">
         <property name="text">
-         <string>下一步 &gt;</string>
+         <string>next &gt;</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
        <widget class="QPushButton" name="btn_prev8">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>
@@ -3586,7 +3586,7 @@ default BIOS)</string>
        <widget class="QComboBox" name="cb_cdc1">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -3617,7 +3617,7 @@ default BIOS)</string>
        <widget class="QComboBox" name="cb_accel">
         <item>
          <property name="text">
-          <string>无</string>
+          <string>none</string>
          </property>
         </item>
         <item>
@@ -3651,7 +3651,7 @@ default BIOS)</string>
        <widget class="QComboBox" name="cb_cdc2">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -3695,7 +3695,7 @@ default BIOS)</string>
       <item row="5" column="1">
        <widget class="QPushButton" name="btn_cancel9">
         <property name="text">
-         <string>取消</string>
+         <string>cancel</string>
         </property>
        </widget>
       </item>
@@ -3710,7 +3710,7 @@ default BIOS)</string>
       <item row="4" column="0">
        <widget class="QPushButton" name="btn_prev9">
         <property name="text">
-         <string>&lt; 上一步</string>
+         <string>&lt; previous</string>
         </property>
        </widget>
       </item>

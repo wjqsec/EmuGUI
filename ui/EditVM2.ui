@@ -211,7 +211,7 @@
          <widget class="QComboBox" name="cb_cpu">
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
          </widget>
@@ -227,7 +227,7 @@
          <widget class="QComboBox" name="cb_machine">
           <item>
            <property name="text">
-            <string>让QEMU决定</string>
+            <string>let QEMU decide</string>
            </property>
           </item>
          </widget>
@@ -239,7 +239,7 @@
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
-     <string>虚拟hard disks</string>
+     <string>virtual hard disks</string>
     </attribute>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
@@ -254,7 +254,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_vhdp">
         <property name="text">
-         <string>VHD 路径</string>
+         <string>VHD path</string>
         </property>
        </widget>
       </item>
@@ -276,7 +276,7 @@
        <widget class="QComboBox" name="cb_cdc2">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -325,7 +325,7 @@
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_vhdp">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -333,7 +333,7 @@
        <widget class="QComboBox" name="cb_cdc1">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -356,7 +356,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_vhdu">
         <property name="text">
-         <string>VHD 使用</string>
+         <string>VHD usage</string>
         </property>
        </widget>
       </item>
@@ -366,7 +366,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_vhdf">
         <property name="text">
-         <string>VHD 文件格式</string>
+         <string>VHD file format</string>
         </property>
        </widget>
       </item>
@@ -456,7 +456,7 @@
        <widget class="QComboBox" name="cb_hddc">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
         <item>
@@ -504,12 +504,12 @@
        <widget class="QComboBox" name="cb_kbdtype">
         <item>
          <property name="text">
-          <string>PS/2 键盘</string>
+          <string>PS/2 keyboard</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>USB 键盘</string>
+          <string>USB keyboard</string>
          </property>
         </item>
        </widget>
@@ -518,12 +518,12 @@
        <widget class="QComboBox" name="cb_mouse">
         <item>
          <property name="text">
-          <string>PS/2 鼠标</string>
+          <string>PS/2 mouse</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>USB 鼠标</string>
+          <string>USB mouse</string>
          </property>
         </item>
         <item>
@@ -536,21 +536,21 @@
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_mouse">
         <property name="text">
-         <string>鼠标类型</string>
+         <string>Mouse type</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_kbdtype">
         <property name="text">
-         <string>键盘类型</string>
+         <string>Keyboard type</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_kbdlayout">
         <property name="text">
-         <string>键盘布局</string>
+         <string>Keyboard layout</string>
         </property>
        </widget>
       </item>
@@ -641,7 +641,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_biosloc">
         <property name="text">
-         <string>外部BIOS文件位置(留空使用默认BIOS)</string>
+         <string>Location of external BIOS file (Leave empty to use the default BIOS)</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -661,7 +661,7 @@
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_biosf">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -691,7 +691,7 @@
       <item row="0" column="2">
        <widget class="QPushButton" name="btn_kernel">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -701,14 +701,14 @@
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_initrd">
         <property name="text">
-         <string>Linux initrd 映像</string>
+         <string>Linux initrd image</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="btn_initrd">
         <property name="text">
-         <string>浏览</string>
+         <string>browse</string>
         </property>
        </widget>
       </item>
@@ -722,7 +722,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_cmd">
         <property name="text">
-         <string>Linux cmd 参数</string>
+         <string>Linux cmd arguments</string>
         </property>
        </widget>
       </item>
@@ -734,7 +734,7 @@
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
-     <string>附加组件</string>
+     <string>Additional arguments</string>
     </attribute>
     <widget class="QWidget" name="gridLayoutWidget_4">
      <property name="geometry">
@@ -768,28 +768,28 @@
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_sound">
         <property name="text">
-         <string>声卡</string>
+         <string>Sound card</string>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
        <widget class="QCheckBox" name="chb_usb">
         <property name="text">
-         <string>添加USB支持</string>
+         <string>Add USB support</string>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
        <widget class="QCheckBox" name="checkBox_3">
         <property name="text">
-         <string>我想安装Windows 2000 (过时)</string>
+         <string>I want to install Windows 2000 (depreciated)</string>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
        <widget class="QLabel" name="lbl_addargs">
         <property name="text">
-         <string>附加组件 (如果需要)</string>
+         <string>Additional arguments (if necessary)</string>
         </property>
        </widget>
       </item>
@@ -797,7 +797,7 @@
        <widget class="QComboBox" name="cb_vga">
         <item>
          <property name="text">
-          <string>让QEMU决定</string>
+          <string>let QEMU decide</string>
          </property>
         </item>
        </widget>
@@ -816,7 +816,7 @@
        <widget class="QComboBox" name="cb_sound">
         <item>
          <property name="text">
-          <string>无</string>
+          <string>none</string>
          </property>
         </item>
        </widget>
@@ -826,7 +826,7 @@
         <item>
          <widget class="QLabel" name="lbl_cpuc">
           <property name="text">
-           <string>CPU 核数</string>
+           <string>CPU cores</string>
           </property>
          </widget>
         </item>
@@ -845,7 +845,7 @@
       <item row="6" column="0">
        <widget class="QLabel" name="lbl_accel">
         <property name="text">
-         <string>加速</string>
+         <string>Acceleration</string>
         </property>
        </widget>
       </item>
@@ -853,7 +853,7 @@
        <widget class="QComboBox" name="cb_accel">
         <item>
          <property name="text">
-          <string>无</string>
+          <string>none</string>
          </property>
         </item>
         <item>
@@ -863,7 +863,7 @@
         </item>
         <item>
          <property name="text">
-          <string>HAXM (过时)</string>
+          <string>HAXM (depreciated)</string>
          </property>
         </item>
         <item>
@@ -897,7 +897,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>取消</string>
+    <string>cancel</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_ok">
@@ -910,7 +910,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>确认</string>
+    <string>OK</string>
    </property>
   </widget>
  </widget>

@@ -61,22 +61,22 @@ def translateMainEN(window):
     window.lbl_riscv32.setText("qemu-system-riscv32 Path") # qemu-system-riscv32 Path
     window.lbl_riscv64.setText("qemu-system-riscv64 Path") # qemu-system-riscv64 Path
 
-    window.pushButton.setText("浏览") # Browse
-    window.pushButton_2.setText("浏览") # Browse
-    window.pushButton_3.setText("浏览") # Browse
-    window.pushButton_4.setText("浏览") # Browse
-    window.pushButton_5.setText("浏览") # Browse
-    window.pushButton_7.setText("浏览") # Browse
-    window.pushButton_12.setText("浏览") # Browse
-    window.pushButton_16.setText("浏览") # Browse
-    window.pushButton_17.setText("浏览") # Browse
-    window.pushButton_18.setText("浏览") # Browse
-    window.pushButton_19.setText("浏览") # Browse
-    window.pushButton_13.setText("浏览") # Browse
-    window.pushButton_14.setText("浏览") # Browse
-    window.btn_alpha.setText("浏览") # Browse
-    window.btn_riscv32.setText("浏览") # Browse
-    window.btn_riscv64.setText("浏览") # Browse
+    window.pushButton.setText("browse") # Browse
+    window.pushButton_2.setText("browse") # Browse
+    window.pushButton_3.setText("browse") # Browse
+    window.pushButton_4.setText("browse") # Browse
+    window.pushButton_5.setText("browse") # Browse
+    window.pushButton_7.setText("browse") # Browse
+    window.pushButton_12.setText("browse") # Browse
+    window.pushButton_16.setText("browse") # Browse
+    window.pushButton_17.setText("browse") # Browse
+    window.pushButton_18.setText("browse") # Browse
+    window.pushButton_19.setText("browse") # Browse
+    window.pushButton_13.setText("browse") # Browse
+    window.pushButton_14.setText("browse") # Browse
+    window.btn_alpha.setText("browse") # Browse
+    window.btn_riscv32.setText("browse") # Browse
+    window.btn_riscv64.setText("browse") # Browse
     window.pushButton_6.setText("Apply") # Apply
     window.btn_apply_qemu2.setText("Apply") # Apply
 
@@ -106,20 +106,20 @@ def translateNewVmEN(window):
     window.lbl_arch.setText("架构")  # Architecture
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
-    window.btn_next1.setText("下一步 >") # Next >
-    window.btn_cancel1.setText("取消") # Cancel
+    window.btn_next1.setText("next >") # Next >
+    window.btn_cancel1.setText("cancel") # Cancel
 
     # Second page
-    window.lbl_machine.setText("机器/Machine") # Machine
+    window.lbl_machine.setText("Machine") # Machine
     window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_ram.setText("RAM / MB") # RAM in MB
+    window.lbl_ram.setText("RAM in MB") # RAM in MB
 
     window.cb_machine.setPlaceholderText("Please select a machine") # Please select a machine
     window.cb_cpu.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pb_prev2.setText("< 上一步") # < Previous
-    window.pb_next2.setText("下一步 >") # Next >
-    window.pb_cancel2.setText("取消") # Cancel
+    window.pb_prev2.setText("< previous") # < Previous
+    window.pb_next2.setText("next >") # Next >
+    window.pb_cancel2.setText("cancel") # Cancel
 
     # Combo boxes on second page
     i = 0
@@ -187,10 +187,10 @@ def translateNewVmEN(window):
 
     window.cb_vhdF.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.btn_vhdP.setText("浏览") # Browse
-    window.btn_prev3.setText("< 上一步") # < Previous
-    window.btn_next3.setText("下一步 >") # Next >
-    window.btn_cancel3.setText("取消") # Cancel
+    window.btn_vhdP.setText("browse") # Browse
+    window.btn_prev3.setText("< previous") # < Previous
+    window.btn_next3.setText("next >") # Next >
+    window.btn_cancel3.setText("cancel") # Cancel
 
     # Fourth page
     window.lbl_vga.setText("VGA") # VGA
@@ -200,9 +200,9 @@ def translateNewVmEN(window):
     window.cb_vga.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
     window.cb_net.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
 
-    window.btn_prev4.setText("< 上一步") # < Previous
-    window.btn_next4.setText("下一步 >") # Next >
-    window.btn_cancel4.setText("取消") # Cancel
+    window.btn_prev4.setText("< previous") # < Previous
+    window.btn_next4.setText("next >") # Next >
+    window.btn_cancel4.setText("cancel") # Cancel
 
     # Fifth page
     window.lbl_biosLoc.setText(
@@ -211,10 +211,10 @@ def translateNewVmEN(window):
 
     window.lbl_biosF.setText("External BIOS file") # External BIOS file
 
-    window.btn_biosF.setText("浏览") # Browse
-    window.btn_prev5.setText("< 上一步") # < Previous
-    window.btn_next5.setText("下一步 >") # Next >
-    window.btn_cancel5.setText("取消") # Cancel
+    window.btn_biosF.setText("browse") # Browse
+    window.btn_prev5.setText("< previous") # < Previous
+    window.btn_next5.setText("next >") # Next >
+    window.btn_cancel5.setText("cancel") # Cancel
 
     # Sixth page
     window.lbl_sound.setText("Sound card") # Sound card
@@ -222,20 +222,20 @@ def translateNewVmEN(window):
     window.lbl_kbd.setText("Keyboard") # Keyboard
     window.lbl_kbdlayout.setText("Keyboard layout") # Keyboard layout
 
-    window.btn_prev6.setText("< 上一步") # < Previous
-    window.btn_next6.setText("下一步 >") # Next >
-    window.btn_cancel6.setText("取消") # Cancel
+    window.btn_prev6.setText("< previous") # < Previous
+    window.btn_next6.setText("next >") # Next >
+    window.btn_cancel6.setText("cancel") # Cancel
 
     # Seventh page
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd args") # Linux cmd args
 
-    window.btn_kernel.setText("浏览") # Browse
-    window.btn_initrd.setText("浏览") # Browse
-    window.btn_prev7.setText("< 上一步") # < Previous
-    window.btn_next7.setText("下一步 >") # Next >
-    window.btn_cancel7.setText("取消") # Cancel
+    window.btn_kernel.setText("browse") # Browse
+    window.btn_initrd.setText("browse") # Browse
+    window.btn_prev7.setText("< previous") # < Previous
+    window.btn_next7.setText("next >") # Next >
+    window.btn_cancel7.setText("cancel") # Cancel
 
     # Eighth page
     window.lbl_accel.setText("Acceleration") # Acceleration
@@ -260,9 +260,9 @@ def translateNewVmEN(window):
 
         i += 1
 
-    window.btn_prev8.setText("< 上一步") # < Previous
-    window.btn_next8.setText("下一步 >") # Next >
-    window.btn_cancel8.setText("取消") # Cancel
+    window.btn_prev8.setText("< previous") # < Previous
+    window.btn_next8.setText("next >") # Next >
+    window.btn_cancel8.setText("cancel") # Cancel
 
     # Ninth page
     window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -270,9 +270,9 @@ def translateNewVmEN(window):
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
     window.chb_usb.setText("Add USB support") # Add USB support
 
-    window.btn_prev9.setText("< 上一步") # < Previous
+    window.btn_prev9.setText("< previous") # < Previous
     window.btn_finish.setText("Finish") # Finish
-    window.btn_cancel9.setText("取消") # Cancel
+    window.btn_cancel9.setText("cancel") # Cancel
 
 def translateStartVmEN(window, vmname):
     window.setWindowTitle(f"EmuGUI - Start {vmname}")
@@ -285,12 +285,12 @@ def translateStartVmEN(window, vmname):
     Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
     """) # Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
 
-    window.pushButton.setText("浏览") # Browse
-    window.pushButton_2.setText("浏览") # Browse
-    window.pushButton_6.setText("浏览") # Browse
+    window.pushButton.setText("browse") # Browse
+    window.pushButton_2.setText("browse") # Browse
+    window.pushButton_6.setText("browse") # Browse
     window.pushButton_5.setText("Set to system") # Set to system
     window.pushButton_3.setText("Start VM") # Start VM
-    window.pushButton_4.setText("取消") # Cancel
+    window.pushButton_4.setText("cancel") # Cancel
     window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
@@ -357,7 +357,7 @@ def translateEditVMEN(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("取消") # Cancel
+    window.btn_cancel.setText("cancel") # Cancel
     window.btn_ok.setText("OK") # OK
 
     # Tab names
@@ -400,7 +400,7 @@ def translateEditVMEN(window, vmname):
     window.lbl_vhdp.setText("VHD path") # VHD path
     window.lbl_vhdf.setText("VHD file format") # VHD file format
     window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.btn_vhdp.setText("浏览") # Browse
+    window.btn_vhdp.setText("browse") # Browse
     
     # Combobox for VHD usage
     i = 0
@@ -470,14 +470,14 @@ def translateEditVMEN(window, vmname):
     # Location of external BIOS file (Leave empty to use the default BIOS)
     window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
     window.lbl_biosf.setText("External BIOS file") # External BIOS file
-    window.btn_biosf.setText("浏览") # Browse
+    window.btn_biosf.setText("browse") # Browse
 
     # Translations for Linux tab
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
-    window.btn_kernel.setText("浏览") # Browse
-    window.btn_initrd.setText("浏览") # Browse
+    window.btn_kernel.setText("browse") # Browse
+    window.btn_initrd.setText("browse") # Browse
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA

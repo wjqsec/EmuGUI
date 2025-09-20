@@ -84,3 +84,10 @@ pip: `python3 -m pip install --upgrade pip`
        ```bash
        python3 emugui.py
        ```
+
+主页 new virtual machine 下拉框选中，属性cb_arch
+eg. architecture: i386
+最终在创建vm时，会执行 newVirtualMachine.py 中的 archSystem(self) 方法，根据选择的 architecture (self.cb_arch.currentText() == "i386") 执行不同的逻辑
+line 357 in newVirtualMachine.py
+当体系结构（cb_arch下拉框当前文本）为i386或x86_64时，遍历所有硬件插件（self.hw_plugins），分别尝试将每个插件的x86_machines和x86_cpus列表中的内容添加到cb_machine和cb_cpu下拉框中。如果某个插件没有这些键，则通过except跳过，不会报错。
+

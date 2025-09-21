@@ -67,7 +67,48 @@
        python3 emugui.py
        ```
 
-ui/NewVM2.ui declares a QComboBox named cb_arch.
-Running pyside6-uic produces uiScripts/ui_NewVM2.py with a Ui_Dialog.setupUi() that creates self.cb_arch.
-dialogExecution/newVirtualMachine.py inherits Ui_Dialog, calls self.setupUi(self), so self.cb_arch becomes available there. The code then reads self.cb_arch.currentText() and populates other widgets based on it (e.g., in archSystem and finishCreation).
+新建VM示例
+修改ui/NewVM2.ui 在第一个对话框加入一个下拉框 选项（选项1，选项2，选项3）
+（1）左侧名称
+```
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_test_dropdown_box">
+        <property name="text">
+         <string>选项</string>
+        </property>
+       </widget>
+      </item>
+  ```
+（2）右侧下拉框
+```
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cb_arch">
+        <item>
+         <property name="text">
+          <string>选项1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>选项2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>选项3</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+```
+最后执行
+```bash
+pyside6-uic ui/NewVM2.ui -o uiScripts/ui_NewVM2.py
+```
+生效
 
+
+```
+dialogExecution/newVirtualMachine.py
+def connectSignalsSlots(self)
+```

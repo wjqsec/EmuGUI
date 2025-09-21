@@ -25,7 +25,7 @@ def translateMainEN(window):
 
     # General tab
     window.label_15.setText("Language") # Language
-    window.pushButton_15.setText("Apply") # Apply
+    window.pushButton_15.setText("应用") # 应用
 
     # Combo box for languages
     i = 0
@@ -61,24 +61,24 @@ def translateMainEN(window):
     window.lbl_riscv32.setText("qemu-system-riscv32 Path") # qemu-system-riscv32 Path
     window.lbl_riscv64.setText("qemu-system-riscv64 Path") # qemu-system-riscv64 Path
 
-    window.pushButton.setText("browse") # Browse
-    window.pushButton_2.setText("browse") # Browse
-    window.pushButton_3.setText("browse") # Browse
-    window.pushButton_4.setText("browse") # Browse
-    window.pushButton_5.setText("browse") # Browse
-    window.pushButton_7.setText("browse") # Browse
-    window.pushButton_12.setText("browse") # Browse
-    window.pushButton_16.setText("browse") # Browse
-    window.pushButton_17.setText("browse") # Browse
-    window.pushButton_18.setText("browse") # Browse
-    window.pushButton_19.setText("browse") # Browse
-    window.pushButton_13.setText("browse") # Browse
-    window.pushButton_14.setText("browse") # Browse
-    window.btn_alpha.setText("browse") # Browse
-    window.btn_riscv32.setText("browse") # Browse
-    window.btn_riscv64.setText("browse") # Browse
-    window.pushButton_6.setText("Apply") # Apply
-    window.btn_apply_qemu2.setText("Apply") # Apply
+    window.pushButton.setText("浏览") # 浏览
+    window.pushButton_2.setText("浏览") # 浏览
+    window.pushButton_3.setText("浏览") # 浏览
+    window.pushButton_4.setText("浏览") # 浏览
+    window.pushButton_5.setText("浏览") # 浏览
+    window.pushButton_7.setText("浏览") # 浏览
+    window.pushButton_12.setText("浏览") # 浏览
+    window.pushButton_16.setText("浏览") # 浏览
+    window.pushButton_17.setText("浏览") # 浏览
+    window.pushButton_18.setText("浏览") # 浏览
+    window.pushButton_19.setText("浏览") # 浏览
+    window.pushButton_13.setText("浏览") # 浏览
+    window.pushButton_14.setText("浏览") # 浏览
+    window.btn_alpha.setText("浏览") # 浏览
+    window.btn_riscv32.setText("浏览") # 浏览
+    window.btn_riscv64.setText("浏览") # 浏览
+    window.pushButton_6.setText("应用") # 应用
+    window.btn_应用_qemu2.setText("应用") # 应用
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
@@ -107,7 +107,7 @@ def translateNewVmEN(window):
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
     window.btn_next1.setText("next >") # Next >
-    window.btn_cancel1.setText("cancel") # Cancel
+    window.btn_取消1.setText("取消") # 取消
 
     # Second page
     window.lbl_machine.setText("Machine") # Machine
@@ -119,14 +119,14 @@ def translateNewVmEN(window):
 
     window.pb_prev2.setText("< previous") # < Previous
     window.pb_next2.setText("next >") # Next >
-    window.pb_cancel2.setText("cancel") # Cancel
+    window.pb_取消2.setText("取消") # 取消
 
     # Combo boxes on second page
     i = 0
 
     while i < window.cb_machine.count():
-        if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
-            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_machine.itemText(i) == "QEMU适配" or window.cb_machine.itemText(i) == "QEMU überlassen":
+            window.cb_machine.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -134,8 +134,8 @@ def translateNewVmEN(window):
     i = 0
 
     while i < window.cb_cpu.count():
-        if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
-            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cpu.itemText(i) == "QEMU适配" or window.cb_cpu.itemText(i) == "QEMU überlassen":
+            window.cb_cpu.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -179,30 +179,30 @@ def translateNewVmEN(window):
     i = 0
 
     while i < window.cb_hddC.count():
-        if window.cb_hddC.itemText(i) == "Let QEMU decide" or window.cb_hddC.itemText(i) == "QEMU überlassen":
-            window.cb_hddC.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_hddC.itemText(i) == "QEMU适配" or window.cb_hddC.itemText(i) == "QEMU überlassen":
+            window.cb_hddC.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
 
     window.cb_vhdF.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.btn_vhdP.setText("browse") # Browse
+    window.btn_vhdP.setText("浏览") # 浏览
     window.btn_prev3.setText("< previous") # < Previous
     window.btn_next3.setText("next >") # Next >
-    window.btn_cancel3.setText("cancel") # Cancel
+    window.btn_取消3.setText("取消") # 取消
 
     # Fourth page
     window.lbl_vga.setText("VGA") # VGA
     window.lbl_net.setText("Network") # Network
     window.lbl_mouse.setText("Mouse") # Mouse
 
-    window.cb_vga.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
-    window.cb_net.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
+    window.cb_vga.setPlaceholderText("(选择图形适配器)") # (Please select a graphics adapter)
+    window.cb_net.setPlaceholderText("(选择网卡适配器)") # (Please select a network adapter)
 
     window.btn_prev4.setText("< previous") # < Previous
     window.btn_next4.setText("next >") # Next >
-    window.btn_cancel4.setText("cancel") # Cancel
+    window.btn_取消4.setText("取消") # 取消
 
     # Fifth page
     window.lbl_biosLoc.setText(
@@ -211,31 +211,31 @@ def translateNewVmEN(window):
 
     window.lbl_biosF.setText("External BIOS file") # External BIOS file
 
-    window.btn_biosF.setText("browse") # Browse
+    window.btn_biosF.setText("浏览") # 浏览
     window.btn_prev5.setText("< previous") # < Previous
     window.btn_next5.setText("next >") # Next >
-    window.btn_cancel5.setText("cancel") # Cancel
+    window.btn_取消5.setText("取消") # 取消
 
     # Sixth page
-    window.lbl_sound.setText("Sound card") # Sound card
-    window.lbl_cores.setText("CPU cores")# CPU cores
-    window.lbl_kbd.setText("Keyboard") # Keyboard
-    window.lbl_kbdlayout.setText("Keyboard layout") # Keyboard layout
+    window.lbl_sound.setText("声卡") # Sound card
+    window.lbl_cores.setText("CPU 核心	")# CPU cores
+    window.lbl_kbd.setText("键盘") # Keyboard
+    window.lbl_kbdlayout.setText("键盘布局") # Keyboard layout
 
     window.btn_prev6.setText("< previous") # < Previous
     window.btn_next6.setText("next >") # Next >
-    window.btn_cancel6.setText("cancel") # Cancel
+    window.btn_取消6.setText("取消") # 取消
 
     # Seventh page
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd args") # Linux cmd args
 
-    window.btn_kernel.setText("browse") # Browse
-    window.btn_initrd.setText("browse") # Browse
+    window.btn_kernel.setText("浏览") # 浏览
+    window.btn_initrd.setText("浏览") # 浏览
     window.btn_prev7.setText("< previous") # < Previous
     window.btn_next7.setText("next >") # Next >
-    window.btn_cancel7.setText("cancel") # Cancel
+    window.btn_取消7.setText("取消") # 取消
 
     # Eighth page
     window.lbl_accel.setText("Acceleration") # Acceleration
@@ -245,8 +245,8 @@ def translateNewVmEN(window):
     i = 0
 
     while i < window.cb_cdc1.count():
-        if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
-            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cdc1.itemText(i) == "QEMU适配" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
+            window.cb_cdc1.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -254,15 +254,15 @@ def translateNewVmEN(window):
     i = 0
 
     while i < window.cb_cdc2.count():
-        if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
-            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cdc2.itemText(i) == "QEMU适配" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
+            window.cb_cdc2.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
 
     window.btn_prev8.setText("< previous") # < Previous
     window.btn_next8.setText("next >") # Next >
-    window.btn_cancel8.setText("cancel") # Cancel
+    window.btn_取消8.setText("取消") # 取消
 
     # Ninth page
     window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -272,33 +272,33 @@ def translateNewVmEN(window):
 
     window.btn_prev9.setText("< previous") # < Previous
     window.btn_finish.setText("Finish") # Finish
-    window.btn_cancel9.setText("cancel") # Cancel
+    window.btn_取消9.setText("取消") # 取消
 
 def translateStartVmEN(window, vmname):
     window.setWindowTitle(f"EmuGUI - Start {vmname}")
     window.label_4.setText("Date & Time") # Date & Time
     window.label_3.setText("Boot from") # Boot from
     window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
-    window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
+    window.label_7.setText("从终端创建 TPM！") # Create the TPM from the terminal!
 
     window.label_5.setText("""
-    Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
+    注意：如果虚拟机在五分钟内没有启动，那么您应该检查虚拟机和 QEMU 设置。
     """) # Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
 
-    window.pushButton.setText("browse") # Browse
-    window.pushButton_2.setText("browse") # Browse
-    window.pushButton_6.setText("browse") # Browse
+    window.pushButton.setText("浏览") # 浏览
+    window.pushButton_2.setText("浏览") # 浏览
+    window.pushButton_6.setText("浏览") # 浏览
     window.pushButton_5.setText("Set to system") # Set to system
-    window.pushButton_3.setText("Start VM") # Start VM
-    window.pushButton_4.setText("cancel") # Cancel
-    window.checkBox.setText("Use RTC option") # Use RTC option
+    window.pushButton_3.setText("启动虚拟机") # Start VM
+    window.pushButton_4.setText("取消") # 取消
+    window.checkBox.setText("使用RTC") # Use RTC option
 
     # Combo box for boot
     i = 0
 
     while i < window.comboBox.count():
-        if window.comboBox.itemText(i) == "Let QEMU decide" or window.comboBox.itemText(i) == "QEMU überlassen":
-            window.comboBox.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.comboBox.itemText(i) == "QEMU适配" or window.comboBox.itemText(i) == "QEMU überlassen":
+            window.comboBox.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -357,16 +357,16 @@ def translateEditVMEN(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("cancel") # Cancel
+    window.btn_cancel.setText("取消") # 取消
     window.btn_ok.setText("OK") # OK
 
     # Tab names
-    window.tabWidget.setTabText(0, "General") # General
-    window.tabWidget.setTabText(1, "Machine") # Machine
-    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(0, "通用") # General
+    window.tabWidget.setTabText(1, "机器") # Machine
+    window.tabWidget.setTabText(2, "虚拟磁盘") # Virtual hard disks
+    window.tabWidget.setTabText(3, "外设") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
-    window.tabWidget.setTabText(6, "Additional components") # Additional components
+    window.tabWidget.setTabText(6, "额外组件") # Additional components
 
     # Translations for General tab
     window.lbl_name.setText("Name") # Name
@@ -380,8 +380,8 @@ def translateEditVMEN(window, vmname):
     i = 0
 
     while i < window.cb_cpu.count():
-        if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
-            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cpu.itemText(i) == "QEMU适配" or window.cb_cpu.itemText(i) == "QEMU überlassen":
+            window.cb_cpu.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -389,8 +389,8 @@ def translateEditVMEN(window, vmname):
     i = 0
 
     while i < window.cb_machine.count():
-        if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
-            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_machine.itemText(i) == "QEMU适配" or window.cb_machine.itemText(i) == "QEMU überlassen":
+            window.cb_machine.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -400,7 +400,7 @@ def translateEditVMEN(window, vmname):
     window.lbl_vhdp.setText("VHD path") # VHD path
     window.lbl_vhdf.setText("VHD file format") # VHD file format
     window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.btn_vhdp.setText("browse") # Browse
+    window.btn_vhdp.setText("浏览") # 浏览
     
     # Combobox for VHD usage
     i = 0
@@ -436,8 +436,8 @@ def translateEditVMEN(window, vmname):
     i = 0
 
     while i < window.cb_cdc1.count():
-        if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
-            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cdc1.itemText(i) == "QEMU适配" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
+            window.cb_cdc1.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -445,8 +445,8 @@ def translateEditVMEN(window, vmname):
     i = 0
 
     while i < window.cb_cdc2.count():
-        if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
-            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_cdc2.itemText(i) == "QEMU适配" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
+            window.cb_cdc2.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -456,8 +456,8 @@ def translateEditVMEN(window, vmname):
     i = 0
 
     while i < window.cb_hddc.count():
-        if window.cb_hddc.itemText(i) == "Let QEMU decide" or window.cb_hddc.itemText(i) == "QEMU überlassen":
-            window.cb_hddc.setItemText(i, "Let QEMU decide") # Let QEMU decide
+        if window.cb_hddc.itemText(i) == "QEMU适配" or window.cb_hddc.itemText(i) == "QEMU überlassen":
+            window.cb_hddc.setItemText(i, "QEMU适配") # QEMU适配
             break
 
         i += 1
@@ -470,14 +470,14 @@ def translateEditVMEN(window, vmname):
     # Location of external BIOS file (Leave empty to use the default BIOS)
     window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
     window.lbl_biosf.setText("External BIOS file") # External BIOS file
-    window.btn_biosf.setText("browse") # Browse
+    window.btn_biosf.setText("浏览") # 浏览
 
     # Translations for Linux tab
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
-    window.btn_kernel.setText("browse") # Browse
-    window.btn_initrd.setText("browse") # Browse
+    window.btn_kernel.setText("浏览") # 浏览
+    window.btn_initrd.setText("浏览") # 浏览
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>400</height>
+    <width>800</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>400</width>
+    <width>300</width>
     <height>300</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>600</width>
-    <height>450</height>
+    <width>800</width>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -39,8 +39,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>381</width>
-     <height>281</height>
+     <width>500</width>
+     <height>400</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -52,8 +52,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>381</width>
-       <height>281</height>
+       <width>400</width>
+       <height>300</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -65,9 +65,9 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="lbl_test_dropdown_box">
+       <widget class="QLabel" name="mode_dropdown_box">
         <property name="text">
-         <string>选项</string>
+         <string>仿真模式</string>
         </property>
        </widget>
       </item>
@@ -93,23 +93,23 @@
        </widget>
       </item>
       <item row="2" column="1" colspan="2">
-       <widget class="QComboBox" name="cb_dropdown_box">
+       <widget class="QComboBox" name="mode_sel_dropdown_box">
         <property name="placeholderText">
          <string>Please choose an option</string>
         </property>
         <item>
          <property name="text">
-          <string>选项1</string>
+          <string>全系统仿真</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>选项2</string>
+          <string>硬件在环仿真</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>选项3</string>
+          <string>固件托管仿真</string>
          </property>
         </item>
        </widget>

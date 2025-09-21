@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'StartVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.3
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,12 +24,17 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(410, 300)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
+        Dialog.setSizePolicy(sizePolicy)
         Dialog.setMinimumSize(QSize(410, 300))
-        Dialog.setMaximumSize(QSize(410, 300))
+        Dialog.setMaximumSize(QSize(610, 800))
         Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget = QWidget(Dialog)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 397, 281))
+        self.gridLayoutWidget.setGeometry(QRect(10, 10, 450, 500))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -96,7 +101,7 @@ class Ui_Dialog(object):
         self.pushButton_4 = QPushButton(self.gridLayoutWidget)
         self.pushButton_4.setObjectName(u"pushButton_4")
 
-        self.gridLayout.addWidget(self.pushButton_4, 9, 2, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_4, 13, 2, 1, 1)
 
         self.label = QLabel(self.gridLayoutWidget)
         self.label.setObjectName(u"label")
@@ -108,24 +113,24 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.label_6, 6, 0, 1, 1)
 
-        self.label_7 = QLabel(self.gridLayoutWidget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setAlignment(Qt.AlignCenter)
-        self.label_7.setWordWrap(True)
-
-        self.gridLayout.addWidget(self.label_7, 11, 0, 1, 3)
-
         self.label_5 = QLabel(self.gridLayoutWidget)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setAlignment(Qt.AlignCenter)
         self.label_5.setWordWrap(True)
 
-        self.gridLayout.addWidget(self.label_5, 10, 0, 1, 3)
+        self.gridLayout.addWidget(self.label_5, 14, 0, 1, 3)
+
+        self.label_7 = QLabel(self.gridLayoutWidget)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setAlignment(Qt.AlignCenter)
+        self.label_7.setWordWrap(True)
+
+        self.gridLayout.addWidget(self.label_7, 12, 0, 1, 3)
 
         self.pushButton_3 = QPushButton(self.gridLayoutWidget)
         self.pushButton_3.setObjectName(u"pushButton_3")
 
-        self.gridLayout.addWidget(self.pushButton_3, 9, 1, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_3, 13, 1, 1, 1)
 
         self.label_2 = QLabel(self.gridLayoutWidget)
         self.label_2.setObjectName(u"label_2")
@@ -144,7 +149,42 @@ class Ui_Dialog(object):
         self.checkBox = QCheckBox(self.gridLayoutWidget)
         self.checkBox.setObjectName(u"checkBox")
 
-        self.gridLayout.addWidget(self.checkBox, 7, 0, 1, 2)
+        self.gridLayout.addWidget(self.checkBox, 7, 1, 1, 2)
+
+        self.checkBox_debug = QCheckBox(self.gridLayoutWidget)
+        self.checkBox_debug.setObjectName(u"checkBox_debug")
+
+        self.gridLayout.addWidget(self.checkBox_debug, 9, 1, 1, 2)
+
+        self.label_hook = QLabel(self.gridLayoutWidget)
+        self.label_hook.setObjectName(u"label_hook")
+
+        self.gridLayout.addWidget(self.label_hook, 10, 0, 1, 1)
+
+        self.comboBox_hook = QComboBox(self.gridLayoutWidget)
+        self.comboBox_hook.addItem("")
+        self.comboBox_hook.addItem("")
+        self.comboBox_hook.addItem("")
+        self.comboBox_hook.addItem("")
+        self.comboBox_hook.addItem("")
+        self.comboBox_hook.setObjectName(u"comboBox_hook")
+
+        self.gridLayout.addWidget(self.comboBox_hook, 10, 1, 1, 2)
+
+        self.label_log = QLabel(self.gridLayoutWidget)
+        self.label_log.setObjectName(u"label_log")
+
+        self.gridLayout.addWidget(self.label_log, 11, 0, 1, 1)
+
+        self.lineEdit_log = QLineEdit(self.gridLayoutWidget)
+        self.lineEdit_log.setObjectName(u"lineEdit_log")
+
+        self.gridLayout.addWidget(self.lineEdit_log, 11, 1, 1, 1)
+
+        self.pushButton_log = QPushButton(self.gridLayoutWidget)
+        self.pushButton_log.setObjectName(u"pushButton_log")
+
+        self.gridLayout.addWidget(self.pushButton_log, 11, 2, 1, 1)
 
         QWidget.setTabOrder(self.lineEdit, self.pushButton)
         QWidget.setTabOrder(self.pushButton, self.lineEdit_2)
@@ -176,8 +216,8 @@ class Ui_Dialog(object):
         self.pushButton_4.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"fda", None))
         self.label_6.setText(QCoreApplication.translate("Dialog", u"TPM path (Linux only)", None))
-        self.label_7.setText(QCoreApplication.translate("Dialog", u"Create the TPM from the terminal!", None))
         self.label_5.setText(QCoreApplication.translate("Dialog", u"Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.", None))
+        self.label_7.setText(QCoreApplication.translate("Dialog", u"Create the TPM from the terminal!", None))
         self.pushButton_3.setText(QCoreApplication.translate("Dialog", u"Start VM", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"cdrom 1", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"c", None))
@@ -186,5 +226,15 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
 
         self.checkBox.setText(QCoreApplication.translate("Dialog", u"Use RTC option", None))
+        self.checkBox_debug.setText(QCoreApplication.translate("Dialog", u"\u8c03\u8bd5\u5f00\u5173", None))
+        self.label_hook.setText(QCoreApplication.translate("Dialog", u"\u63d2\u6869", None))
+        self.comboBox_hook.setItemText(0, QCoreApplication.translate("Dialog", u"\u65e0", None))
+        self.comboBox_hook.setItemText(1, QCoreApplication.translate("Dialog", u"\u6307\u4ee4\u7ea7", None))
+        self.comboBox_hook.setItemText(2, QCoreApplication.translate("Dialog", u"\u57fa\u672c\u5757\u7ea7", None))
+        self.comboBox_hook.setItemText(3, QCoreApplication.translate("Dialog", u"\u51fd\u6570\u7ea7", None))
+        self.comboBox_hook.setItemText(4, QCoreApplication.translate("Dialog", u"\u6a21\u5757\u7ea7", None))
+
+        self.label_log.setText(QCoreApplication.translate("Dialog", u"\u8bb0\u5f55", None))
+        self.pushButton_log.setText(QCoreApplication.translate("Dialog", u"Browse", None))
     # retranslateUi
 

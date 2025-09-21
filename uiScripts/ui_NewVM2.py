@@ -23,23 +23,23 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(500, 400)
+        Dialog.resize(800, 800)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
-        Dialog.setMinimumSize(QSize(400, 300))
-        Dialog.setMaximumSize(QSize(600, 450))
+        Dialog.setMinimumSize(QSize(300, 300))
+        Dialog.setMaximumSize(QSize(800, 800))
         Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.stackedWidget = QStackedWidget(Dialog)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setGeometry(QRect(10, 10, 381, 281))
+        self.stackedWidget.setGeometry(QRect(10, 10, 500, 400))
         self.page = QWidget()
         self.page.setObjectName(u"page")
         self.gridLayoutWidget = QWidget(self.page)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayoutWidget.setGeometry(QRect(0, 0, 400, 300))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -48,10 +48,10 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.lbl_arch, 1, 0, 1, 1)
 
-        self.lbl_test_dropdown_box = QLabel(self.gridLayoutWidget)
-        self.lbl_test_dropdown_box.setObjectName(u"lbl_test_dropdown_box")
+        self.mode_dropdown_box = QLabel(self.gridLayoutWidget)
+        self.mode_dropdown_box.setObjectName(u"mode_dropdown_box")
 
-        self.gridLayout.addWidget(self.lbl_test_dropdown_box, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.mode_dropdown_box, 2, 0, 1, 1)
 
         self.lbl_vmname = QLabel(self.gridLayoutWidget)
         self.lbl_vmname.setObjectName(u"lbl_vmname")
@@ -68,13 +68,13 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.btn_next1, 3, 1, 1, 1)
 
-        self.cb_dropdown_box = QComboBox(self.gridLayoutWidget)
-        self.cb_dropdown_box.addItem("")
-        self.cb_dropdown_box.addItem("")
-        self.cb_dropdown_box.addItem("")
-        self.cb_dropdown_box.setObjectName(u"cb_dropdown_box")
+        self.mode_sel_dropdown_box = QComboBox(self.gridLayoutWidget)
+        self.mode_sel_dropdown_box.addItem("")
+        self.mode_sel_dropdown_box.addItem("")
+        self.mode_sel_dropdown_box.addItem("")
+        self.mode_sel_dropdown_box.setObjectName(u"mode_sel_dropdown_box")
 
-        self.gridLayout.addWidget(self.cb_dropdown_box, 2, 1, 1, 2)
+        self.gridLayout.addWidget(self.mode_sel_dropdown_box, 2, 1, 1, 2)
 
         self.cb_arch = QComboBox(self.gridLayoutWidget)
         self.cb_arch.addItem("")
@@ -1806,15 +1806,15 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.lbl_arch.setText(QCoreApplication.translate("Dialog", u"Architecture", None))
-        self.lbl_test_dropdown_box.setText(QCoreApplication.translate("Dialog", u"\u9009\u9879", None))
+        self.mode_dropdown_box.setText(QCoreApplication.translate("Dialog", u"\u4eff\u771f\u6a21\u5f0f", None))
         self.lbl_vmname.setText(QCoreApplication.translate("Dialog", u"Name", None))
         self.btn_cancel1.setText(QCoreApplication.translate("Dialog", u"cancel", None))
         self.btn_next1.setText(QCoreApplication.translate("Dialog", u"next >", None))
-        self.cb_dropdown_box.setItemText(0, QCoreApplication.translate("Dialog", u"\u9009\u98791", None))
-        self.cb_dropdown_box.setItemText(1, QCoreApplication.translate("Dialog", u"\u9009\u98792", None))
-        self.cb_dropdown_box.setItemText(2, QCoreApplication.translate("Dialog", u"\u9009\u98793", None))
+        self.mode_sel_dropdown_box.setItemText(0, QCoreApplication.translate("Dialog", u"\u5168\u7cfb\u7edf\u4eff\u771f", None))
+        self.mode_sel_dropdown_box.setItemText(1, QCoreApplication.translate("Dialog", u"\u786c\u4ef6\u5728\u73af\u4eff\u771f", None))
+        self.mode_sel_dropdown_box.setItemText(2, QCoreApplication.translate("Dialog", u"\u56fa\u4ef6\u6258\u7ba1\u4eff\u771f", None))
 
-        self.cb_dropdown_box.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an option", None))
+        self.mode_sel_dropdown_box.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an option", None))
         self.cb_arch.setItemText(0, QCoreApplication.translate("Dialog", u"i386", None))
         self.cb_arch.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
         self.cb_arch.setItemText(2, QCoreApplication.translate("Dialog", u"mips64el", None))

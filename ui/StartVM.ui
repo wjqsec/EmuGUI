@@ -10,6 +10,12 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="minimumSize">
    <size>
     <width>410</width>
@@ -18,8 +24,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>410</width>
-    <height>300</height>
+    <width>610</width>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -33,8 +39,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>397</width>
-     <height>281</height>
+     <width>450</width>
+     <height>500</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -106,7 +112,7 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="2">
+    <item row="13" column="2">
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
        <string>Cancel</string>
@@ -127,20 +133,7 @@
       </property>
      </widget>
     </item>
-    <item row="11" column="0" colspan="3">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Create the TPM from the terminal!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0" colspan="3">
+    <item row="14" column="0" colspan="3">
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.</string>
@@ -153,7 +146,20 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="1">
+    <item row="12" column="0" colspan="3">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Create the TPM from the terminal!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
        <string>Start VM</string>
@@ -191,10 +197,70 @@
       </item>
      </widget>
     </item>
-    <item row="7" column="0" colspan="2">
+    <item row="7" column="1" colspan="2">
      <widget class="QCheckBox" name="checkBox">
       <property name="text">
        <string>Use RTC option</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1" colspan="2">
+     <widget class="QCheckBox" name="checkBox_debug">
+      <property name="text">
+       <string>调试开关</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_hook">
+      <property name="text">
+       <string>插桩</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox_hook">
+      <item>
+       <property name="text">
+        <string>无</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>指令级</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>基本块级</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>函数级</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>模块级</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_log">
+      <property name="text">
+       <string>记录</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="lineEdit_log"/>
+    </item>
+    <item row="11" column="2">
+     <widget class="QPushButton" name="pushButton_log">
+      <property name="text">
+       <string>Browse</string>
       </property>
      </widget>
     </item>

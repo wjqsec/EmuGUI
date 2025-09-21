@@ -1,22 +1,4 @@
 # Ubuntu
-update: `sudo apt-get update && sudo apt-get upgrade`
-install QEMU: `sudo apt-get install qemu`
-
-## Install Dependencies:
-python: `sudo apt install python3 -y`
-
-pip: `python3 -m pip install --upgrade pip`
-
-安装Qemu: `sudo apt install qemu -y` (更高版本的Ubuntu: `sudo apt install qemu-system -y`)
-
-安装 EmuGUI 所需的 Python 包: `pip3 install PyQt6 PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
-
-安装 python3-venv, 为了创建虚拟环境，需要安装 python3-venv(Ubuntu 24.04 及更高版本):
-`sudo apt install python3-venv -y`
-
-创建虚拟环境(名称为emugui-venv) `python3 -m venv ~/emugui-venv`
-
-激活虚拟环境: `source ~/emugui-venv/bin/activate`
 
 1. **确保 Python 和 pip 已安装**
    检查 Python 和 pip 是否已安装：

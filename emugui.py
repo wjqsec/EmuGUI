@@ -3556,22 +3556,21 @@ class Window(QMainWindow, Ui_MainWindow):
         webbrowser.open_new_tab("https://www.guilded.gg/i/pBAY6BAk")
         
     def runPythonScript(self):
-        import io
-        import contextlib
-        import traceback
-        def run_code(code: str):
-            buffer = io.StringIO()
-            error = None
-            with contextlib.redirect_stdout(buffer), contextlib.redirect_stderr(buffer):
-                try:
-                    exec(code)
-                except Exception:
-                    # Capture the full traceback
-                    error = traceback.format_exc()
-            output = buffer.getvalue()
-            return output, error
+        import subprocess
+        import sys
+        def run_python_script(script_text: str, timeout: float = None):
+            try:
+                proc = subprocess.run(
+                    [sys.executable, "-c", script_text],  # -c executes the string as code
+                    capture_output=True,                  # capture stdout and stderr
+                    text=True,                            # return strings instead of bytes
+                    timeout=timeout
+                )
+                return proc.stdout, proc.stderr, proc.returncode
+            except subprocess.TimeoutExpired as e:
+                return "", f"TimeoutExpired: {e}", -1
         text = self.textEdit.toPlainText()
-        out_smg,err_smg = run_code(text)
+        out_smg,err_smg,err_code = run_python_script(text)
         self.textBrowser.append (out_smg)
         self.textBrowser.append (err_smg)
 if __name__ == "__main__":

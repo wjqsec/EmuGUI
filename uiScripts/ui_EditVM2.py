@@ -24,14 +24,13 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(813, 474)
+        Dialog.resize(833, 477)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
         Dialog.setMinimumSize(QSize(813, 474))
-        Dialog.setMaximumSize(QSize(813, 474))
         Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.tabWidget = QTabWidget(Dialog)
         self.tabWidget.setObjectName(u"tabWidget")
@@ -116,6 +115,7 @@ class Ui_Dialog(object):
 
         self.sb_ram = QSpinBox(self.gridLayoutWidget_8)
         self.sb_ram.setObjectName(u"sb_ram")
+        self.sb_ram.setMinimum(50)
         self.sb_ram.setMaximum(32768)
 
         self.gridLayout_8.addWidget(self.sb_ram, 1, 1, 1, 1)

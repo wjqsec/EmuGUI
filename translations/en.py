@@ -21,8 +21,8 @@ def translateMainEN(window):
     window.pushButton_23.setText("导入VM") # Import virtual machine
 
     # Settings tabs
-    window.tabWidget_2.setTabText(0, "General") # General
-    window.tabWidget_2.setTabText(3, "About EmuGUI") # About EmuGUI
+    #window.tabWidget_2.setTabText(0, "General") # General
+    #window.tabWidget_2.setTabText(3, "About EmuGUI") # About EmuGUI
 
     # General tab
     #window.label_15.setText("Language") # Language

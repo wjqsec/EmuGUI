@@ -312,7 +312,7 @@ class Window(QMainWindow, Ui_MainWindow):
         #self.pushButton_24.clicked.connect(self.toYouTube)
         #self.pushButton_25.clicked.connect(self.toOdysee)
         #self.btn_guilded.clicked.connect(self.toGuilded)
-
+        self.pushButton_32.clicked.connect(self.runPythonScript)
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
         good_saturday_delta = datetime.timedelta(days=-1)
@@ -3554,7 +3554,26 @@ class Window(QMainWindow, Ui_MainWindow):
     
     def toGuilded(self):
         webbrowser.open_new_tab("https://www.guilded.gg/i/pBAY6BAk")
-
+        
+    def runPythonScript(self):
+        import io
+        import contextlib
+        import traceback
+        def run_code(code: str):
+            buffer = io.StringIO()
+            error = None
+            with contextlib.redirect_stdout(buffer), contextlib.redirect_stderr(buffer):
+                try:
+                    exec(code)
+                except Exception:
+                    # Capture the full traceback
+                    error = traceback.format_exc()
+            output = buffer.getvalue()
+            return output, error
+        text = self.textEdit.toPlainText()
+        out_smg,err_smg = run_code(text)
+        self.textBrowser.append (out_smg)
+        self.textBrowser.append (err_smg)
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

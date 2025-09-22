@@ -126,7 +126,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
         self.version = ""
-
+        translations.en.translateMainEN(self)
         self.architectures = [
             ["i386", self.lineEdit_4],
             ["x86_64", self.lineEdit_3],
@@ -208,8 +208,8 @@ class Window(QMainWindow, Ui_MainWindow):
                     f"{errors.errCodes.errCodes[46]}: Less than 6 GB of RAM detected! As you're using Windows 11, proceed at your own risk. Support requests won't be prioritised."
                     )
 
-        self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
-        self.setWindowTitle(f"EmuGUI {self.version}")
+        #self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
+        #self.setWindowTitle(f"EmuGUI {self.version}")
 
         if datetime.date.today().day == 1 and datetime.date.today().month == 4:
             wintitle = self.windowTitle()
@@ -236,7 +236,7 @@ class Window(QMainWindow, Ui_MainWindow):
         print(self.osThemes)
 
         for osTheme in self.osThemes:
-            self.comboBox_5.addItem(osTheme)
+            #self.comboBox_5.addItem(osTheme)
             print(osTheme)
 
         self.userThemeFileList = glob.glob(f"{self.exec_folder}themes/*.qss")
@@ -251,8 +251,8 @@ class Window(QMainWindow, Ui_MainWindow):
             else:
                 userTheme = userTheme.replace(f"{self.exec_folder}themes/", "")
             
-            self.comboBox_5.addItem(userTheme)
-            self.userThemeList.append(userTheme)
+            #self.comboBox_5.addItem(userTheme)
+            #self.userThemeList.append(userTheme)
         
         self.prepareDatabase(self.connection)
         self.updateVmList()
@@ -270,12 +270,12 @@ class Window(QMainWindow, Ui_MainWindow):
         super().resizeEvent(event)
 
         self.gridLayoutWidget.resize(event.size())
-        self.tabWidget.resize(event.size())
+        self.tabWidget_2.resize(event.size())
         self.gridLayoutWidget_4.resize(QSize(event.size().width() - 9, event.size().height() - 66))
         self.tabWidget_2.resize(QSize(event.size().width() - 9, event.size().height() - 56))
         self.gridLayoutWidget_2.resize(QSize(event.size().width() - 19, event.size().height() - 86))
-        self.gridLayoutWidget_3.resize(QSize(event.size().width() - 19, event.size().height() - 86))
-        self.gridLayoutWidget_6.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        #self.gridLayoutWidget_3.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        #self.gridLayoutWidget_6.resize(QSize(event.size().width() - 19, event.size().height() - 86))
         
         self.centralwidget.resize(event.size())
     
@@ -304,14 +304,14 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_23.clicked.connect(self.importVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
-        self.pushButton_15.clicked.connect(self.applyGeneric)
+        #self.pushButton_15.clicked.connect(self.applyGeneric)
         self.pushButton_13.clicked.connect(self.set_qemu_sparc_path)
         self.pushButton_14.clicked.connect(self.set_qemu_sparc64_path)
-        self.pushButton_20.clicked.connect(self.toGithub)
-        self.pushButton_21.clicked.connect(self.toDiscord)
-        self.pushButton_24.clicked.connect(self.toYouTube)
-        self.pushButton_25.clicked.connect(self.toOdysee)
-        self.btn_guilded.clicked.connect(self.toGuilded)
+        #self.pushButton_20.clicked.connect(self.toGithub)
+        #self.pushButton_21.clicked.connect(self.toDiscord)
+        #self.pushButton_24.clicked.connect(self.toYouTube)
+        #self.pushButton_25.clicked.connect(self.toOdysee)
+        #self.btn_guilded.clicked.connect(self.toGuilded)
 
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
@@ -327,7 +327,8 @@ class Window(QMainWindow, Ui_MainWindow):
             self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/RobertRabbit.png"))
 
         else:
-            self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/IoanaRosa.png"))
+            pass
+            #self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/IoanaRosa.png"))
 
         if datetime.date.today().day == 1 and datetime.date.today().month == 4:
             pixmap = self.label_6.pixmap()

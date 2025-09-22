@@ -4,7 +4,8 @@ def translateMainEN(window):
     # Tab group 1
     window.tabWidget.setTabText(0, "主页") # Main
     window.tabWidget.setTabText(1, "设置") # Settings
-
+    window.tabWidget.setTabText(3, "仿真外设信息") # Settings
+    window.tabWidget.setTabText(4, "仿真API编程") # Settings
     # Main tab
     # window.pushButton_8.setText("New virtual machine") # New virtual machine
     # window.pushButton_9.setText("Start virtual machine") # Start virtual machine
@@ -24,12 +25,12 @@ def translateMainEN(window):
     window.tabWidget_2.setTabText(3, "About EmuGUI") # About EmuGUI
 
     # General tab
-    window.label_15.setText("Language") # Language
-    window.pushButton_15.setText("应用") # 应用
+    #window.label_15.setText("Language") # Language
+    #window.pushButton_15.setText("应用") # 应用
 
     # Combo box for languages
     i = 0
-
+    '''
     while i < window.comboBox_4.count():
         sysDefSet("System default", window.comboBox_4, i) # System default
 
@@ -42,7 +43,7 @@ def translateMainEN(window):
         sysDefSet("System default", window.comboBox_5, i) # System default
 
         i += 1
-
+    '''
     # QEMU tab
     window.label.setText("qemu-img Path") # qemu-img Path
     window.label_2.setText("qemu-system-i386 Path") # qemu-system-i386 Path
@@ -78,10 +79,11 @@ def translateMainEN(window):
     window.btn_riscv32.setText("浏览") # 浏览
     window.btn_riscv64.setText("浏览") # 浏览
     window.pushButton_6.setText("应用") # 应用
-    window.btn_应用_qemu2.setText("应用") # 应用
+    window.btn_apply_qemu2.setText("应用") # 应用
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
+    '''
     window.label_7.setText("xiyang3 Built on Python and PyQt technology, licensed under GNU General Public License 3.0")
 
     window.label_10.setText(
@@ -93,7 +95,7 @@ def translateMainEN(window):
     window.label_14.setText("Banner made by Tech-FZ.") # Banner made by (insert author of current banner here).
 
     window.label_21.setText("EmuGUI on social media (in English)") # EmuGUI on social media (in English)
-
+    '''
 def translateNewVmEN(window):
     #window.setWindowTitle("EmuGUI - Create new VM")
     # 新建VM对话框标题
@@ -107,7 +109,7 @@ def translateNewVmEN(window):
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
     window.btn_next1.setText("next >") # Next >
-    window.btn_取消1.setText("取消") # 取消
+    window.btn_cancel1.setText("取消") # 取消
 
     # Second page
     window.lbl_machine.setText("Machine") # Machine
@@ -119,7 +121,7 @@ def translateNewVmEN(window):
 
     window.pb_prev2.setText("< previous") # < Previous
     window.pb_next2.setText("next >") # Next >
-    window.pb_取消2.setText("取消") # 取消
+    window.pb_cancel2.setText("取消") # 取消
 
     # Combo boxes on second page
     i = 0
@@ -190,7 +192,7 @@ def translateNewVmEN(window):
     window.btn_vhdP.setText("浏览") # 浏览
     window.btn_prev3.setText("< previous") # < Previous
     window.btn_next3.setText("next >") # Next >
-    window.btn_取消3.setText("取消") # 取消
+    window.btn_cancel3.setText("取消") # 取消
 
     # Fourth page
     window.lbl_vga.setText("VGA") # VGA
@@ -202,7 +204,7 @@ def translateNewVmEN(window):
 
     window.btn_prev4.setText("< previous") # < Previous
     window.btn_next4.setText("next >") # Next >
-    window.btn_取消4.setText("取消") # 取消
+    window.btn_cancel4.setText("取消") # 取消
 
     # Fifth page
     window.lbl_biosLoc.setText(
@@ -214,7 +216,7 @@ def translateNewVmEN(window):
     window.btn_biosF.setText("浏览") # 浏览
     window.btn_prev5.setText("< previous") # < Previous
     window.btn_next5.setText("next >") # Next >
-    window.btn_取消5.setText("取消") # 取消
+    window.btn_cancel5.setText("取消") # 取消
 
     # Sixth page
     window.lbl_sound.setText("声卡") # Sound card
@@ -224,7 +226,7 @@ def translateNewVmEN(window):
 
     window.btn_prev6.setText("< previous") # < Previous
     window.btn_next6.setText("next >") # Next >
-    window.btn_取消6.setText("取消") # 取消
+    window.btn_cancel6.setText("取消") # 取消
 
     # Seventh page
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
@@ -235,7 +237,7 @@ def translateNewVmEN(window):
     window.btn_initrd.setText("浏览") # 浏览
     window.btn_prev7.setText("< previous") # < Previous
     window.btn_next7.setText("next >") # Next >
-    window.btn_取消7.setText("取消") # 取消
+    window.btn_cancel7.setText("取消") # 取消
 
     # Eighth page
     window.lbl_accel.setText("Acceleration") # Acceleration
@@ -262,7 +264,7 @@ def translateNewVmEN(window):
 
     window.btn_prev8.setText("< previous") # < Previous
     window.btn_next8.setText("next >") # Next >
-    window.btn_取消8.setText("取消") # 取消
+    window.btn_cancel8.setText("取消") # 取消
 
     # Ninth page
     window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -272,7 +274,7 @@ def translateNewVmEN(window):
 
     window.btn_prev9.setText("< previous") # < Previous
     window.btn_finish.setText("Finish") # Finish
-    window.btn_取消9.setText("取消") # 取消
+    window.btn_cancel9.setText("取消") # 取消
 
 def translateStartVmEN(window, vmname):
     window.setWindowTitle(f"EmuGUI - Start {vmname}")

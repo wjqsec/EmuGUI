@@ -272,7 +272,7 @@
       <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="sb_ram">
         <property name="minimum">
-         <number>1</number>
+         <number>50</number>
         </property>
         <property name="maximum">
          <number>32768</number>

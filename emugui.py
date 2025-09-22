@@ -1355,7 +1355,6 @@ class Window(QMainWindow, Ui_MainWindow):
             cursor.execute(debug_db_settings)
             connection.commit()
             result = cursor.fetchall()
-
             print(result)
 
             i = 0
@@ -1376,7 +1375,7 @@ class Window(QMainWindow, Ui_MainWindow):
                             f"{errors.errCodes.errCodes[18]}: qemu-img is not registered in settings."
                         )
 
-                        dialog = ErrDialog(self)
+                        dialog = ErrDialog(self,msg="qemu-img没有设置")
                         dialog.exec()
 
                     else:
@@ -1439,7 +1438,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(get_vm_to_start)
                 connection.commit()
                 result = cursor.fetchall()
-
+                
                 print(result)
 
                 architecture_of_vm = result[0][0]
@@ -1621,7 +1620,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
                                 logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
 
-                                dialog = ErrDialog(self)
+                                dialog = ErrDialog(self,"对应qemu路径未配置")
                                 dialog.exec()
                                 arch_supported = True
                                 break

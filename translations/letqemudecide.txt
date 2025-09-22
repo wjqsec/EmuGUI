@@ -1,4 +1,4 @@
-Let QEMU decide
+let QEMU decide
 QEMU überlassen
 Няхай QEMU вырашае
 Пусть QEMU решает

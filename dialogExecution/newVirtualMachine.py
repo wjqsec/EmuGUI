@@ -309,13 +309,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
     def archSystem(self):
         # Here, it checks the name first, than the architecture.
-
+        if self.le_vmname.text() == "":
+            dialog = ErrDialog(self,msg="虚拟机名不能为空")
+            dialog.exec()
+            return
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
         else:
             connection = platformSpecific.unixSpecific.setupUnixBackend()
-
+       
         cursor = connection.cursor()
 
         check_vm_name = f"""

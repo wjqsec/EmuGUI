@@ -26,7 +26,10 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>EmuGUI encountered an error.</string>
+       <string>错误</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -36,14 +39,17 @@
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Error Code:</string>
+       <string>错误码</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.</string>
+       <string>发生了一个错误，请查看日志文件，通常是由于配置错误，如qemu路径未配置等，产生的。</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -63,3 +69,4 @@
  <resources/>
  <connections/>
 </ui>
+

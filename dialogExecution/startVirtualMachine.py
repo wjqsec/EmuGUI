@@ -293,8 +293,8 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             qemu_to_execute = result[0][0]
 
-            qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
-            qemu_cmd_list = [qemu_to_execute, "-m", self.vmSpecs[4], "-smp", self.vmSpecs[17], "-k", self.vmSpecs[21]]
+            qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[22]}"
+            qemu_cmd_list = [qemu_to_execute, "-m", self.vmSpecs[4], "-smp", self.vmSpecs[17], "-k", self.vmSpecs[22]]
 
             if self.checkBox.isChecked():
                 qemu_cmd = qemu_cmd + f" -rtc base=\"{dateTimeForVM}\",clock=vm"
@@ -328,7 +328,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                         elif self.vmSpecs[26] == "AHCI":
                             qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
                             qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0")
-
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
 
@@ -526,13 +525,22 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.vmSpecs[1] == "ppc64":
                     qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0"
                     qemu_cmd_list.append(f"-chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0")
-
-            subprocess.Popen(qemu_cmd)
+            if self.checkBox_debug.isChecked():
+                qemu_cmd = qemu_cmd + f" -s -S"
+                qemu_cmd_list.append(f"-s -S")
+            if self.checkBox_debug_2.isChecked():
+                qemu_cmd = qemu_cmd + " -nographic"
+                qemu_cmd_list.append("-nographic")
+            qemu_cmd_list = ["gnome-terminal", "--", "bash", "-c"] + [qemu_cmd + "; exec bash"]
+            print(qemu_cmd_list)
+            subprocess.Popen(qemu_cmd_list)
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
         
         except:
+            pass
+            '''
             print("Qemu couldn't be executed. Trying subprocess.run")
 
             try:
@@ -550,5 +558,5 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 except:
                     print("Qemu couldn't be executed. Please check if the settings of your VM and/or the QEMU paths are correct.")
-        
+            '''
         self.close()

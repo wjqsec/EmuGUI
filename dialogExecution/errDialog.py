@@ -15,7 +15,7 @@ import sqlite3
 import services.pathfinder as pf
 
 class ErrDialog(QDialog, Ui_Dialog):
-    def __init__(self, parent = None):
+    def __init__(self,parent = None, msg = None):
         try:
             super().__init__(parent)
 
@@ -25,7 +25,8 @@ class ErrDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.exec_folder = pf.retrieveExecFolder()
         self.setWindowTitle("EmuGUI - Error")
-        
+        if msg != None:
+            self.label_3.setText(msg)
         try:
             self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
@@ -34,12 +35,14 @@ class ErrDialog(QDialog, Ui_Dialog):
         
         self.connectSignalsSlots()
         self.vmSpecs = self.readTempVmFile()
-        self.langDetect()
+        #self.langDetect()
 
     def connectSignalsSlots(self):
         self.pushButton.clicked.connect(self.pushBtnClicked)
 
     def pushBtnClicked(self):
+        self.close()
+        return
         if self.vmSpecs[0].startswith("C"):
             exit()
 

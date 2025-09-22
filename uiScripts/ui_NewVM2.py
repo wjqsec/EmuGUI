@@ -152,7 +152,7 @@ class Ui_Dialog(object):
 
         self.sb_ram = QSpinBox(self.gridLayoutWidget_2)
         self.sb_ram.setObjectName(u"sb_ram")
-        self.sb_ram.setMinimum(1)
+        self.sb_ram.setMinimum(50)
         self.sb_ram.setMaximum(32768)
         self.sb_ram.setValue(1)
 

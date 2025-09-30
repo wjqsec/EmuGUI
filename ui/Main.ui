@@ -32,12 +32,6 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
-       <property name="styleSheet">
-       <string notr="true">QTabWidget#tabWidget::pane { background: navy; }
-      QTabWidget#tabWidget QWidget { background: navy; color: white; }
-      QTabBar::tab { background: #002147; color: white; }
-      QTabBar::tab:selected { background: #00163a; }</string>
-      </property>
        <widget class="QWidget" name="tab">
         <property name="locale">
          <locale language="English" country="UnitedStates"/>
@@ -55,10 +49,7 @@
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="QListView" name="listView"/>
-          </item>
-          <item row="0" column="1" rowspan="2">
+          <item row="1" column="2" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
              <widget class="QPushButton" name="pushButton_8">
@@ -104,6 +95,25 @@
             </item>
            </layout>
           </item>
+          <item row="1" column="1" alignment="Qt::AlignRight">
+           <widget class="QListView" name="listView"/>
+          </item>
+          <item row="1" column="0" alignment="Qt::AlignLeft">
+           <widget class="QListView" name="listView_2">
+            <property name="minimumSize">
+             <size>
+              <width>256</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>256</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </widget>
@@ -136,7 +146,7 @@
              <x>0</x>
              <y>0</y>
              <width>781</width>
-             <height>498</height>
+             <height>557</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -1650,7 +1660,7 @@
      <x>0</x>
      <y>0</y>
      <width>798</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -1703,4 +1713,3 @@
  <resources/>
  <connections/>
 </ui>
-

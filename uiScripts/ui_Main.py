@@ -45,11 +45,6 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.listView = QListView(self.gridLayoutWidget_4)
-        self.listView.setObjectName(u"listView")
-
-        self.gridLayout_4.addWidget(self.listView, 0, 0, 1, 1)
-
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
@@ -83,7 +78,19 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.pushButton_23)
 
 
-        self.gridLayout_4.addLayout(self.verticalLayout, 0, 1, 2, 1)
+        self.gridLayout_4.addLayout(self.verticalLayout, 1, 2, 2, 1)
+
+        self.listView = QListView(self.gridLayoutWidget_4)
+        self.listView.setObjectName(u"listView")
+
+        self.gridLayout_4.addWidget(self.listView, 1, 1, 1, 1, Qt.AlignRight)
+
+        self.listView_2 = QListView(self.gridLayoutWidget_4)
+        self.listView_2.setObjectName(u"listView_2")
+        self.listView_2.setMinimumSize(QSize(256, 0))
+        self.listView_2.setMaximumSize(QSize(256, 16777215))
+
+        self.gridLayout_4.addWidget(self.listView_2, 1, 0, 1, 1, Qt.AlignLeft)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -96,7 +103,7 @@ class Ui_MainWindow(object):
         self.tab_3.setObjectName(u"tab_3")
         self.gridLayoutWidget_2 = QWidget(self.tab_3)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 498))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 557))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -711,7 +718,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 798, 21))
+        self.menubar.setGeometry(QRect(0, 0, 798, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

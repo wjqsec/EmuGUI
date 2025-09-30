@@ -141,13 +141,13 @@
            <widget class="QListView" name="listView_2">
             <property name="minimumSize">
              <size>
-              <width>256</width>
-              <height>0</height>
+              <width>128</width>
+              <height>128</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>256</width>
+              <width>128</width>
               <height>16777215</height>
              </size>
             </property>

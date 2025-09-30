@@ -36,6 +36,37 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.tabWidget = QTabWidget(self.gridLayoutWidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setStyleSheet(u"QTabWidget#tabWidget::pane {\n"
+"         background: transparent;\n"
+"         border: none;\n"
+"        }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar {\n"
+"         qproperty-expanding: false;\n"
+"         margin-left: auto;\n"
+"         margin-right: auto;\n"
+"         spacing: 6px;\n"
+"        }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar::tab {\n"
+"         background: transparent;\n"
+"         color: #2b2b2b;\n"
+"         padding: 8px 16px;\n"
+"         border-radius: 6px;\n"
+"         font-size: 13px;\n"
+"         min-width: 72px;\n"
+"        }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar::tab:hover {\n"
+"         background: rgba(0,0,0,0.04);\n"
+"        }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar::tab:selected {\n"
+"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #f5f7fa);\n"
+"         color: #111111;\n"
+"         font-weight: 600;\n"
+"         border: 1px solid rgba(0,0,0,0.08);\n"
+"        }")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
@@ -87,8 +118,8 @@ class Ui_MainWindow(object):
 
         self.listView_2 = QListView(self.gridLayoutWidget_4)
         self.listView_2.setObjectName(u"listView_2")
-        self.listView_2.setMinimumSize(QSize(256, 0))
-        self.listView_2.setMaximumSize(QSize(256, 16777215))
+        self.listView_2.setMinimumSize(QSize(128, 128))
+        self.listView_2.setMaximumSize(QSize(128, 16777215))
 
         self.gridLayout_4.addWidget(self.listView_2, 1, 0, 1, 1, Qt.AlignLeft)
 

@@ -32,6 +32,12 @@
        <property name="currentIndex">
         <number>0</number>
        </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget#tabWidget::pane { background: transparent; border: none; }
+      QTabWidget#tabWidget QTabBar { qproperty-expanding: false; margin-left: 140px; margin-top: 2px; }
+      QTabWidget#tabWidget QTabBar::tab { background: transparent; color: #000000; padding: 6px 12px; }
+      QTabWidget#tabWidget QTabBar::tab:selected { background: transparent; font-weight: 600; }</string>
+      </property>
        <widget class="QWidget" name="tab">
         <property name="locale">
          <locale language="English" country="UnitedStates"/>

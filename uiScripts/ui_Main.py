@@ -113,12 +113,14 @@ class Ui_MainWindow(object):
 
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
+        self.listView.setMinimumSize(QSize(420, 0))
+        self.listView.setMaximumSize(QSize(420, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 1, 1, 1, 1, Qt.AlignRight)
 
         self.listView_2 = QListView(self.gridLayoutWidget_4)
         self.listView_2.setObjectName(u"listView_2")
-        self.listView_2.setMinimumSize(QSize(128, 128))
+        self.listView_2.setMinimumSize(QSize(128, 0))
         self.listView_2.setMaximumSize(QSize(128, 16777215))
 
         self.gridLayout_4.addWidget(self.listView_2, 1, 0, 1, 1, Qt.AlignLeft)

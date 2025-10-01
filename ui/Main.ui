@@ -39,6 +39,7 @@
 <!--      QTabWidget#tabWidget QTabBar::tab:selected { background: transparent; font-weight: 600; }</string>-->
 <!--      </property>-->
        <property name="styleSheet">
+        <string notr="true">QTabBar::tab { background: #1E90FF; } QTabBar::tab:selected { background: #0B60C6; } QTabWidget::pane { background: #1E90FF; border: none; }</string>
         <string notr="true">QTabWidget#tabWidget::pane {
          background: transparent;
          border: none;

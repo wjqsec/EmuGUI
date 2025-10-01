@@ -25,9 +25,6 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(798, 598)
-        icon = QIcon()
-        icon.addFile(u"../EmuGUI.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
-        MainWindow.setWindowIcon(icon)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -39,6 +36,11 @@ class Ui_MainWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.tabWidget = QTabWidget(self.gridLayoutWidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy)
         self.tabWidget.setStyleSheet(u"\n"
 "         QTabWidget#tabWidget::pane {\n"
 "         background: transparent;\n"
@@ -46,9 +48,7 @@ class Ui_MainWindow(object):
 "         }\n"
 "\n"
 "         QTabWidget#tabWidget QTabBar {\n"
-"         qproperty-expanding: false;\n"
-"         margin-left: auto;\n"
-"         margin-right: auto;\n"
+"         qproperty-expanding: true;\n"
 "         spacing: 6px;\n"
 "         }\n"
 "\n"
@@ -56,9 +56,9 @@ class Ui_MainWindow(object):
 "         background: #0c3763;\n"
 "         color: #ffffff;\n"
 "         padding: 8px 16px;\n"
-"         border-radius: 0px;\n"
 "         font-size: 15px;\n"
-"         min-width: 72px;\n"
+"         min-width: 125px;\n"
+"         qproperty-expanding: true\n"
 "         }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:hover {\n"
@@ -538,11 +538,11 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.tab_6)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(10, 40, 54, 16))
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
-        self.label_20.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
+        self.label_20.setSizePolicy(sizePolicy1)
         self.label_20.setAlignment(Qt.AlignCenter)
         self.line_16 = QFrame(self.tab_6)
         self.line_16.setObjectName(u"line_16")

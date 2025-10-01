@@ -39,9 +39,9 @@
 <!--      QTabWidget#tabWidget QTabBar::tab:selected { background: transparent; font-weight: 600; }</string>-->
 <!--      </property>-->
        <property name="styleSheet">
-        <string notr="true">QTabBar::tab { background: #1E90FF; } QTabBar::tab:selected { background: #0B60C6; } QTabWidget::pane { background: #1E90FF; border: none; }</string>
+
         <string notr="true">QTabWidget#tabWidget::pane {
-         background: transparent;
+         background: #1E90FF;
          border: none;
         }
 
@@ -53,11 +53,11 @@
         }
 
         QTabWidget#tabWidget QTabBar::tab {
-         background: transparent;
+         background: #1E90FF;
          color: #2b2b2b;
          padding: 8px 16px;
          border-radius: 6px;
-         font-size: 13px;
+         font-size: 20px;
          min-width: 72px;
         }
 

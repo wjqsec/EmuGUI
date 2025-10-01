@@ -27,7 +27,32 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
+       <item row="0" column="0">
+      <widget class="QLabel" name="logoLabel">
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="pixmap">
+        <pixmap>../EmuGUI.png</pixmap>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignVCenter|Qt::AlignLeft</set>
+       </property>
+       <property name="margin">
+        <number>8</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
         <number>0</number>
@@ -40,26 +65,27 @@
 <!--      </property>-->
        <property name="styleSheet">
 
-        <string notr="true">QTabWidget#tabWidget::pane {
+        <string notr="true">
+         QTabWidget#tabWidget::pane {
          background: transparent;
-              border: none;
-              }
+         border: none;
+         }
 
-              QTabWidget#tabWidget QTabBar {
-              qproperty-expanding: false;
-              margin-left: auto;
-              margin-right: auto;
-              spacing: 6px;
-              }
+         QTabWidget#tabWidget QTabBar {
+         qproperty-expanding: false;
+         margin-left: auto;
+         margin-right: auto;
+         spacing: 6px;
+         }
 
-              QTabWidget#tabWidget QTabBar::tab {
-              background: #0c3763;
-              color: #ffffff;
-              padding: 8px 16px;
-              border-radius: 0px;
-              font-size: 15px;
-              min-width: 72px;
-              }
+         QTabWidget#tabWidget QTabBar::tab {
+         background: #0c3763;
+         color: #ffffff;
+         padding: 8px 16px;
+         border-radius: 0px;
+         font-size: 15px;
+         min-width: 72px;
+         }
 
         QTabWidget#tabWidget QTabBar::tab:hover {
          background: rgba(3, 9, 26, 0.25);
@@ -70,8 +96,10 @@
          color: #111111;
          font-weight: 600;
          border: 1px solid rgba(0,0,0,0.08);
-        }</string>
+        }
+        </string>
        </property>
+
        <widget class="QWidget" name="tab">
         <property name="locale">
          <locale language="English" country="UnitedStates"/>

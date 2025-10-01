@@ -62,7 +62,7 @@
               }
 
         QTabWidget#tabWidget QTabBar::tab:hover {
-         background: rgba(0,0,0,0.04);
+         background: rgba(3, 9, 26, 0.25);
         }
 
         QTabWidget#tabWidget QTabBar::tab:selected {

@@ -58,15 +58,15 @@ class Ui_MainWindow(object):
 "              }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:hover {\n"
-"         background: rgba(0,0,0,0.04);\n"
+"         background: rgba(3, 9, 26, 0.25);\n"
 "        }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:selected {\n"
 "         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #f5f7fa);\n"
 "         color: #111111;\n"
 "         font-weight: 600;\n"
-"         border: 1px solid rgba(0,0,0,0.08"
-                        ");\n"
+"         border: 1px solid rgba(0,0,0,"
+                        "0.08);\n"
 "        }")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")

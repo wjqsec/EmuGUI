@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.tabWidget = QTabWidget(self.gridLayoutWidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setStyleSheet(u"QTabWidget#tabWidget::pane {\n"
-"         background: transparent;\n"
+"         background: #1E90FF; \n"
 "         border: none;\n"
 "        }\n"
 "\n"
@@ -49,11 +49,11 @@ class Ui_MainWindow(object):
 "        }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab {\n"
-"         background: transparent;\n"
+"         background: #1E90FF;\n"
 "         color: #2b2b2b;\n"
 "         padding: 8px 16px;\n"
-"         border-radius: 6px;\n"
-"         font-size: 13px;\n"
+"         border-radius: 0px;\n"
+"         font-size: 15px;\n"
 "         min-width: 72px;\n"
 "        }\n"
 "\n"
@@ -117,13 +117,6 @@ class Ui_MainWindow(object):
         self.listView.setMaximumSize(QSize(420, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 1, 1, 1, 1, Qt.AlignRight)
-
-        self.listView_2 = QListView(self.gridLayoutWidget_4)
-        self.listView_2.setObjectName(u"listView_2")
-        self.listView_2.setMinimumSize(QSize(128, 0))
-        self.listView_2.setMaximumSize(QSize(128, 16777215))
-
-        self.gridLayout_4.addWidget(self.listView_2, 1, 0, 1, 1, Qt.AlignLeft)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()

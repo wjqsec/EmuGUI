@@ -25,6 +25,9 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(798, 598)
+        icon = QIcon()
+        icon.addFile(u"../EmuGUI.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")

@@ -17,6 +17,16 @@
    <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+
+   <property name="styleSheet">
+    <string notr="true">
+<!--      scale background to fill centralwidget-->
+      QWidget#centralwidget {
+        border-image: url(:/icons/EmuGUI.png) 0 0 0 0 stretch stretch;
+      }
+    </string>
+  </property>
+
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>

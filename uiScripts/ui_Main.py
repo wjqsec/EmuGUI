@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(798, 598)
+        MainWindow.resize(1182, 872)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -66,9 +66,10 @@ class Ui_MainWindow(object):
 "        }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:selected {\n"
-"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #f5f7fa);\n"
-"         color: #111111;\n"
+"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5071DC, stop:1 #2A52D5);\n"
+"         color: #ffffff;\n"
 "         font-weight: 600;\n"
+"         text-decoration: underline;\n"
 "         border: 1px solid rgba(0,0,0,0.08);\n"
 "        }\n"
 "        ")
@@ -77,7 +78,7 @@ class Ui_MainWindow(object):
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget_4 = QWidget(self.tab)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
-        self.gridLayoutWidget_4.setGeometry(QRect(0, 0, 791, 511))
+        self.gridLayoutWidget_4.setGeometry(QRect(70, 0, 791, 511))
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -86,50 +87,52 @@ class Ui_MainWindow(object):
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_8.setObjectName(u"pushButton_8")
 
-        self.verticalLayout.addWidget(self.pushButton_8)
+        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignHCenter)
 
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
 
-        self.verticalLayout.addWidget(self.pushButton_9)
+        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignHCenter)
 
         self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
 
-        self.verticalLayout.addWidget(self.pushButton_10)
+        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignHCenter)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
 
-        self.verticalLayout.addWidget(self.pushButton_11)
+        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignHCenter)
 
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_22.setObjectName(u"pushButton_22")
 
-        self.verticalLayout.addWidget(self.pushButton_22)
+        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignHCenter)
 
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_23.setObjectName(u"pushButton_23")
 
-        self.verticalLayout.addWidget(self.pushButton_23)
+        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignHCenter)
 
 
-        self.gridLayout_4.addLayout(self.verticalLayout, 1, 2, 2, 1)
+        self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
 
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
-        self.listView.setMinimumSize(QSize(420, 0))
-        self.listView.setMaximumSize(QSize(420, 16777215))
+        self.listView.setMinimumSize(QSize(500, 0))
+        self.listView.setMaximumSize(QSize(600, 16777215))
 
-        self.gridLayout_4.addWidget(self.listView, 1, 1, 1, 1, Qt.AlignRight)
+        self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)
 
-        self.label_15 = QLabel(self.gridLayoutWidget_4)
+        self.label_15 = QLabel(self.tab)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setPixmap(QPixmap(u"../banners/RobertRabbit.png"))
+        self.label_15.setGeometry(QRect(0, 60, 61, 41))
+        self.label_15.setAutoFillBackground(False)
+        self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
         self.label_15.setScaledContents(True)
-
-        self.gridLayout_4.addWidget(self.label_15, 0, 1, 1, 2)
-
+        self.label_15.setWordWrap(False)
+        self.label_15.setMargin(-6)
+        self.label_15.setIndent(-2)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -756,7 +759,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 798, 24))
+        self.menubar.setGeometry(QRect(0, 0, 1182, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

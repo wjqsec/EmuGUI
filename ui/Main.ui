@@ -90,42 +90,42 @@
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="2" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_8">
               <property name="text">
                <string>New Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_9">
               <property name="text">
                <string>Start Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_10">
               <property name="text">
                <string>Edit Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_11">
               <property name="text">
                <string>Delete Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_22">
               <property name="text">
                <string>Export selected virtual machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_23">
               <property name="text">
                <string>Import virtual machine</string>

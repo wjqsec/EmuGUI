@@ -28,11 +28,6 @@ class Ui_MainWindow(object):
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setStyleSheet(u"\n"
-"      QWidget#centralwidget {\n"
-"        border-image: url(:/icons/EmuGUI.png) 0 0 0 0 stretch stretch;\n"
-"      }\n"
-"    ")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
         self.gridLayoutWidget.setGeometry(QRect(0, 0, 801, 551))

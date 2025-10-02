@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
 
         self.label_15 = QLabel(self.tab)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(0, 60, 61, 41))
+        self.label_15.setGeometry(QRect(0, 0, 150, 500))
         self.label_15.setAutoFillBackground(False)
         self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
         self.label_15.setScaledContents(True)

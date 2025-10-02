@@ -1699,7 +1699,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>2</string>
     </property>
     <property name="pixmap">
      <pixmap>../Text 2.png</pixmap>

@@ -28,6 +28,11 @@ class Ui_MainWindow(object):
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"\n"
+"      QWidget#centralwidget {\n"
+"        border-image: url(:/icons/EmuGUI.png) 0 0 0 0 stretch stretch;\n"
+"      }\n"
+"    ")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
         self.gridLayoutWidget.setGeometry(QRect(0, 0, 801, 551))
@@ -122,6 +127,13 @@ class Ui_MainWindow(object):
         self.listView.setMaximumSize(QSize(420, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 1, 1, 1, 1, Qt.AlignRight)
+
+        self.label_15 = QLabel(self.gridLayoutWidget_4)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setPixmap(QPixmap(u"../banners/RobertRabbit.png"))
+        self.label_15.setScaledContents(True)
+
+        self.gridLayout_4.addWidget(self.label_15, 0, 1, 1, 2)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -813,6 +825,7 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_22.setText(QCoreApplication.translate("MainWindow", u"Export selected virtual machine", None))
         self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Import virtual machine", None))
+        self.label_15.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"qemu-img Path", None))
         self.pushButton_19.setText(QCoreApplication.translate("MainWindow", u"Browse", None))

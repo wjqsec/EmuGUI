@@ -178,7 +178,7 @@
           <pixmap>Text colourized.png</pixmap>
          </property>
          <property name="scaledContents">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="wordWrap">
           <bool>false</bool>

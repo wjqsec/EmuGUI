@@ -91,42 +91,48 @@
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="2" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout">
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_8">
+              <property name="maximumSize">
+               <size>
+                <width>153</width>
+                <height>32</height>
+               </size>
+              </property>
               <property name="text">
                <string>New Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_9">
               <property name="text">
                <string>Start Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_10">
               <property name="text">
                <string>Edit Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_11">
               <property name="text">
                <string>Delete Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_22">
               <property name="text">
                <string>Export selected virtual machine</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item alignment="Qt::AlignLeft">
              <widget class="QPushButton" name="pushButton_23">
               <property name="text">
                <string>Import virtual machine</string>
@@ -172,7 +178,7 @@
           <pixmap>Text colourized.png</pixmap>
          </property>
          <property name="scaledContents">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="wordWrap">
           <bool>false</bool>

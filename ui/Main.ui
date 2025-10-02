@@ -168,7 +168,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../Text colourized.png</pixmap>
+          <pixmap>Text colourized.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>

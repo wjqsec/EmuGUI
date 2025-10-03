@@ -24,13 +24,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1182, 872)
+        MainWindow.resize(1179, 872)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(0, 0, 801, 551))
+        self.gridLayoutWidget.setGeometry(QRect(10, 0, 801, 551))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -86,34 +86,33 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMaximumSize(QSize(153, 32))
 
-        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_8)
 
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
 
-        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_9)
 
         self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
 
-        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_10)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
 
-        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_11)
 
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_22.setObjectName(u"pushButton_22")
 
-        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_22)
 
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_23.setObjectName(u"pushButton_23")
 
-        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignLeft)
+        self.verticalLayout.addWidget(self.pushButton_23)
 
 
         self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
@@ -760,7 +759,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1182, 24))
+        self.menubar.setGeometry(QRect(0, 0, 1179, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

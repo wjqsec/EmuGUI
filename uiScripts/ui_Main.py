@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(870, 600)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -756,6 +756,10 @@ class Ui_MainWindow(object):
         self.label_15.setWordWrap(False)
         self.label_15.setMargin(-6)
         self.label_15.setIndent(-2)
+        self.label_27 = QLabel(self.centralwidget)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setGeometry(QRect(0, 0, 110, 40))
+        self.label_27.setStyleSheet(u"background-color: #0c3763; color: white;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -942,5 +946,6 @@ class Ui_MainWindow(object):
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u884c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
         self.label_15.setText("")
+        self.label_27.setText("")
     # retranslateUi
 

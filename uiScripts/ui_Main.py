@@ -124,15 +124,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)
 
-        self.label_15 = QLabel(self.tab)
-        self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(0, 0, 71, 251))
-        self.label_15.setAutoFillBackground(False)
-        self.label_15.setPixmap(QPixmap(u"amazon.png"))
-        self.label_15.setScaledContents(True)
-        self.label_15.setWordWrap(False)
-        self.label_15.setMargin(-6)
-        self.label_15.setIndent(-2)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -756,10 +747,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
+        self.label_15 = QLabel(self.centralwidget)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setGeometry(QRect(20, 40, 100, 150))
+        self.label_15.setAutoFillBackground(False)
+        self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
+        self.label_15.setScaledContents(True)
+        self.label_15.setWordWrap(False)
+        self.label_15.setMargin(-6)
+        self.label_15.setIndent(-2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1179, 24))
+        self.menubar.setGeometry(QRect(0, 0, 800, 24))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -823,7 +823,6 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_22.setText(QCoreApplication.translate("MainWindow", u"Export selected virtual machine", None))
         self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Import virtual machine", None))
-        self.label_15.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"qemu-img Path", None))
         self.pushButton_19.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
@@ -942,5 +941,6 @@ class Ui_MainWindow(object):
         self.pushButton_31.setText(QCoreApplication.translate("MainWindow", u"\u793a\u4f8b\u4ee3\u78012", None))
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u884c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
+        self.label_15.setText("")
     # retranslateUi
 

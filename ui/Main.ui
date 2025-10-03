@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1199</width>
-    <height>872</height>
+    <width>900</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1715,10 +1715,10 @@
      <bool>false</bool>
     </property>
     <property name="margin">
-     <number>-6</number>
+     <number>0</number>
     </property>
     <property name="indent">
-     <number>-2</number>
+     <number>0</number>
     </property>
    </widget>
   </widget>

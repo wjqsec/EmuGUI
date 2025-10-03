@@ -24,13 +24,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1179, 872)
+        MainWindow.resize(800, 600)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(50, 0, 801, 551))
+        self.gridLayoutWidget.setGeometry(QRect(100, 0, 801, 551))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -119,7 +119,7 @@ class Ui_MainWindow(object):
 
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
-        self.listView.setMinimumSize(QSize(420, 0))
+        self.listView.setMinimumSize(QSize(300, 0))
         self.listView.setMaximumSize(QSize(420, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)

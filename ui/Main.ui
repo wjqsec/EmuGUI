@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1179</width>
-    <height>872</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>100</x>
       <y>0</y>
       <width>801</width>
       <height>551</height>
@@ -139,7 +139,7 @@
            <widget class="QListView" name="listView">
             <property name="minimumSize">
              <size>
-              <width>420</width>
+              <width>300</width>
               <height>0</height>
              </size>
             </property>

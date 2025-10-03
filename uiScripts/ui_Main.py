@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget_4 = QWidget(self.tab)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
-        self.gridLayoutWidget_4.setGeometry(QRect(-50, 0, 700, 511))
+        self.gridLayoutWidget_4.setGeometry(QRect(-100, 0, 700, 511))
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -749,7 +749,7 @@ class Ui_MainWindow(object):
 
         self.label_15 = QLabel(self.centralwidget)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(20, 40, 100, 150))
+        self.label_15.setGeometry(QRect(0, 40, 110, 150))
         self.label_15.setAutoFillBackground(False)
         self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
         self.label_15.setScaledContents(True)

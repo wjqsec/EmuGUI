@@ -318,7 +318,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         else:
             connection = platformSpecific.unixSpecific.setupUnixBackend()
-       
+
         cursor = connection.cursor()
 
         check_vm_name = f"""
@@ -538,7 +538,104 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                         except:
                             pass
-
+                if self.mode_sel_dropdown_box.currentText() == "硬件在环仿真":
+                    pass
+                elif self.mode_sel_dropdown_box.currentText() == "固件托管仿真":
+                    self.cb_machine.clear()
+                    self.cb_machine.addItem("NULL")
+                    self.cb_machine.setCurrentIndex(0)
+                    self.cb_machine.setEnabled(False)
+                    
+                    self.cb_vhdU.clear()
+                    self.cb_vhdU.addItem("NULL")
+                    self.cb_vhdU.setCurrentIndex(0)
+                    self.cb_vhdU.setEnabled(False)
+                    
+                    self.le_vhdP.setEnabled(False)
+                    
+                    self.btn_vhdP.setEnabled(False)
+                    
+                    self.cb_vhdF.clear()
+                    self.cb_vhdF.addItem("NULL")
+                    self.cb_vhdF.setCurrentIndex(0)
+                    self.cb_vhdF.setEnabled(False)
+                    
+                    self.cb_hddC.clear()
+                    self.cb_hddC.addItem("NULL")
+                    self.cb_hddC.setCurrentIndex(0)
+                    self.cb_hddC.setEnabled(False)
+                    
+                    self.cb_vga.clear()
+                    self.cb_vga.addItem("NULL")
+                    self.cb_vga.setCurrentIndex(0)
+                    self.cb_vga.setEnabled(False)
+                    
+                    self.cb_net.clear()
+                    self.cb_net.addItem("NULL")
+                    self.cb_net.setCurrentIndex(0)
+                    self.cb_net.setEnabled(False)
+                    
+                    self.cb_mouse.clear()
+                    self.cb_mouse.addItem("NULL")
+                    self.cb_mouse.setCurrentIndex(0)
+                    self.cb_mouse.setEnabled(False)
+                    
+                    self.checkBox_4.setEnabled(False)
+                    
+                    self.le_biosF.setEnabled(False)
+                    
+                    self.btn_biosF.setEnabled(False)
+                    
+                    self.le_biosLoc.setEnabled(False)
+                    
+                    self.cb_sound.clear()
+                    self.cb_sound.addItem("NULL")
+                    self.cb_sound.setCurrentIndex(0)
+                    self.cb_sound.setEnabled(False)
+                    
+                    self.cb_kbd.clear()
+                    self.cb_kbd.addItem("NULL")
+                    self.cb_kbd.setCurrentIndex(0)
+                    self.cb_kbd.setEnabled(False)
+                    
+                    self.cb_kbdlayout.clear()
+                    self.cb_kbdlayout.addItem("NULL")
+                    self.cb_kbdlayout.setCurrentIndex(0)
+                    self.cb_kbdlayout.setEnabled(False)
+                    
+                    self.cb_accel.clear()
+                    self.cb_accel.addItem("NULL")
+                    self.cb_accel.setCurrentIndex(0)
+                    self.cb_accel.setEnabled(False)
+                    
+                    self.cb_cdc1.clear()
+                    self.cb_cdc1.addItem("NULL")
+                    self.cb_cdc1.setCurrentIndex(0)
+                    self.cb_cdc1.setEnabled(False)
+                    
+                    self.cb_usb.clear()
+                    self.cb_usb.addItem("NULL")
+                    self.cb_usb.setCurrentIndex(0)
+                    self.cb_usb.setEnabled(False)
+                    
+                    self.cb_cdc2.clear()
+                    self.cb_cdc2.addItem("NULL")
+                    self.cb_cdc2.setCurrentIndex(0)
+                    self.cb_cdc2.setEnabled(False)
+                    
+                    self.checkBox_2.setEnabled(False)
+                    self.chb_usb.setEnabled(False)
+                    self.checkBox.setEnabled(False)
+                    self.checkBox_5.setEnabled(False)
+                    self.checkBox_6.setEnabled(False)
+                    
+                    self.sb_maxsize.setEnabled(False)
+                    self.sb_cores.setEnabled(False)
+                    
+                    
+                    
+                    
+                    
                 self.stackedWidget.setCurrentIndex(1)
         
         except sqlite3.Error as e:
@@ -836,6 +933,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         insert_into_vm_database = f"""
         INSERT INTO virtualmachines (
             name,
+            mode,
             architecture,
             machine,
             cpu,
@@ -864,6 +962,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             hdacontrol
         ) VALUES (
             "{self.le_vmname.text()}",
+            "{self.mode_sel_dropdown_box.currentText()}",
             "{self.cb_arch.currentText()}",
             "{machine}",
             "{cpu}",

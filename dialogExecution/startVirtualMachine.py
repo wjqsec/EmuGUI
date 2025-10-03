@@ -290,7 +290,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     result = cursor.fetchall()
                     print(result)
                     break
-
+            mode = result[0][26]
             qemu_to_execute = result[0][0]
 
             qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[22]}"
@@ -525,6 +525,20 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.vmSpecs[1] == "ppc64":
                     qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0"
                     qemu_cmd_list.append(f"-chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0")
+            if mode == "硬件在环仿真":
+                pass
+            elif mode == "固件托管仿真":
+                qemu_to_execute = qemu_to_execute.replace("-system", "")
+                
+                qemu_cmd = f"\"{qemu_to_execute}\""
+                qemu_cmd_list = [qemu_to_execute]
+                
+                qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
+                qemu_cmd_list.append(f"-kernel \"{self.vmSpecs[13]}\"")
+                
+                qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
+                qemu_cmd_list.append(f"-append \"{self.vmSpecs[15]}\"")
+
             if self.checkBox_debug.isChecked():
                 qemu_cmd = qemu_cmd + f" -s -S"
                 qemu_cmd_list.append(f"-s -S")

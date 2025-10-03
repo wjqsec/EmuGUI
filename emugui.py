@@ -355,6 +355,7 @@ class Window(QMainWindow, Ui_MainWindow):
         CREATE TABLE IF NOT EXISTS virtualmachines (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
+            mode TEXT NOT NULL,
             architecture TEXT NOT NULL,
             machine TEXT NOT NULL,
             cpu TEXT NOT NULL,
@@ -1430,7 +1431,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2, hdacontrol
+            storagecontrollercd1, storagecontrollercd2, hdacontrol, mode
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1467,6 +1468,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
                 hda_control = result[0][25]
+                mode = result[0][26]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1522,6 +1524,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(cd_control1 + "\n")
                     tempVmDefFile.write(cd_control2 + "\n")
                     tempVmDefFile.write(hda_control + "\n")
+                    tempVmDefFile.write(mode + "\n")
 
             except:
                 if platform.system() == "Windows":
@@ -1686,7 +1689,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2, hdacontrol
+            storagecontrollercd1, storagecontrollercd2, hdacontrol, mode
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1721,6 +1724,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
                 hda_control = result[0][25]
+                mode = result[0][26]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1773,6 +1777,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     vmDefFile.write("cdcontrol1 = " + cd_control1 + "\n")
                     vmDefFile.write("cdcontrol2 = " + cd_control2 + "\n")
                     vmDefFile.write("hdacontrol = " + hda_control + "\n")
+                    vmDefFile.write("mode = " + mode + "\n")
 
             except:
                 if platform.system() == "Windows":
@@ -1864,11 +1869,12 @@ class Window(QMainWindow, Ui_MainWindow):
                     else:
                         tempVmDef = platformSpecific.unixSpecific.unixExportFile()
 
+                    vm_data = []
                     try:
-                        zip_vm_file.extract(content_name, tempVmDef)
-                        vm_data = []
+                        zip_vm_file.extract(content_name, os.path.dirname(tempVmDef))
+                        
 
-                    except:
+                    except Exception as e:
                         if platform.system() == "Windows":
                             errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
         
@@ -1877,11 +1883,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
                         with open(errorFile, "w+") as errCodeFile:
                             errCodeFile.write(errors.errCodes.errCodes[34])
-
+                        print(e)
                         dialog = ErrDialog(self)
                         dialog.exec()
 
-                    with open(tempVmDef + "/vmdef.txt", "r+") as vmDefFile:
+                    with open(tempVmDef, "r+") as vmDefFile:
                         vmDefContent = vmDefFile.readlines()
 
                         for vmDefLine in vmDefContent:
@@ -1958,6 +1964,9 @@ class Window(QMainWindow, Ui_MainWindow):
 
                             elif vmDefLineClean.startswith("hdacontrol = "):
                                 vm_data.append(vmDefLineClean.replace("hdacontrol = ", ""))
+                            
+                            elif vmDefLineClean.startswith("mode = "):
+                                vm_data.append(vmDefLineClean.replace("hdacontrol = ", ""))
 
                     insert_into_vm_database = f"""
                     INSERT INTO virtualmachines (
@@ -1987,7 +1996,8 @@ class Window(QMainWindow, Ui_MainWindow):
                         acceltype,
                         storagecontrollercd1,
                         storagecontrollercd2,
-                        hdacontrol
+                        hdacontrol,
+                        mode
                     ) VALUES (
                         "{vm_data[0]}",
                         "{vm_data[1]}",
@@ -2015,7 +2025,8 @@ class Window(QMainWindow, Ui_MainWindow):
                         "{vm_data[20]}",
                         "{vm_data[21]}",
                         "{vm_data[22]}",
-                        "{vm_data[23]}"
+                        "{vm_data[23]}",
+                        "{vm_data[24]}"
         );
         """
                     
@@ -2076,7 +2087,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2, hdacontrol
+            storagecontrollercd1, storagecontrollercd2, hdacontrol, mode
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -2113,6 +2124,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
                 hda_control = result[0][25]
+                mode = result[0][26]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -2168,6 +2180,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(cd_control1 + "\n")
                     tempVmDefFile.write(cd_control2 + "\n")
                     tempVmDefFile.write(hda_control + "\n")
+                    tempVmDefFile.write(mode + "\n")
 
             except:
                 if platform.system() == "Windows":

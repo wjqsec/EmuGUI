@@ -66,9 +66,9 @@ class Ui_MainWindow(object):
 "        }\n"
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:selected {\n"
-"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5071DC, stop:1 #2A52D5);\n"
+"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #0c3763, stop:1 #0c3763);\n"
 "         color: #ffffff;\n"
-"         font-weight: 600;\n"
+"         font-weight: 700;\n"
 "         text-decoration: underline;\n"
 "         border: 1px solid rgba(0,0,0,0.08);\n"
 "        }\n"
@@ -127,9 +127,9 @@ class Ui_MainWindow(object):
 
         self.label_15 = QLabel(self.tab)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(0, 0, 150, 500))
+        self.label_15.setGeometry(QRect(0, 0, 71, 251))
         self.label_15.setAutoFillBackground(False)
-        self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
+        self.label_15.setPixmap(QPixmap(u"amazon.png"))
         self.label_15.setScaledContents(True)
         self.label_15.setWordWrap(False)
         self.label_15.setMargin(-6)

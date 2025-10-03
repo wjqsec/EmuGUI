@@ -61,9 +61,9 @@
         }
 
         QTabWidget#tabWidget QTabBar::tab:selected {
-         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5071DC, stop:1 #2A52D5);
+         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #0c3763, stop:1 #0c3763);
          color: #ffffff;
-         font-weight: 600;
+         font-weight: 700;
          text-decoration: underline;
          border: 1px solid rgba(0,0,0,0.08);
         }

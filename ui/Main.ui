@@ -1721,6 +1721,24 @@
      <number>-2</number>
     </property>
    </widget>
+
+   <widget class="QLabel" name="label_27">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>110</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string></string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #0c3763; color: white;</string>
+    </property>
+   </widget>
+
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

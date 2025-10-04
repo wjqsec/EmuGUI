@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,75 +15,174 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
-    QLineEdit, QListView, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QStatusBar, QTabWidget,
-    QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QListView, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
+    QTabWidget, QTextBrowser, QTextEdit, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(798, 598)
+        MainWindow.resize(944, 597)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(0, 0, 801, 551))
+        self.gridLayoutWidget.setGeometry(QRect(220, 0, 721, 551))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.tabWidget = QTabWidget(self.gridLayoutWidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
+        self.tabWidget.setSizePolicy(sizePolicy)
+        self.tabWidget.setStyleSheet(u"\n"
+"         QTabWidget#tabWidget::pane {\n"
+"         background: transparent;\n"
+"         border: none;\n"
+"         }\n"
+"\n"
+"         QTabWidget#tabWidget QTabBar {\n"
+"         qproperty-expanding: true;\n"
+"         spacing: 6px;\n"
+"         }\n"
+"\n"
+"         QTabWidget#tabWidget QTabBar::tab {\n"
+"         height: 45px;\n"
+"         background: #223a7d;\n"
+"         color: #ffffff;\n"
+"         font-size: 15px;\n"
+"         min-width: 125px;\n"
+"         qproperty-expanding: true;\n"
+"         padding: 8px 16px;\n"
+"         }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar::tab:hover {\n"
+"         background: rgba(3, 9, 26, 0.25);\n"
+"        }\n"
+"\n"
+"        QTabWidget#tabWidget QTabBar::tab:selected {\n"
+"         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #223a7d, stop:1 #223a7d);\n"
+"         color: #A4B5ED;\n"
+"         font-weight: 700;\n"
+"         font-family: \"Microsoft YaHei\", \"PingFang SC\";\n"
+"         text-decoration: underline;\n"
+"        }\n"
+"        ")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget_4 = QWidget(self.tab)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
-        self.gridLayoutWidget_4.setGeometry(QRect(0, 0, 791, 511))
+        self.gridLayoutWidget_4.setGeometry(QRect(0, 0, 838, 511))
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.listView = QListView(self.gridLayoutWidget_4)
-        self.listView.setObjectName(u"listView")
-
-        self.gridLayout_4.addWidget(self.listView, 0, 0, 1, 1)
-
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setStyleSheet(u"\n"
+"                QPushButton#pushButton_8 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_8)
+        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setStyleSheet(u"\n"
+"                QPushButton#pushButton_9 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_9)
+        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setStyleSheet(u"\n"
+"                QPushButton#pushButton_10 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_10)
+        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
+        self.pushButton_11.setStyleSheet(u"\n"
+"                QPushButton#pushButton_11 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_11)
+        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_22.setObjectName(u"pushButton_22")
+        self.pushButton_22.setStyleSheet(u"\n"
+"                QPushButton#pushButton_22 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_22)
+        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_23.setObjectName(u"pushButton_23")
+        self.pushButton_23.setStyleSheet(u"\n"
+"                QPushButton#pushButton_23 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_23)
+        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignmentFlag.AlignLeft)
 
 
-        self.gridLayout_4.addLayout(self.verticalLayout, 0, 1, 2, 1)
+        self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
+
+        self.listView = QListView(self.gridLayoutWidget_4)
+        self.listView.setObjectName(u"listView")
+        self.listView.setMinimumSize(QSize(500, 0))
+        self.listView.setMaximumSize(QSize(500, 16777215))
+        self.listView.setStyleSheet(u"\n"
+"               QListView#listView::item:selected {\n"
+"                    background: #3f6e9cff;\n"
+"                    color: #000000;\n"
+"               }\n"
+"               QListView#listView::item:selected:!active {\n"
+"                    background: #3f6e9cff;\n"
+"                    color: #000000;\n"
+"               }\n"
+"               ")
+
+        self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignmentFlag.AlignRight)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -96,7 +195,7 @@ class Ui_MainWindow(object):
         self.tab_3.setObjectName(u"tab_3")
         self.gridLayoutWidget_2 = QWidget(self.tab_3)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 498))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 557))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -418,7 +517,7 @@ class Ui_MainWindow(object):
         self.label_6 = QLabel(self.tab_4)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(150, 130, 121, 31))
-        self.label_6.setTextFormat(Qt.PlainText)
+        self.label_6.setTextFormat(Qt.TextFormat.PlainText)
         self.label_7 = QLabel(self.tab_4)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(150, 210, 121, 31))
@@ -431,7 +530,7 @@ class Ui_MainWindow(object):
         self.label_14 = QLabel(self.tab_4)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setGeometry(QRect(50, 20, 661, 41))
-        self.label_14.setTextFormat(Qt.AutoText)
+        self.label_14.setTextFormat(Qt.TextFormat.AutoText)
         self.label_14.setScaledContents(False)
         self.line = QFrame(self.tab_4)
         self.line.setObjectName(u"line")
@@ -500,12 +599,12 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.tab_6)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(10, 40, 54, 16))
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
-        self.label_20.setSizePolicy(sizePolicy)
-        self.label_20.setAlignment(Qt.AlignCenter)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
+        self.label_20.setSizePolicy(sizePolicy1)
+        self.label_20.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.line_16 = QFrame(self.tab_6)
         self.line_16.setObjectName(u"line_16")
         self.line_16.setGeometry(QRect(80, 160, 721, 20))
@@ -520,7 +619,7 @@ class Ui_MainWindow(object):
         self.label_25 = QLabel(self.tab_6)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setGeometry(QRect(10, 400, 54, 31))
-        self.label_25.setAlignment(Qt.AlignCenter)
+        self.label_25.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.pushButton_48 = QPushButton(self.tab_6)
         self.pushButton_48.setObjectName(u"pushButton_48")
         self.pushButton_48.setGeometry(QRect(230, 210, 121, 23))
@@ -579,7 +678,7 @@ class Ui_MainWindow(object):
         self.label_21 = QLabel(self.tab_6)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setGeometry(QRect(10, 110, 54, 21))
-        self.label_21.setAlignment(Qt.AlignCenter)
+        self.label_21.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.pushButton_38 = QPushButton(self.tab_6)
         self.pushButton_38.setObjectName(u"pushButton_38")
         self.pushButton_38.setGeometry(QRect(80, 50, 121, 23))
@@ -594,7 +693,7 @@ class Ui_MainWindow(object):
         self.label_24 = QLabel(self.tab_6)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setGeometry(QRect(3, 340, 71, 21))
-        self.label_24.setAlignment(Qt.AlignCenter)
+        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.pushButton_34 = QPushButton(self.tab_6)
         self.pushButton_34.setObjectName(u"pushButton_34")
         self.pushButton_34.setGeometry(QRect(230, 20, 121, 23))
@@ -633,11 +732,11 @@ class Ui_MainWindow(object):
         self.label_22 = QLabel(self.tab_6)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setGeometry(QRect(10, 190, 54, 16))
-        self.label_22.setAlignment(Qt.AlignCenter)
+        self.label_22.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_23 = QLabel(self.tab_6)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setGeometry(QRect(10, 270, 54, 16))
-        self.label_23.setAlignment(Qt.AlignCenter)
+        self.label_23.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.pushButton_65 = QPushButton(self.tab_6)
         self.pushButton_65.setObjectName(u"pushButton_65")
         self.pushButton_65.setGeometry(QRect(80, 290, 121, 23))
@@ -682,7 +781,7 @@ class Ui_MainWindow(object):
         self.label_26 = QLabel(self.tab_6)
         self.label_26.setObjectName(u"label_26")
         self.label_26.setGeometry(QRect(10, 460, 54, 31))
-        self.label_26.setAlignment(Qt.AlignCenter)
+        self.label_26.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.tabWidget.addTab(self.tab_6, "")
         self.tab_7 = QWidget()
         self.tab_7.setObjectName(u"tab_7")
@@ -708,10 +807,119 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
+        self.verticalWidget2 = QWidget(self.centralwidget)
+        self.verticalWidget2.setObjectName(u"verticalWidget2")
+        self.verticalWidget2.setGeometry(QRect(0, 60, 221, 211))
+        self.verticalWidget2.setStyleSheet(u"background-color: rgb(21, 56, 91);")
+        self.verticalLayout_2 = QVBoxLayout(self.verticalWidget2)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.pushButton_68 = QPushButton(self.verticalWidget2)
+        self.pushButton_68.setObjectName(u"pushButton_68")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.pushButton_68.sizePolicy().hasHeightForWidth())
+        self.pushButton_68.setSizePolicy(sizePolicy2)
+        self.pushButton_68.setMinimumSize(QSize(0, 0))
+        self.pushButton_68.setStyleSheet(u"QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;   /* optional, removes button border */\n"
+"    color: #999999;   /* set text color since background is gone */\n"
+"}\n"
+"QPushButton:hover {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}")
+
+        self.verticalLayout_2.addWidget(self.pushButton_68)
+
+        self.pushButton_71 = QPushButton(self.verticalWidget2)
+        self.pushButton_71.setObjectName(u"pushButton_71")
+        sizePolicy2.setHeightForWidth(self.pushButton_71.sizePolicy().hasHeightForWidth())
+        self.pushButton_71.setSizePolicy(sizePolicy2)
+        self.pushButton_71.setMinimumSize(QSize(0, 0))
+        self.pushButton_71.setStyleSheet(u"QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;   /* optional, removes button border */\n"
+"    color: #999999;   /* set text color since background is gone */\n"
+"}\n"
+"QPushButton:hover {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}")
+
+        self.verticalLayout_2.addWidget(self.pushButton_71)
+
+        self.pushButton_69 = QPushButton(self.verticalWidget2)
+        self.pushButton_69.setObjectName(u"pushButton_69")
+        sizePolicy2.setHeightForWidth(self.pushButton_69.sizePolicy().hasHeightForWidth())
+        self.pushButton_69.setSizePolicy(sizePolicy2)
+        self.pushButton_69.setMinimumSize(QSize(0, 0))
+        self.pushButton_69.setStyleSheet(u"QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;   /* optional, removes button border */\n"
+"    color: #999999;   /* set text color since background is gone */\n"
+"}\n"
+"QPushButton:hover {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    color: #ffffff;  /* force white text */\n"
+"}")
+
+        self.verticalLayout_2.addWidget(self.pushButton_69)
+
+        self.verticalWidget1 = QWidget(self.centralwidget)
+        self.verticalWidget1.setObjectName(u"verticalWidget1")
+        self.verticalWidget1.setGeometry(QRect(0, 270, 221, 281))
+        self.verticalWidget1.setStyleSheet(u"background-color: rgb(21, 56, 91);")
+        self.verticalLayout_5 = QVBoxLayout(self.verticalWidget1)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.horizontalWidget = QWidget(self.centralwidget)
+        self.horizontalWidget.setObjectName(u"horizontalWidget")
+        self.horizontalWidget.setGeometry(QRect(0, 0, 221, 61))
+        self.horizontalWidget.setStyleSheet(u"background-color: rgb(34, 58, 125);")
+        self.horizontalLayout = QHBoxLayout(self.horizontalWidget)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label_27 = QLabel(self.horizontalWidget)
+        self.label_27.setObjectName(u"label_27")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_27.sizePolicy().hasHeightForWidth())
+        self.label_27.setSizePolicy(sizePolicy3)
+        self.label_27.setMaximumSize(QSize(50, 50))
+        self.label_27.setStyleSheet(u"")
+        self.label_27.setPixmap(QPixmap(u"logo.png"))
+        self.label_27.setScaledContents(True)
+
+        self.horizontalLayout.addWidget(self.label_27)
+
+        self.label_15 = QLabel(self.horizontalWidget)
+        self.label_15.setObjectName(u"label_15")
+        font = QFont()
+        font.setFamilies([u"Segoe UI"])
+        font.setPointSize(8)
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_15.setScaledContents(True)
+        self.label_15.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_15.setMargin(0)
+
+        self.horizontalLayout.addWidget(self.label_15)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 798, 21))
+        self.menubar.setGeometry(QRect(0, 0, 944, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -761,7 +969,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.tabWidget.setCurrentIndex(0)
-        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -893,5 +1101,11 @@ class Ui_MainWindow(object):
         self.pushButton_31.setText(QCoreApplication.translate("MainWindow", u"\u793a\u4f8b\u4ee3\u78012", None))
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u884c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
+        self.pushButton_68.setText(QCoreApplication.translate("MainWindow", u"QEMU\u76ee\u5f55", None))
+        self.pushButton_71.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u5f55\u76ee\u5f55", None))
+        self.pushButton_69.setText(QCoreApplication.translate("MainWindow", u"\u65e5\u5fd7\u76ee\u5f55", None))
+        self.label_27.setText("")
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u7f51\u7edc\u5b89\u5168\u5b66\u79d1\u4e13\u4e1a\u5efa\u8bbe\n"
+"\u67d0\u5b89\u5168\u6559\u5b66\u6f14\u8bad\u5206\u7cfb\u7edf", None))
     # retranslateUi
 

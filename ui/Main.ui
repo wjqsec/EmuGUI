@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>798</width>
-    <height>598</height>
+    <width>944</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,15 +20,56 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>220</x>
       <y>0</y>
-      <width>801</width>
+      <width>721</width>
       <height>551</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QTabWidget" name="tabWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+         QTabWidget#tabWidget::pane {
+         background: transparent;
+         border: none;
+         }
+
+         QTabWidget#tabWidget QTabBar {
+         qproperty-expanding: true;
+         spacing: 6px;
+         }
+
+         QTabWidget#tabWidget QTabBar::tab {
+         height: 45px;
+         background: #223a7d;
+         color: #ffffff;
+         font-size: 15px;
+         min-width: 125px;
+         qproperty-expanding: true;
+         padding: 8px 16px;
+         }
+
+        QTabWidget#tabWidget QTabBar::tab:hover {
+         background: rgba(3, 9, 26, 0.25);
+        }
+
+        QTabWidget#tabWidget QTabBar::tab:selected {
+         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #223a7d, stop:1 #223a7d);
+         color: #A4B5ED;
+         font-weight: 700;
+         font-family: &quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;;
+         text-decoration: underline;
+        }
+        </string>
+       </property>
        <property name="currentIndex">
         <number>0</number>
        </property>
@@ -44,59 +85,144 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>791</width>
+           <width>838</width>
            <height>511</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="QListView" name="listView"/>
-          </item>
-          <item row="0" column="1" rowspan="2">
+          <item row="0" column="2" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_8">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_8 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>New Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_9">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_9 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>Start Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_10">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_10 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>Edit Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_11">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_11 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>Delete Selected Virtual Machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_22">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_22 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>Export selected virtual machine</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft">
              <widget class="QPushButton" name="pushButton_23">
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_23 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
               <property name="text">
                <string>Import virtual machine</string>
               </property>
              </widget>
             </item>
            </layout>
+          </item>
+          <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+           <widget class="QListView" name="listView">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>500</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+               QListView#listView::item:selected {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               QListView#listView::item:selected:!active {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               </string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -118,7 +244,7 @@
           </rect>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
@@ -130,7 +256,7 @@
              <x>0</x>
              <y>0</y>
              <width>781</width>
-             <height>498</height>
+             <height>557</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -539,7 +665,7 @@
           <string>指令级</string>
          </property>
          <property name="textFormat">
-          <enum>Qt::PlainText</enum>
+          <enum>Qt::TextFormat::PlainText</enum>
          </property>
         </widget>
         <widget class="QLabel" name="label_7">
@@ -594,7 +720,7 @@
           <string>自主插桩定制，需要选修改对源代码，然后应用到该框架上，下次模拟固件即可使用</string>
          </property>
          <property name="textFormat">
-          <enum>Qt::AutoText</enum>
+          <enum>Qt::TextFormat::AutoText</enum>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -610,7 +736,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="Line" name="line_2">
@@ -623,7 +749,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="Line" name="line_3">
@@ -636,7 +762,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="Line" name="line_4">
@@ -649,7 +775,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="Line" name="line_5">
@@ -662,7 +788,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
        </widget>
@@ -845,7 +971,7 @@
           <string>USB</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="Line" name="line_16">
@@ -858,7 +984,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_35">
@@ -900,7 +1026,7 @@
           <string>DMA</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_48">
@@ -1030,7 +1156,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_37">
@@ -1069,7 +1195,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_57">
@@ -1137,7 +1263,7 @@
           <string>存储</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_38">
@@ -1163,7 +1289,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_73">
@@ -1192,7 +1318,7 @@
           <string>数模转换</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_34">
@@ -1231,7 +1357,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_47">
@@ -1351,7 +1477,7 @@
           <string>网卡</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QLabel" name="label_23">
@@ -1367,7 +1493,7 @@
           <string>定时器</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_65">
@@ -1471,7 +1597,7 @@
           </rect>
          </property>
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_87">
@@ -1552,7 +1678,7 @@
           <string>串口</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
        </widget>
@@ -1637,13 +1763,213 @@
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="verticalWidget2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>221</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(21, 56, 91);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton_68">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>QEMU目录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_71">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>记录目录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_69">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>日志目录</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalWidget1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>221</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(21, 56, 91);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5"/>
+   </widget>
+   <widget class="QWidget" name="horizontalWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>221</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(34, 58, 125);</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_27">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>logo.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_15">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>网络安全学科专业建设
+某安全教学演训分系统</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>798</width>
+     <width>944</width>
      <height>21</height>
     </rect>
    </property>

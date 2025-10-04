@@ -62,8 +62,9 @@
 
         QTabWidget#tabWidget QTabBar::tab:selected {
          background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #0c3763, stop:1 #0c3763);
-         color: #ffffff;
+         color: #A4B5ED;
          font-weight: 700;
+         font-family: "Microsoft YaHei", "PingFang SC";
          text-decoration: underline;
          border: 1px solid rgba(0,0,0,0.08);
         }
@@ -91,45 +92,105 @@
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="2" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_8">
               <property name="text">
                <string>New Virtual Machine</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_8 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_9">
               <property name="text">
                <string>Start Selected Virtual Machine</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_9 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_10">
               <property name="text">
                <string>Edit Selected Virtual Machine</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_10 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_11">
               <property name="text">
                <string>Delete Selected Virtual Machine</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_11 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_22">
               <property name="text">
                <string>Export selected virtual machine</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_22 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+              </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QPushButton" name="pushButton_23">
               <property name="text">
                <string>Import virtual machine</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+                QPushButton#pushButton_23 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
               </property>
              </widget>
             </item>
@@ -139,7 +200,7 @@
            <widget class="QListView" name="listView">
             <property name="minimumSize">
              <size>
-              <width>300</width>
+              <width>420</width>
               <height>0</height>
              </size>
             </property>

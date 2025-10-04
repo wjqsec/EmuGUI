@@ -67,18 +67,20 @@ class Ui_MainWindow(object):
 "\n"
 "        QTabWidget#tabWidget QTabBar::tab:selected {\n"
 "         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #0c3763, stop:1 #0c3763);\n"
-"         color: #ffffff;\n"
+"         color: #A4B5ED;\n"
 "         font-weight: 700;\n"
+"         font-family: \"Microsoft YaHei\", \"PingFang SC\";\n"
 "         text-decoration: underline;\n"
 "         border: 1px solid rgba(0,0,0,0.08);\n"
-"        }\n"
+"        }"
+                        "\n"
 "        ")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget_4 = QWidget(self.tab)
         self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
-        self.gridLayoutWidget_4.setGeometry(QRect(-100, 0, 700, 511))
+        self.gridLayoutWidget_4.setGeometry(QRect(0, 0, 700, 511))
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -86,40 +88,89 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setStyleSheet(u"\n"
+"                QPushButton#pushButton_8 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_8)
+        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignHCenter)
 
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setStyleSheet(u"\n"
+"                QPushButton#pushButton_9 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_9)
+        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignHCenter)
 
         self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setStyleSheet(u"\n"
+"                QPushButton#pushButton_10 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_10)
+        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignHCenter)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
+        self.pushButton_11.setStyleSheet(u"\n"
+"                QPushButton#pushButton_11 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_11)
+        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignHCenter)
 
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_22.setObjectName(u"pushButton_22")
+        self.pushButton_22.setStyleSheet(u"\n"
+"                QPushButton#pushButton_22 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_22)
+        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignHCenter)
 
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_23.setObjectName(u"pushButton_23")
+        self.pushButton_23.setStyleSheet(u"\n"
+"                QPushButton#pushButton_23 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
 
-        self.verticalLayout.addWidget(self.pushButton_23)
+        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignHCenter)
 
 
         self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
 
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
-        self.listView.setMinimumSize(QSize(300, 0))
+        self.listView.setGeometry(QRect(0, 0, 791, 521))
+        self.listView.setMinimumSize(QSize(420, 0))
         self.listView.setMaximumSize(QSize(420, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)

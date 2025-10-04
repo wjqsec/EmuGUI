@@ -747,19 +747,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
+        self.label_27 = QLabel(self.centralwidget)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setGeometry(QRect(0, 0, 110, 40))
+        self.label_27.setStyleSheet(u"background-color: #0c3763; color: white;")
         self.label_15 = QLabel(self.centralwidget)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(0, 40, 110, 150))
+        self.label_15.setGeometry(QRect(0, 0, 110, 40))
         self.label_15.setAutoFillBackground(False)
         self.label_15.setPixmap(QPixmap(u"Text colourized.png"))
         self.label_15.setScaledContents(True)
         self.label_15.setWordWrap(False)
         self.label_15.setMargin(-6)
         self.label_15.setIndent(-2)
-        self.label_27 = QLabel(self.centralwidget)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setGeometry(QRect(0, 0, 110, 40))
-        self.label_27.setStyleSheet(u"background-color: #0c3763; color: white;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -945,7 +945,7 @@ class Ui_MainWindow(object):
         self.pushButton_31.setText(QCoreApplication.translate("MainWindow", u"\u793a\u4f8b\u4ee3\u78012", None))
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u884c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
-        self.label_15.setText("")
         self.label_27.setText("")
+        self.label_15.setText("")
     # retranslateUi
 

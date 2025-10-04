@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(944, 597)
+        MainWindow.resize(942, 593)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -880,6 +880,8 @@ class Ui_MainWindow(object):
         self.verticalWidget1 = QWidget(self.centralwidget)
         self.verticalWidget1.setObjectName(u"verticalWidget1")
         self.verticalWidget1.setGeometry(QRect(0, 270, 221, 281))
+        sizePolicy.setHeightForWidth(self.verticalWidget1.sizePolicy().hasHeightForWidth())
+        self.verticalWidget1.setSizePolicy(sizePolicy)
         self.verticalWidget1.setStyleSheet(u"background-color: rgb(21, 56, 91);")
         self.verticalLayout_5 = QVBoxLayout(self.verticalWidget1)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -919,7 +921,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 944, 21))
+        self.menubar.setGeometry(QRect(0, 0, 942, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

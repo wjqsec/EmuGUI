@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>944</width>
-    <height>597</height>
+    <width>942</width>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1889,6 +1889,12 @@ QPushButton:pressed {
       <height>281</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(21, 56, 91);</string>
     </property>
@@ -1969,7 +1975,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>944</width>
+     <width>942</width>
      <height>21</height>
     </rect>
    </property>

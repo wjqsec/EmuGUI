@@ -85,6 +85,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_4.clicked.connect(self.close)
         self.pushButton_5.clicked.connect(self.set_date_to_system)
         self.checkBox.clicked.connect(self.timeUsageTrigger)
+        self.pushButton_log.clicked.connect(self.set_hook_path)
 
     def timeUsageTrigger(self):
         if self.checkBox.isChecked():
@@ -236,6 +237,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         return vmSpecs
 
     # These are asked every time you want to run the VMs.
+    def set_hook_path(self):
+        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Select hook recording', dir='.')
+        self.lineEdit_log.setText(filename)
 
     def set_fda_path(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select floppy disk', dir='.', filter='Floppy image (*.img);;Floppy file (*.flp);;Floppy image (*.ima);;All files (*.*)')
@@ -634,6 +638,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.checkBox_debug_2.isChecked():
                 qemu_cmd = qemu_cmd + " -nographic"
                 qemu_cmd_list.append("-nographic")
+            hook_recording_file = self.lineEdit_log.text()
+            if self.comboBox_hook.currentText() == "指令级":
+                pass
+            elif self.comboBox_hook.currentText() == "基本块级":
+                pass
+            elif self.comboBox_hook.currentText() == "函数级":
+                pass
+            elif self.comboBox_hook.currentText() == "模块级":
+                pass
             qemu_cmd_list = ["gnome-terminal", "--", "bash", "-c"] + [qemu_cmd + "; exec bash"]
             print(qemu_cmd_list)
             subprocess.Popen(qemu_cmd_list)

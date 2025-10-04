@@ -97,7 +97,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignLeft)
 
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignLeft)
 
         self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
@@ -123,7 +123,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignLeft)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
@@ -136,7 +136,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignLeft)
 
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_22.setObjectName(u"pushButton_22")
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignLeft)
 
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_23.setObjectName(u"pushButton_23")
@@ -162,7 +162,7 @@ class Ui_MainWindow(object):
 "                }\n"
 "               ")
 
-        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignLeft)
 
 
         self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
@@ -170,8 +170,8 @@ class Ui_MainWindow(object):
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
         self.listView.setGeometry(QRect(0, 0, 791, 521))
-        self.listView.setMinimumSize(QSize(420, 0))
-        self.listView.setMaximumSize(QSize(420, 16777215))
+        self.listView.setMinimumSize(QSize(500, 0))
+        self.listView.setMaximumSize(QSize(500, 16777215))
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)
 

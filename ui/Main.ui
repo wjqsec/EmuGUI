@@ -218,6 +218,18 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="styleSheet">
+               <string notr="true">
+               QListView#listView::item:selected {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               QListView#listView::item:selected:!active {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               </string>
+               </property>
            </widget>
           </item>
          </layout>

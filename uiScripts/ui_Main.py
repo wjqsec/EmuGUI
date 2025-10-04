@@ -172,6 +172,16 @@ class Ui_MainWindow(object):
         self.listView.setGeometry(QRect(0, 0, 791, 521))
         self.listView.setMinimumSize(QSize(500, 0))
         self.listView.setMaximumSize(QSize(500, 16777215))
+        self.listView.setStyleSheet(u"\n"
+"               QListView#listView::item:selected {\n"
+"                    background: #3f6e9cff;\n"
+"                    color: #000000;\n"
+"               }\n"
+"               QListView#listView::item:selected:!active {\n"
+"                    background: #3f6e9cff;\n"
+"                    color: #000000;\n"
+"               }\n"
+"               ")
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignRight)
 

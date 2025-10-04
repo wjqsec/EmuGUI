@@ -2154,33 +2154,33 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 with open(tempVmDef, "w+") as tempVmDefFile:
                     tempVmDefFile.write(selectedVM + "\n")
-                    tempVmDefFile.write(architecture_of_vm + "\n")
-                    tempVmDefFile.write(machine_of_vm + "\n")
-                    tempVmDefFile.write(cpu_of_vm + "\n")
-                    tempVmDefFile.write(str(ram_of_vm) + "\n")
-                    tempVmDefFile.write(hda_of_vm + "\n")
-                    tempVmDefFile.write(vga_of_vm + "\n")
-                    tempVmDefFile.write(net_of_vm + "\n")
-                    tempVmDefFile.write(str(usbtablet_wanted) + "\n")
-                    tempVmDefFile.write(str(os_is_win2k) + "\n")
-                    tempVmDefFile.write(dir_bios + "\n")
-                    tempVmDefFile.write(additional_arguments + "\n")
-                    tempVmDefFile.write(sound_card + "\n")
-                    tempVmDefFile.write(linux_kernel + "\n")
-                    tempVmDefFile.write(linux_initrid + "\n")
-                    tempVmDefFile.write(linux_cmd + "\n")
-                    tempVmDefFile.write(mouse_type + "\n")
-                    tempVmDefFile.write(str(cpu_cores) + "\n")
-                    tempVmDefFile.write(str(file_bios) + "\n")
-                    tempVmDefFile.write(kbd_type + "\n")
-                    tempVmDefFile.write(str(usb_support) + "\n")
-                    tempVmDefFile.write(usb_controller + "\n")
-                    tempVmDefFile.write(kbd_layout + "\n")
-                    tempVmDefFile.write(accel_type + "\n")
-                    tempVmDefFile.write(cd_control1 + "\n")
-                    tempVmDefFile.write(cd_control2 + "\n")
-                    tempVmDefFile.write(hda_control + "\n")
-                    tempVmDefFile.write(mode + "\n")
+                    tempVmDefFile.write(architecture_of_vm + "\n") #1
+                    tempVmDefFile.write(machine_of_vm + "\n") #2
+                    tempVmDefFile.write(cpu_of_vm + "\n") #3
+                    tempVmDefFile.write(str(ram_of_vm) + "\n") #4
+                    tempVmDefFile.write(hda_of_vm + "\n") #5
+                    tempVmDefFile.write(vga_of_vm + "\n") #6
+                    tempVmDefFile.write(net_of_vm + "\n") #7
+                    tempVmDefFile.write(str(usbtablet_wanted) + "\n") #8
+                    tempVmDefFile.write(str(os_is_win2k) + "\n") #9
+                    tempVmDefFile.write(dir_bios + "\n") #10
+                    tempVmDefFile.write(additional_arguments + "\n") #11
+                    tempVmDefFile.write(sound_card + "\n") #12
+                    tempVmDefFile.write(linux_kernel + "\n") #13
+                    tempVmDefFile.write(linux_initrid + "\n") #14
+                    tempVmDefFile.write(linux_cmd + "\n") #15
+                    tempVmDefFile.write(mouse_type + "\n") #16
+                    tempVmDefFile.write(str(cpu_cores) + "\n") #17
+                    tempVmDefFile.write(str(file_bios) + "\n") #18
+                    tempVmDefFile.write(kbd_type + "\n") #19
+                    tempVmDefFile.write(str(usb_support) + "\n") #20
+                    tempVmDefFile.write(usb_controller + "\n") #21
+                    tempVmDefFile.write(kbd_layout + "\n") #22
+                    tempVmDefFile.write(accel_type + "\n") #23
+                    tempVmDefFile.write(cd_control1 + "\n") #24
+                    tempVmDefFile.write(cd_control2 + "\n") # 25
+                    tempVmDefFile.write(hda_control + "\n") # 26
+                    tempVmDefFile.write(mode + "\n") # 27
 
             except:
                 if platform.system() == "Windows":

@@ -539,7 +539,14 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                         except:
                             pass
                 if self.mode_sel_dropdown_box.currentText() == "硬件在环仿真":
-                    pass
+                    self.chb_usb.setChecked(True)
+                    self.chb_usb.setEnabled(False)
+             
+                    self.cb_usb.clear()
+                    self.cb_usb.addItem("Host")
+                    self.cb_usb.setCurrentIndex(0)
+                    self.cb_usb.setEnabled(False)
+                    
                 elif self.mode_sel_dropdown_box.currentText() == "固件托管仿真":
                     self.cb_machine.clear()
                     self.cb_machine.addItem("NULL")

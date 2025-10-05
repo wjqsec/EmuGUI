@@ -62,7 +62,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.cb_vhdU.count():
-            if self.cb_vhdU.itemText(i) == "Create a new virtual hard drive":
+            if self.cb_vhdU.itemText(i) == "Don't add a virtual hard drive":
                 self.cb_vhdU.setCurrentIndex(i)
                 break
 

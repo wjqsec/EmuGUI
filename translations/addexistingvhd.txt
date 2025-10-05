@@ -1,5 +1,5 @@
-添加现有的virtual hard drive
-Existierende virtuelle Festplatte anfügen
+添加现有虚拟硬盘
+Add an existing virtual hard drive
 Дадаць існуючы віртуальны жорсткі дыск
 Добавить существующий виртуальный жесткий диск
 Añadir un disco duro virtual existente

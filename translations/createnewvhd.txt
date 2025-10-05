@@ -1,3 +1,4 @@
+新建虚拟硬盘
 Create a new virtual hard drive
 Neue virtuelle Festplatte erstellen
 Стварыць новы віртуальны жорсткі дыск

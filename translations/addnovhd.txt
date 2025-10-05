@@ -1,3 +1,4 @@
+不添加虚拟硬盘
 Don't add a virtual hard drive
 Keine virtuelle Festplatte anfügen
 Не дадаваць віртуальны жорсткі дыск

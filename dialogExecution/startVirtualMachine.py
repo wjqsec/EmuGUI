@@ -280,7 +280,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         print(dateTimeForVM)
 
         qemu_cmd = ""
-
+        
         try:
             for architecture in self.architectures:
                 if self.vmSpecs[1] == architecture:
@@ -292,14 +292,12 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     cursor.execute(sel_query)
                     connection.commit()
                     result = cursor.fetchall()
-                    print(result)
                     break
-            mode = result[0][26]
+            mode = self.vmSpecs[26]
             qemu_to_execute = result[0][0]
-
             qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[22]}"
             qemu_cmd_list = [qemu_to_execute, f"-m", self.vmSpecs[4], f"-smp", self.vmSpecs[17], f"-k", self.vmSpecs[22]]
-
+            
             if self.checkBox.isChecked():
                 qemu_cmd = qemu_cmd + f" -rtc base=\"{dateTimeForVM}\",clock=vm"
                 qemu_cmd_list.append(f"-rtc")
@@ -326,14 +324,16 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                             qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=ide,media=disk")
 
                         elif self.vmSpecs[26] == "VirtIO SCSI":
-                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
-                            qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1")
+                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd1,bus=scsi.0"
+                            qemu_cmd_list.append(f"id=hd1,file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1")
                             qemu_cmd_list.append(f"-device")
-                            qemu_cmd_list.append(f"scsi-hd,drive=hd1,bus=scsi0.0")
+                            qemu_cmd_list.append(f"-virtio-scsi-pci,id=scsi")
+                            qemu_cmd_list.append(f"-device")
+                            qemu_cmd_list.append(f"scsi-hd,drive=hd1,bus=scsi.0")
 
                         elif self.vmSpecs[26] == "AHCI":
-                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
-                            qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=none")
+                            qemu_cmd = qemu_cmd + f" id=disk,file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
+                            qemu_cmd_list.append(f"id=disk,file=\"{self.vmSpecs[5]}\",if=none")
                             qemu_cmd_list.append(f"-device")
                             qemu_cmd_list.append(f"ahci,id=ahci")
                             qemu_cmd_list.append(f"-device")
@@ -342,7 +342,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
                 qemu_cmd_list.append(f"-M")
-                qemu_cmd_list.append(f"self.vmSpecs[2]")
+                qemu_cmd_list.append(f"{self.vmSpecs[2]}")
             '''    
             elif self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
                 qemu_cmd = qemu_cmd + " -M virt"
@@ -353,18 +353,18 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.vmSpecs[3] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[3]}"
                 qemu_cmd_list.append(f"-cpu")
-                qemu_cmd_list.append(f"self.vmSpecs[3]")
+                qemu_cmd_list.append(f"{self.vmSpecs[3]}")
 
             if self.vmSpecs[6] != "Let QEMU decide":
                 if self.vmSpecs[6] == "std" or self.vmSpecs[6] == "qxl" or self.vmSpecs[6] == "cirrus" or self.vmSpecs[6] == "cg3" or self.vmSpecs[6] == "tcx":
                     qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
                     qemu_cmd_list.append(f"-vga")
-                    qemu_cmd_list.append(f"self.vmSpecs[6]")
+                    qemu_cmd_list.append(f"{self.vmSpecs[6]}")
 
                 else:
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]}"
                     qemu_cmd_list.append(f"-device")
-                    qemu_cmd_list.append(f"self.vmSpecs[6]")
+                    qemu_cmd_list.append(f"{self.vmSpecs[6]}")
 
             if self.vmSpecs[7] != "none":
                 if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64" or self.vmSpecs[1] == "sparc" or self.vmSpecs[1] == "sparc64":
@@ -567,7 +567,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"
-                qemu_cmd_list.append(self.vmSpecs[11])
+                qemu_cmd_list.append(f"{self.vmSpecs[11]}")
 
             if self.vmSpecs[23] == "TCG":
                 qemu_cmd = qemu_cmd + " -accel tcg"
@@ -647,8 +647,8 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 pass
             elif self.comboBox_hook.currentText() == "模块级":
                 pass
+            print(qemu_cmd)
             qemu_cmd_list = ["gnome-terminal", "--", "bash", "-c"] + [qemu_cmd + "; exec bash"]
-            print(qemu_cmd_list)
             subprocess.Popen(qemu_cmd_list)
 
         except sqlite3.Error as e:

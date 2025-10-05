@@ -269,15 +269,15 @@ class Window(QMainWindow, Ui_MainWindow):
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
 
-        self.gridLayoutWidget.resize(event.size())
-        self.tabWidget_2.resize(event.size())
-        self.gridLayoutWidget_4.resize(QSize(event.size().width() - 9, event.size().height() - 66))
-        self.tabWidget_2.resize(QSize(event.size().width() - 9, event.size().height() - 56))
-        self.gridLayoutWidget_2.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        #self.gridLayoutWidget.resize(event.size())
+        #self.tabWidget_2.resize(event.size())
+        #self.gridLayoutWidget_4.resize(QSize(event.size().width() - 9, event.size().height() - 66))
+        #self.tabWidget_2.resize(QSize(event.size().width() - 9, event.size().height() - 56))
+        #self.gridLayoutWidget_2.resize(QSize(event.size().width() - 19, event.size().height() - 86))
         #self.gridLayoutWidget_3.resize(QSize(event.size().width() - 19, event.size().height() - 86))
         #self.gridLayoutWidget_6.resize(QSize(event.size().width() - 19, event.size().height() - 86))
         
-        self.centralwidget.resize(event.size())
+        #self.centralwidget.resize(event.size())
     
 
     def connectSignalsSlots(self):

@@ -17,21 +17,20 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QLabel, QLineEdit, QListView, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QTabWidget, QTextBrowser, QTextEdit, QVBoxLayout,
-    QWidget)
+    QMenuBar, QPushButton, QSizePolicy, QTabWidget,
+    QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(942, 593)
+        MainWindow.resize(1002, 582)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(220, 0, 721, 551))
+        self.gridLayoutWidget.setGeometry(QRect(220, 0, 781, 561))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -78,96 +77,12 @@ class Ui_MainWindow(object):
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tab.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.gridLayoutWidget_4 = QWidget(self.tab)
-        self.gridLayoutWidget_4.setObjectName(u"gridLayoutWidget_4")
-        self.gridLayoutWidget_4.setGeometry(QRect(0, 0, 838, 511))
-        self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
+        self.gridWidget_4 = QWidget(self.tab)
+        self.gridWidget_4.setObjectName(u"gridWidget_4")
+        self.gridWidget_4.setGeometry(QRect(0, 0, 771, 491))
+        self.gridLayout_4 = QGridLayout(self.gridWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setStyleSheet(u"\n"
-"                QPushButton#pushButton_8 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_8, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setStyleSheet(u"\n"
-"                QPushButton#pushButton_9 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_9, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setStyleSheet(u"\n"
-"                QPushButton#pushButton_10 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_10, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-        self.pushButton_11.setStyleSheet(u"\n"
-"                QPushButton#pushButton_11 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_11, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_22.setObjectName(u"pushButton_22")
-        self.pushButton_22.setStyleSheet(u"\n"
-"                QPushButton#pushButton_22 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_22, 0, Qt.AlignmentFlag.AlignLeft)
-
-        self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_23.setObjectName(u"pushButton_23")
-        self.pushButton_23.setStyleSheet(u"\n"
-"                QPushButton#pushButton_23 {\n"
-"                 min-width: 200px;\n"
-"                 max-width: 200px;\n"
-"                 min-height: 30px;\n"
-"                 max-height: 30px;\n"
-"                }\n"
-"               ")
-
-        self.verticalLayout.addWidget(self.pushButton_23, 0, Qt.AlignmentFlag.AlignLeft)
-
-
-        self.gridLayout_4.addLayout(self.verticalLayout, 0, 2, 2, 1)
-
-        self.listView = QListView(self.gridLayoutWidget_4)
+        self.listView = QListView(self.gridWidget_4)
         self.listView.setObjectName(u"listView")
         self.listView.setMinimumSize(QSize(500, 0))
         self.listView.setMaximumSize(QSize(500, 16777215))
@@ -184,247 +99,354 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1, Qt.AlignmentFlag.AlignRight)
 
+        self.widget = QWidget(self.gridWidget_4)
+        self.widget.setObjectName(u"widget")
+        self.verticalLayout = QVBoxLayout(self.widget)
+        self.verticalLayout.setSpacing(50)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(20, 20, 20, 20)
+        self.pushButton_8 = QPushButton(self.widget)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.pushButton_8.sizePolicy().hasHeightForWidth())
+        self.pushButton_8.setSizePolicy(sizePolicy1)
+        self.pushButton_8.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_8.setStyleSheet(u"\n"
+"                QPushButton#pushButton_8 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_8)
+
+        self.pushButton_9 = QPushButton(self.widget)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        sizePolicy1.setHeightForWidth(self.pushButton_9.sizePolicy().hasHeightForWidth())
+        self.pushButton_9.setSizePolicy(sizePolicy1)
+        self.pushButton_9.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_9.setStyleSheet(u"\n"
+"                QPushButton#pushButton_9 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_9)
+
+        self.pushButton_10 = QPushButton(self.widget)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        sizePolicy1.setHeightForWidth(self.pushButton_10.sizePolicy().hasHeightForWidth())
+        self.pushButton_10.setSizePolicy(sizePolicy1)
+        self.pushButton_10.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_10.setStyleSheet(u"\n"
+"                QPushButton#pushButton_10 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_10)
+
+        self.pushButton_22 = QPushButton(self.widget)
+        self.pushButton_22.setObjectName(u"pushButton_22")
+        sizePolicy1.setHeightForWidth(self.pushButton_22.sizePolicy().hasHeightForWidth())
+        self.pushButton_22.setSizePolicy(sizePolicy1)
+        self.pushButton_22.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_22.setStyleSheet(u"\n"
+"                QPushButton#pushButton_22 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_22)
+
+        self.pushButton_11 = QPushButton(self.widget)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+        sizePolicy1.setHeightForWidth(self.pushButton_11.sizePolicy().hasHeightForWidth())
+        self.pushButton_11.setSizePolicy(sizePolicy1)
+        self.pushButton_11.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_11.setStyleSheet(u"\n"
+"                QPushButton#pushButton_11 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_11)
+
+        self.pushButton_23 = QPushButton(self.widget)
+        self.pushButton_23.setObjectName(u"pushButton_23")
+        sizePolicy1.setHeightForWidth(self.pushButton_23.sizePolicy().hasHeightForWidth())
+        self.pushButton_23.setSizePolicy(sizePolicy1)
+        self.pushButton_23.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_23.setStyleSheet(u"\n"
+"                QPushButton#pushButton_23 {\n"
+"                 min-width: 200px;\n"
+"                 max-width: 200px;\n"
+"                 min-height: 30px;\n"
+"                 max-height: 30px;\n"
+"                }\n"
+"               ")
+
+        self.verticalLayout.addWidget(self.pushButton_23)
+
+
+        self.gridLayout_4.addWidget(self.widget, 0, 2, 2, 1)
+
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.tab_2.setEnabled(True)
         self.tabWidget_2 = QTabWidget(self.tab_2)
         self.tabWidget_2.setObjectName(u"tabWidget_2")
-        self.tabWidget_2.setGeometry(QRect(0, 0, 791, 521))
+        self.tabWidget_2.setGeometry(QRect(0, 0, 781, 521))
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
-        self.gridLayoutWidget_2 = QWidget(self.tab_3)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 557))
-        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
+        self.gridWidget_2 = QWidget(self.tab_3)
+        self.gridWidget_2.setObjectName(u"gridWidget_2")
+        self.gridWidget_2.setGeometry(QRect(0, 0, 771, 431))
+        self.gridLayout_2 = QGridLayout(self.gridWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.gridLayoutWidget_2)
+        self.label = QLabel(self.gridWidget_2)
         self.label.setObjectName(u"label")
 
         self.gridLayout_2.addWidget(self.label, 0, 1, 1, 1)
 
-        self.pushButton_19 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_19 = QPushButton(self.gridWidget_2)
         self.pushButton_19.setObjectName(u"pushButton_19")
 
         self.gridLayout_2.addWidget(self.pushButton_19, 12, 3, 1, 1)
 
-        self.pushButton_7 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_7 = QPushButton(self.gridWidget_2)
         self.pushButton_7.setObjectName(u"pushButton_7")
 
         self.gridLayout_2.addWidget(self.pushButton_7, 7, 3, 1, 1)
 
-        self.label_12 = QLabel(self.gridLayoutWidget_2)
+        self.label_12 = QLabel(self.gridWidget_2)
         self.label_12.setObjectName(u"label_12")
 
         self.gridLayout_2.addWidget(self.label_12, 13, 1, 1, 1)
 
-        self.lbl_alpha = QLabel(self.gridLayoutWidget_2)
+        self.lbl_alpha = QLabel(self.gridWidget_2)
         self.lbl_alpha.setObjectName(u"lbl_alpha")
 
         self.gridLayout_2.addWidget(self.lbl_alpha, 15, 1, 1, 1)
 
-        self.label_5 = QLabel(self.gridLayoutWidget_2)
+        self.label_5 = QLabel(self.gridWidget_2)
         self.label_5.setObjectName(u"label_5")
 
         self.gridLayout_2.addWidget(self.label_5, 6, 1, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_5 = QLineEdit(self.gridWidget_2)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
 
         self.gridLayout_2.addWidget(self.lineEdit_5, 0, 2, 1, 1)
 
-        self.lineEdit_10 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_10 = QLineEdit(self.gridWidget_2)
         self.lineEdit_10.setObjectName(u"lineEdit_10")
 
         self.gridLayout_2.addWidget(self.lineEdit_10, 11, 2, 1, 1)
 
-        self.pushButton_16 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_16 = QPushButton(self.gridWidget_2)
         self.pushButton_16.setObjectName(u"pushButton_16")
 
         self.gridLayout_2.addWidget(self.pushButton_16, 9, 3, 1, 1)
 
-        self.lineEdit_12 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_12 = QLineEdit(self.gridWidget_2)
         self.lineEdit_12.setObjectName(u"lineEdit_12")
 
         self.gridLayout_2.addWidget(self.lineEdit_12, 13, 2, 1, 1)
 
-        self.lineEdit_13 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_13 = QLineEdit(self.gridWidget_2)
         self.lineEdit_13.setObjectName(u"lineEdit_13")
 
         self.gridLayout_2.addWidget(self.lineEdit_13, 14, 2, 1, 1)
 
-        self.lineEdit = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit = QLineEdit(self.gridWidget_2)
         self.lineEdit.setObjectName(u"lineEdit")
 
         self.gridLayout_2.addWidget(self.lineEdit, 6, 2, 1, 1)
 
-        self.pushButton_4 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_4 = QPushButton(self.gridWidget_2)
         self.pushButton_4.setObjectName(u"pushButton_4")
 
         self.gridLayout_2.addWidget(self.pushButton_4, 3, 3, 1, 1)
 
-        self.lineEdit_11 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_11 = QLineEdit(self.gridWidget_2)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
 
         self.gridLayout_2.addWidget(self.lineEdit_11, 12, 2, 1, 1)
 
-        self.label_4 = QLabel(self.gridLayoutWidget_2)
+        self.label_4 = QLabel(self.gridWidget_2)
         self.label_4.setObjectName(u"label_4")
 
         self.gridLayout_2.addWidget(self.label_4, 3, 1, 1, 1)
 
-        self.lineEdit_8 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_8 = QLineEdit(self.gridWidget_2)
         self.lineEdit_8.setObjectName(u"lineEdit_8")
 
         self.gridLayout_2.addWidget(self.lineEdit_8, 9, 2, 1, 1)
 
-        self.pushButton_12 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_12 = QPushButton(self.gridWidget_2)
         self.pushButton_12.setObjectName(u"pushButton_12")
 
         self.gridLayout_2.addWidget(self.pushButton_12, 8, 3, 1, 1)
 
-        self.label_11 = QLabel(self.gridLayoutWidget_2)
+        self.label_11 = QLabel(self.gridWidget_2)
         self.label_11.setObjectName(u"label_11")
 
         self.gridLayout_2.addWidget(self.label_11, 8, 1, 1, 1)
 
-        self.pushButton_17 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_17 = QPushButton(self.gridWidget_2)
         self.pushButton_17.setObjectName(u"pushButton_17")
 
         self.gridLayout_2.addWidget(self.pushButton_17, 10, 3, 1, 1)
 
-        self.label_3 = QLabel(self.gridLayoutWidget_2)
+        self.label_3 = QLabel(self.gridWidget_2)
         self.label_3.setObjectName(u"label_3")
 
         self.gridLayout_2.addWidget(self.label_3, 2, 1, 1, 1)
 
-        self.lineEdit_2 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_2 = QLineEdit(self.gridWidget_2)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
 
         self.gridLayout_2.addWidget(self.lineEdit_2, 3, 2, 1, 1)
 
-        self.lbl_riscv32 = QLabel(self.gridLayoutWidget_2)
+        self.lbl_riscv32 = QLabel(self.gridWidget_2)
         self.lbl_riscv32.setObjectName(u"lbl_riscv32")
 
         self.gridLayout_2.addWidget(self.lbl_riscv32, 16, 1, 1, 1)
 
-        self.label_18 = QLabel(self.gridLayoutWidget_2)
+        self.label_18 = QLabel(self.gridWidget_2)
         self.label_18.setObjectName(u"label_18")
 
         self.gridLayout_2.addWidget(self.label_18, 11, 1, 1, 1)
 
-        self.label_2 = QLabel(self.gridLayoutWidget_2)
+        self.label_2 = QLabel(self.gridWidget_2)
         self.label_2.setObjectName(u"label_2")
 
         self.gridLayout_2.addWidget(self.label_2, 1, 1, 1, 1)
 
-        self.label_19 = QLabel(self.gridLayoutWidget_2)
+        self.label_19 = QLabel(self.gridWidget_2)
         self.label_19.setObjectName(u"label_19")
 
         self.gridLayout_2.addWidget(self.label_19, 12, 1, 1, 1)
 
-        self.label_17 = QLabel(self.gridLayoutWidget_2)
+        self.label_17 = QLabel(self.gridWidget_2)
         self.label_17.setObjectName(u"label_17")
 
         self.gridLayout_2.addWidget(self.label_17, 10, 1, 1, 1)
 
-        self.btn_alpha = QPushButton(self.gridLayoutWidget_2)
+        self.btn_alpha = QPushButton(self.gridWidget_2)
         self.btn_alpha.setObjectName(u"btn_alpha")
 
         self.gridLayout_2.addWidget(self.btn_alpha, 15, 3, 1, 1)
 
-        self.pushButton_2 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_2 = QPushButton(self.gridWidget_2)
         self.pushButton_2.setObjectName(u"pushButton_2")
 
         self.gridLayout_2.addWidget(self.pushButton_2, 1, 3, 1, 1)
 
-        self.btn_riscv32 = QPushButton(self.gridLayoutWidget_2)
+        self.btn_riscv32 = QPushButton(self.gridWidget_2)
         self.btn_riscv32.setObjectName(u"btn_riscv32")
 
         self.gridLayout_2.addWidget(self.btn_riscv32, 16, 3, 1, 1)
 
-        self.le_riscv32 = QLineEdit(self.gridLayoutWidget_2)
+        self.le_riscv32 = QLineEdit(self.gridWidget_2)
         self.le_riscv32.setObjectName(u"le_riscv32")
 
         self.gridLayout_2.addWidget(self.le_riscv32, 16, 2, 1, 1)
 
-        self.lineEdit_3 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_3 = QLineEdit(self.gridWidget_2)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
 
         self.gridLayout_2.addWidget(self.lineEdit_3, 2, 2, 1, 1)
 
-        self.label_13 = QLabel(self.gridLayoutWidget_2)
+        self.label_13 = QLabel(self.gridWidget_2)
         self.label_13.setObjectName(u"label_13")
 
         self.gridLayout_2.addWidget(self.label_13, 14, 1, 1, 1)
 
-        self.lineEdit_7 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_7 = QLineEdit(self.gridWidget_2)
         self.lineEdit_7.setObjectName(u"lineEdit_7")
 
         self.gridLayout_2.addWidget(self.lineEdit_7, 8, 2, 1, 1)
 
-        self.pushButton_18 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_18 = QPushButton(self.gridWidget_2)
         self.pushButton_18.setObjectName(u"pushButton_18")
 
         self.gridLayout_2.addWidget(self.pushButton_18, 11, 3, 1, 1)
 
-        self.pushButton_3 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_3 = QPushButton(self.gridWidget_2)
         self.pushButton_3.setObjectName(u"pushButton_3")
 
         self.gridLayout_2.addWidget(self.pushButton_3, 2, 3, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_6 = QLineEdit(self.gridWidget_2)
         self.lineEdit_6.setObjectName(u"lineEdit_6")
 
         self.gridLayout_2.addWidget(self.lineEdit_6, 7, 2, 1, 1)
 
-        self.pushButton_5 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_5 = QPushButton(self.gridWidget_2)
         self.pushButton_5.setObjectName(u"pushButton_5")
 
         self.gridLayout_2.addWidget(self.pushButton_5, 6, 3, 1, 1)
 
-        self.lineEdit_9 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_9 = QLineEdit(self.gridWidget_2)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
 
         self.gridLayout_2.addWidget(self.lineEdit_9, 10, 2, 1, 1)
 
-        self.pushButton_13 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_13 = QPushButton(self.gridWidget_2)
         self.pushButton_13.setObjectName(u"pushButton_13")
 
         self.gridLayout_2.addWidget(self.pushButton_13, 13, 3, 1, 1)
 
-        self.le_alpha = QLineEdit(self.gridLayoutWidget_2)
+        self.le_alpha = QLineEdit(self.gridWidget_2)
         self.le_alpha.setObjectName(u"le_alpha")
 
         self.gridLayout_2.addWidget(self.le_alpha, 15, 2, 1, 1)
 
-        self.pushButton_14 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_14 = QPushButton(self.gridWidget_2)
         self.pushButton_14.setObjectName(u"pushButton_14")
 
         self.gridLayout_2.addWidget(self.pushButton_14, 14, 3, 1, 1)
 
-        self.lineEdit_4 = QLineEdit(self.gridLayoutWidget_2)
+        self.lineEdit_4 = QLineEdit(self.gridWidget_2)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
 
         self.gridLayout_2.addWidget(self.lineEdit_4, 1, 2, 1, 1)
 
-        self.label_16 = QLabel(self.gridLayoutWidget_2)
+        self.label_16 = QLabel(self.gridWidget_2)
         self.label_16.setObjectName(u"label_16")
 
         self.gridLayout_2.addWidget(self.label_16, 9, 1, 1, 1)
 
-        self.pushButton_6 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_6 = QPushButton(self.gridWidget_2)
         self.pushButton_6.setObjectName(u"pushButton_6")
 
         self.gridLayout_2.addWidget(self.pushButton_6, 17, 3, 1, 1)
 
-        self.pushButton = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton = QPushButton(self.gridWidget_2)
         self.pushButton.setObjectName(u"pushButton")
 
         self.gridLayout_2.addWidget(self.pushButton, 0, 3, 1, 1)
 
-        self.label_9 = QLabel(self.gridLayoutWidget_2)
+        self.label_9 = QLabel(self.gridWidget_2)
         self.label_9.setObjectName(u"label_9")
 
         self.gridLayout_2.addWidget(self.label_9, 7, 1, 1, 1)
@@ -432,28 +454,27 @@ class Ui_MainWindow(object):
         self.tabWidget_2.addTab(self.tab_3, "")
         self.tab_5 = QWidget()
         self.tab_5.setObjectName(u"tab_5")
-        self.gridLayoutWidget_5 = QWidget(self.tab_5)
-        self.gridLayoutWidget_5.setObjectName(u"gridLayoutWidget_5")
-        self.gridLayoutWidget_5.setGeometry(QRect(0, 0, 781, 498))
-        self.gridLayout_6 = QGridLayout(self.gridLayoutWidget_5)
+        self.gridWidget_5 = QWidget(self.tab_5)
+        self.gridWidget_5.setObjectName(u"gridWidget_5")
+        self.gridWidget_5.setGeometry(QRect(0, 0, 711, 421))
+        self.gridLayout_6 = QGridLayout(self.gridWidget_5)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.btn_riscv64 = QPushButton(self.gridLayoutWidget_5)
+        self.btn_riscv64 = QPushButton(self.gridWidget_5)
         self.btn_riscv64.setObjectName(u"btn_riscv64")
 
         self.gridLayout_6.addWidget(self.btn_riscv64, 2, 3, 1, 1)
 
-        self.lbl_riscv64 = QLabel(self.gridLayoutWidget_5)
+        self.lbl_riscv64 = QLabel(self.gridWidget_5)
         self.lbl_riscv64.setObjectName(u"lbl_riscv64")
 
         self.gridLayout_6.addWidget(self.lbl_riscv64, 2, 1, 1, 1)
 
-        self.btn_apply_qemu2 = QPushButton(self.gridLayoutWidget_5)
+        self.btn_apply_qemu2 = QPushButton(self.gridWidget_5)
         self.btn_apply_qemu2.setObjectName(u"btn_apply_qemu2")
 
         self.gridLayout_6.addWidget(self.btn_apply_qemu2, 3, 3, 1, 1)
 
-        self.le_riscv64 = QLineEdit(self.gridLayoutWidget_5)
+        self.le_riscv64 = QLineEdit(self.gridWidget_5)
         self.le_riscv64.setObjectName(u"le_riscv64")
 
         self.gridLayout_6.addWidget(self.le_riscv64, 2, 2, 1, 1)
@@ -599,9 +620,6 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.tab_6)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(10, 40, 54, 16))
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
         self.label_20.setSizePolicy(sizePolicy1)
         self.label_20.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -799,10 +817,10 @@ class Ui_MainWindow(object):
         self.pushButton_32.setGeometry(QRect(620, 10, 101, 31))
         self.textEdit = QTextEdit(self.tab_7)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(0, 50, 791, 361))
+        self.textEdit.setGeometry(QRect(0, 50, 771, 361))
         self.textBrowser = QTextBrowser(self.tab_7)
         self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setGeometry(QRect(0, 410, 791, 111))
+        self.textBrowser.setGeometry(QRect(0, 410, 771, 81))
         self.tabWidget.addTab(self.tab_7, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
@@ -879,7 +897,7 @@ class Ui_MainWindow(object):
 
         self.verticalWidget1 = QWidget(self.centralwidget)
         self.verticalWidget1.setObjectName(u"verticalWidget1")
-        self.verticalWidget1.setGeometry(QRect(0, 270, 221, 281))
+        self.verticalWidget1.setGeometry(QRect(0, 270, 221, 291))
         sizePolicy.setHeightForWidth(self.verticalWidget1.sizePolicy().hasHeightForWidth())
         self.verticalWidget1.setSizePolicy(sizePolicy)
         self.verticalWidget1.setStyleSheet(u"background-color: rgb(21, 56, 91);")
@@ -921,16 +939,9 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 942, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1002, 21))
         MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        QWidget.setTabOrder(self.listView, self.pushButton_8)
-        QWidget.setTabOrder(self.pushButton_8, self.pushButton_9)
-        QWidget.setTabOrder(self.pushButton_9, self.pushButton_10)
-        QWidget.setTabOrder(self.pushButton_10, self.pushButton_11)
-        QWidget.setTabOrder(self.pushButton_11, self.tabWidget_2)
+        QWidget.setTabOrder(self.listView, self.tabWidget_2)
         QWidget.setTabOrder(self.tabWidget_2, self.lineEdit_5)
         QWidget.setTabOrder(self.lineEdit_5, self.pushButton)
         QWidget.setTabOrder(self.pushButton, self.lineEdit_4)
@@ -962,16 +973,14 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.btn_alpha, self.le_riscv32)
         QWidget.setTabOrder(self.le_riscv32, self.btn_riscv32)
         QWidget.setTabOrder(self.btn_riscv32, self.pushButton_6)
-        QWidget.setTabOrder(self.pushButton_6, self.pushButton_22)
-        QWidget.setTabOrder(self.pushButton_22, self.pushButton_23)
-        QWidget.setTabOrder(self.pushButton_23, self.btn_riscv64)
+        QWidget.setTabOrder(self.pushButton_6, self.btn_riscv64)
         QWidget.setTabOrder(self.btn_riscv64, self.btn_apply_qemu2)
         QWidget.setTabOrder(self.btn_apply_qemu2, self.le_riscv64)
 
         self.retranslateUi(MainWindow)
 
         self.tabWidget.setCurrentIndex(0)
-        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -982,8 +991,8 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"New Virtual Machine", None))
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Start Selected Virtual Machine", None))
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
-        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_22.setText(QCoreApplication.translate("MainWindow", u"Export selected virtual machine", None))
+        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Import virtual machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"qemu-img Path", None))

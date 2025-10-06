@@ -233,6 +233,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         for vmSpec in vmSpecsRaw:
             vmSpecNew = vmSpec.replace("\n", "")
             vmSpecs.append(vmSpecNew)
+            
 
         return vmSpecs
 
@@ -293,7 +294,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     connection.commit()
                     result = cursor.fetchall()
                     break
-            mode = self.vmSpecs[26]
+            mode = self.vmSpecs[27]
             qemu_to_execute = result[0][0]
             qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[22]}"
             qemu_cmd_list = [qemu_to_execute, f"-m", self.vmSpecs[4], f"-smp", self.vmSpecs[17], f"-k", self.vmSpecs[22]]
@@ -620,25 +621,18 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd_list.append(f"emulator,id=tpm0,chardev=chrtpm")
                     qemu_cmd_list.append(f"-device")
                     qemu_cmd_list.append(f"tpm-spapr,tpmdev=tpm0")
+            if self.checkBox_debug_2.isChecked():
+                qemu_cmd = qemu_cmd + " -nographic"
+                qemu_cmd_list.append("-nographic")
             if mode == "固件托管仿真":
                 qemu_to_execute = qemu_to_execute.replace("-system", "")
                 
                 qemu_cmd = f"\"{qemu_to_execute}\""
                 qemu_cmd_list = [qemu_to_execute]
+            hook_recording_file = self.lineEdit_log.text() 
+            if self.comboBox_hook.currentText() != "无" and hook_recording_file != "":
+                qemu_cmd = qemu_cmd + f" -d out_asm,in_asm,op,op_opt,op_ind,int,exec,cpu,nochain,strace -D {self.lineEdit_log.text()}"
                 
-                qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
-                qemu_cmd_list.append(f"-kernel \"{self.vmSpecs[13]}\"")
-                
-                qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
-                qemu_cmd_list.append(f"-append \"{self.vmSpecs[15]}\"")
-
-            if self.checkBox_debug.isChecked():
-                qemu_cmd = qemu_cmd + f" -s -S"
-                qemu_cmd_list.append(f"-s -S")
-            if self.checkBox_debug_2.isChecked():
-                qemu_cmd = qemu_cmd + " -nographic"
-                qemu_cmd_list.append("-nographic")
-            hook_recording_file = self.lineEdit_log.text()
             if self.comboBox_hook.currentText() == "指令级":
                 pass
             elif self.comboBox_hook.currentText() == "基本块级":
@@ -647,6 +641,22 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 pass
             elif self.comboBox_hook.currentText() == "模块级":
                 pass
+            
+            if self.checkBox_debug.isChecked():
+                qemu_cmd = qemu_cmd + f" -s -S"
+                qemu_cmd_list.append(f"-s")
+                emu_cmd_list.append(f"-S")
+            if mode == "固件托管仿真":
+                qemu_cmd = qemu_cmd + f" \"{self.vmSpecs[13]}\""
+                qemu_cmd_list.append(f"\"{self.vmSpecs[13]}\"")
+                
+                qemu_cmd = qemu_cmd + f" \"{self.vmSpecs[15]}\""
+                qemu_cmd_list.append(f"\"{self.vmSpecs[15]}\"")
+
+
+            
+            
+
             print(qemu_cmd)
             qemu_cmd_list = ["gnome-terminal", "--", "bash", "-c"] + [qemu_cmd + "; exec bash"]
             subprocess.Popen(qemu_cmd_list)

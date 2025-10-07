@@ -56,6 +56,7 @@ from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.errDialog import ErrDialog
+from dialogExecution.CompileQemuDialog import CompileQemuDialog
 from dialogExecution.settingsRequireRestart import *
 
 try:
@@ -313,6 +314,12 @@ class Window(QMainWindow, Ui_MainWindow):
         #self.pushButton_25.clicked.connect(self.toOdysee)
         #self.btn_guilded.clicked.connect(self.toGuilded)
         self.pushButton_32.clicked.connect(self.runPythonScript)
+        
+        self.pushButton_25.clicked.connect(self.compileQemu)
+        self.pushButton_26.clicked.connect(self.compileQemu)
+        self.pushButton_27.clicked.connect(self.compileQemu)
+        self.pushButton_28.clicked.connect(self.compileQemu)
+        
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
         good_saturday_delta = datetime.timedelta(days=-1)
@@ -3566,7 +3573,9 @@ class Window(QMainWindow, Ui_MainWindow):
     
     def toGuilded(self):
         webbrowser.open_new_tab("https://www.guilded.gg/i/pBAY6BAk")
-        
+    def compileQemu(self):
+        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.0")
+        dialog.exec()
     def runPythonScript(self):
         import subprocess
         import sys

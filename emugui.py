@@ -57,6 +57,9 @@ from dialogExecution.editVMNew import EditVMNewDialog
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.errDialog import ErrDialog
 from dialogExecution.CompileQemuDialog import CompileQemuDialog
+from dialogExecution.ShowCode import ShowCodeDialog
+from dialogExecution.EditCode import EditCodeDialog
+from dialogExecution.DeviceInfo import DeviceInfoDialog
 from dialogExecution.settingsRequireRestart import *
 
 try:
@@ -320,6 +323,13 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_27.clicked.connect(self.compileQemu)
         self.pushButton_28.clicked.connect(self.compileQemu)
         
+        self.pushButton_30.clicked.connect(self.showAPIExample1)
+        self.pushButton_31.clicked.connect(self.showAPIExample2)
+        self.pushButton_29.clicked.connect(self.showAPI)
+        
+        self.pushButton_21.clicked.connect(self.editInsCode)
+        
+        self.pushButton_33.clicked.connect(self.showDeviceInfo)
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
         good_saturday_delta = datetime.timedelta(days=-1)
@@ -1430,10 +1440,10 @@ class Window(QMainWindow, Ui_MainWindow):
             connection.commit()
             result_settings = cursor.fetchall()
 
-            print(result_settings)
+
 
             selectedVM = self.listView.currentIndex().data()
-            print(selectedVM)
+
 
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
@@ -1447,7 +1457,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 connection.commit()
                 result = cursor.fetchall()
                 
-                print(result)
+
 
                 architecture_of_vm = result[0][0]
                 machine_of_vm = result[0][1]
@@ -3590,10 +3600,370 @@ class Window(QMainWindow, Ui_MainWindow):
                 return proc.stdout, proc.stderr, proc.returncode
             except subprocess.TimeoutExpired as e:
                 return "", f"TimeoutExpired: {e}", -1
-        text = self.textEdit.toPlainText()
+        text = self.textEdit.toPlainText().replace("\x00","")
         out_smg,err_smg,err_code = run_python_script(text)
         self.textBrowser.append (out_smg)
         self.textBrowser.append (err_smg)
+    def showAPIExample1(self):
+        dialog = ShowCodeDialog(self,code='''
+from unicorn import *
+from unicorn.x86_const import *
+
+# code to be emulated
+X86_CODE32 = b"\\x41\\x4a" # INC ecx; DEC edx
+
+# memory address where emulation starts
+ADDRESS = 0x1000000
+
+print("Emulate i386 code")
+try:
+    # Initialize emulator in X86-32bit mode
+    mu = Uc(UC_ARCH_X86, UC_MODE_32)
+
+    # map 2MB memory for this emulation
+    mu.mem_map(ADDRESS, 2 * 1024 * 1024)
+
+    # write machine code to be emulated to memory
+    mu.mem_write(ADDRESS, X86_CODE32)
+
+    # initialize machine registers
+    mu.reg_write(UC_X86_REG_ECX, 0x1234)
+    mu.reg_write(UC_X86_REG_EDX, 0x7890)
+
+    # emulate code in infinite time & unlimited instructions
+    mu.emu_start(ADDRESS, ADDRESS + len(X86_CODE32))
+
+    # now print out some registers
+    print("Emulation done. Below is the CPU context")
+
+    r_ecx = mu.reg_read(UC_X86_REG_ECX)
+    r_edx = mu.reg_read(UC_X86_REG_EDX)
+    print(">>> ECX = 0x%x" %r_ecx)
+    print(">>> EDX = 0x%x" %r_edx)
+
+except UcError as e:
+    print("ERROR: %s" % e)
+        ''')
+        dialog.exec()
+    def showAPIExample2(self):
+        dialog = ShowCodeDialog(self,code='''
+#!/usr/bin/env python
+# Sample code for ARM64 of Unicorn. Nguyen Anh Quynh <aquynh@gmail.com>
+# Python sample ported by Loi Anh Tuan <loianhtuan@gmail.com>
+
+from unicorn import *
+from unicorn.arm64_const import *
+
+# code to be emulated
+ARM64_CODE = b"\\xab\\x05\\x00\\xb8\\xaf\\x05\\x40\\x38"  # str x11, [x13]; ldrb x15, [x13]
+
+# MSR code
+ARM64_MRS_CODE = b"\\x62\\xd0\\x3b\\xd5"  # mrs        x2, tpidrro_el0
+
+# memory address where emulation starts
+ADDRESS = 0x10000
+
+
+# callback for tracing basic blocks
+def hook_block(uc, address, size, user_data):
+    print(">>> Tracing basic block at 0x%x, block size = 0x%x" % (address, size))
+
+
+# callback for tracing instructions
+def hook_code(uc, address, size, user_data):
+    print(">>> Tracing instruction at 0x%x, instruction size = 0x%x" % (address, size))
+
+
+# Test ARM64
+def test_arm64():
+    print("Emulate ARM64 code")
+    try:
+        # Initialize emulator in ARM mode
+        mu = Uc(UC_ARCH_ARM64, UC_MODE_ARM)
+
+        # map 2MB memory for this emulation
+        mu.mem_map(ADDRESS, 2 * 1024 * 1024)
+
+        # write machine code to be emulated to memory
+        mu.mem_write(ADDRESS, ARM64_CODE)
+
+        # initialize machine registers
+        mu.reg_write(UC_ARM64_REG_X11, 0x12345678)
+        mu.reg_write(UC_ARM64_REG_X13, 0x10008)
+        mu.reg_write(UC_ARM64_REG_X15, 0x33)
+
+        # tracing all basic blocks with customized callback
+        mu.hook_add(UC_HOOK_BLOCK, hook_block)
+
+        # tracing one instruction with customized callback
+        mu.hook_add(UC_HOOK_CODE, hook_code, begin=ADDRESS, end=ADDRESS)
+
+        # emulate machine code in infinite time
+        mu.emu_start(ADDRESS, ADDRESS + len(ARM64_CODE))
+
+        # now print out some registers
+        print(">>> Emulation done. Below is the CPU context")
+        print(">>> As little endian, X15 should be 0x78:")
+
+        x11 = mu.reg_read(UC_ARM64_REG_X11)
+        x13 = mu.reg_read(UC_ARM64_REG_X13)
+        x15 = mu.reg_read(UC_ARM64_REG_X15)
+        print(">>> X15 = 0x%x" % x15)
+
+    except UcError as e:
+        print("ERROR: %s" % e)
+
+
+def test_arm64_read_sctlr():
+    print("Read SCTLR_EL1")
+    try:
+        # Initialize emulator in ARM mode
+        mu = Uc(UC_ARCH_ARM64, UC_MODE_ARM)
+
+        # Read SCTLR_EL1
+        # crn = 1;
+        # crm = 0;
+        # op0 = 3;
+        # op1 = 0;
+        # op2 = 0;
+        val = mu.reg_read(UC_ARM64_REG_CP_REG, (1, 0, 3, 0, 0))
+        print(">>> SCTLR_EL1 = 0x%x" % val)
+
+    except UcError as e:
+        print("ERROR: %s" % e)
+
+
+def test_arm64_hook_mrs():
+    def _hook_mrs(uc, reg, cp_reg, _):
+        print(">>> Hook MRS instruction: reg = {reg:#x}(UC_ARM64_REG_X2) cp_reg = {cp_reg}".format(reg=reg,
+                                                                                                   cp_reg=cp_reg))
+        uc.reg_write(reg, 0x114514)
+        print(">>> Write 0x114514 to X")
+
+        # Skip MRS instruction
+        return True
+
+    print("Test hook MRS instruction")
+    try:
+        # Initialize emulator in ARM mode
+        mu = Uc(UC_ARCH_ARM64, UC_MODE_ARM)
+
+        # Map an area for code
+        mu.mem_map(0x1000, 0x1000)
+
+        # Write code
+        mu.mem_write(0x1000, ARM64_MRS_CODE)
+
+        # Hook MRS instruction
+        mu.hook_add(UC_HOOK_INSN, _hook_mrs, None, 1, 0, UC_ARM64_INS_MRS)
+
+        # Start emulation
+        mu.emu_start(0x1000, 0x1000 + len(ARM64_MRS_CODE))
+
+        print(">>> X2 = {reg:#x}".format(reg=mu.reg_read(UC_ARM64_REG_X2)))
+
+    except UcError as e:
+        print("ERROR: %s" % e)
+
+
+if __name__ == '__main__':
+    test_arm64()
+    print("=" * 26)
+    test_arm64_read_sctlr()
+    print("=" * 26)
+    test_arm64_hook_mrs()
+        ''')
+        dialog.exec()
+        
+    def showAPI(self):
+        dialog = ShowCodeDialog(self,code='''
+// =========================
+// 初始化与关闭
+// =========================
+
+uc_err uc_open(uc_arch arch, uc_mode mode, uc_engine **uc);
+// 创建并初始化仿真上下文，指定架构和模式。
+
+uc_err uc_close(uc_engine *uc);
+// 关闭仿真上下文，释放资源。
+
+// =========================
+// 内存管理
+// =========================
+
+uc_err uc_mem_map(uc_engine *uc, uint64_t address, size_t size, uint32_t perms);
+// 映射一段仿真内存，设置地址、大小和权限（读/写/执行）。
+
+uc_err uc_mem_unmap(uc_engine *uc, uint64_t address, size_t size);
+// 解除映射指定范围的仿真内存。
+
+uc_err uc_mem_protect(uc_engine *uc, uint64_t address, size_t size, uint32_t perms);
+// 修改已映射内存区域的访问权限。
+
+uc_err uc_mem_read(uc_engine *uc, uint64_t address, void *bytes, size_t size);
+// 从仿真内存读取数据到缓冲区。
+
+uc_err uc_mem_write(uc_engine *uc, uint64_t address, const void *bytes, size_t size);
+// 将数据写入仿真内存。
+
+// =========================
+// 寄存器访问
+// =========================
+
+uc_err uc_reg_read(uc_engine *uc, int regid, void *value);
+// 读取指定寄存器的值。
+
+uc_err uc_reg_write(uc_engine *uc, int regid, const void *value);
+// 写入指定寄存器的值。
+
+uc_err uc_reg_read_batch(uc_engine *uc, int *regs, void **vals, int count);
+// 批量读取多个寄存器。
+
+uc_err uc_reg_write_batch(uc_engine *uc, int *regs, void **vals, int count);
+// 批量写入多个寄存器。
+
+// =========================
+// 仿真执行
+// =========================
+
+uc_err uc_emu_start(uc_engine *uc, uint64_t begin, uint64_t until, uint64_t timeout, size_t count);
+// 启动仿真，从指定地址开始执行，直到指定结束条件。
+
+uc_err uc_emu_stop(uc_engine *uc);
+// 手动停止仿真执行。
+
+// =========================
+// 钩子与回调
+// =========================
+
+uc_err uc_hook_add(uc_engine *uc, uc_hook *hh, int type, void *callback, void *user_data,
+                   uint64_t begin, uint64_t end, ...);
+// 添加钩子函数，用于拦截代码执行、内存访问或中断等事件。
+
+uc_err uc_hook_del(uc_engine *uc, uc_hook hh);
+// 删除指定钩子。
+
+// 常见回调函数原型
+void code_hook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data);
+// 在指令执行时被调用。
+
+bool mem_read_hook(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, void *user_data);
+// 在内存读取时被调用。
+
+bool mem_write_hook(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, void *user_data);
+// 在内存写入时被调用。
+
+bool intr_hook(uc_engine *uc, uint32_t intno, void *user_data);
+// 在中断发生时被调用。
+
+// =========================
+// 架构与模式常量
+// =========================
+
+typedef enum uc_arch {
+    UC_ARCH_ARM,
+    UC_ARCH_ARM64,
+    UC_ARCH_MIPS,
+    UC_ARCH_X86,
+    UC_ARCH_PPC,
+    UC_ARCH_SPARC,
+    UC_ARCH_RISCV,
+} uc_arch;
+// 支持的处理器架构类型。
+
+typedef enum uc_mode {
+    UC_MODE_LITTLE_ENDIAN = 0,
+    UC_MODE_BIG_ENDIAN = 1 << 30,
+    UC_MODE_16 = 1 << 1,
+    UC_MODE_32 = 1 << 2,
+    UC_MODE_64 = 1 << 3,
+    UC_MODE_THUMB = 1 << 4,
+    UC_MODE_MCLASS = 1 << 5,
+    UC_MODE_V8 = 1 << 6,
+} uc_mode;
+// 仿真模式，如 16/32/64 位、Thumb、M-Class、V8 等。
+
+// =========================
+// 内存权限常量
+// =========================
+
+#define UC_PROT_NONE  0
+#define UC_PROT_READ  (1 << 0)
+#define UC_PROT_WRITE (1 << 1)
+#define UC_PROT_EXEC  (1 << 2)
+// 内存页权限位，用于映射或保护。
+
+// =========================
+// 钩子类型常量
+// =========================
+
+#define UC_HOOK_INTR              1 << 0
+#define UC_HOOK_INSN              1 << 1
+#define UC_HOOK_CODE              1 << 2
+#define UC_HOOK_BLOCK             1 << 3
+#define UC_HOOK_MEM_READ_UNMAPPED 1 << 4
+#define UC_HOOK_MEM_WRITE_UNMAPPED 1 << 5
+#define UC_HOOK_MEM_FETCH_UNMAPPED 1 << 6
+#define UC_HOOK_MEM_READ_PROT     1 << 7
+#define UC_HOOK_MEM_WRITE_PROT    1 << 8
+#define UC_HOOK_MEM_FETCH_PROT    1 << 9
+#define UC_HOOK_MEM_READ          1 << 10
+#define UC_HOOK_MEM_WRITE         1 << 11
+#define UC_HOOK_MEM_FETCH         1 << 12
+// 不同事件类型的钩子，用于注册不同类别的回调。
+
+// =========================
+// 错误码
+// =========================
+
+typedef enum uc_err {
+    UC_ERR_OK = 0,           // 无错误
+    UC_ERR_NOMEM,            // 内存不足
+    UC_ERR_ARCH,             // 不支持的架构
+    UC_ERR_HANDLE,           // 无效的句柄
+    UC_ERR_MODE,             // 模式错误
+    UC_ERR_VERSION,          // 版本不匹配
+    UC_ERR_READ_UNMAPPED,    // 读取未映射内存
+    UC_ERR_WRITE_UNMAPPED,   // 写入未映射内存
+    UC_ERR_FETCH_UNMAPPED,   // 取指未映射内存
+    UC_ERR_HOOK,             // 钩子错误
+    UC_ERR_INSN_INVALID,     // 无效指令
+    UC_ERR_MAP,              // 内存映射失败
+    UC_ERR_WRITE_PROT,       // 写保护错误
+    UC_ERR_READ_PROT,        // 读保护错误
+    UC_ERR_FETCH_PROT,       // 执行保护错误
+    UC_ERR_ARG,              // 参数错误
+    UC_ERR_READ_UNALIGNED,   // 非对齐读取
+    UC_ERR_WRITE_UNALIGNED,  // 非对齐写入
+    UC_ERR_FETCH_UNALIGNED,  // 非对齐执行
+    UC_ERR_RESOURCE,         // 资源不足
+    UC_ERR_EXCEPTION,        // 异常发生
+} uc_err;
+// 所有可能的错误返回码。
+
+// =========================
+// 辅助函数
+// =========================
+
+const char *uc_strerror(uc_err code);
+// 将错误码转换为字符串描述。
+
+uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
+// 查询仿真状态或特定属性。
+
+        ''')
+        dialog.exec()
+    def editInsCode(self):
+        dialog = EditCodeDialog(title = "aaaa",path = "/home/w/Downloads/test.c")
+        dialog.exec()
+    def showDeviceInfo(self):
+        dialog = DeviceInfoDialog(info_path = "/home/w/Downloads/info.txt")
+        dialog.exec()
+    def addQemuItems():
+        std_item = QtGui.QStandardItem ("Dinner")
+        child_std_item = QtGui.QStandardItem ("Drinks")
+        std_item.appendRow (child_std_item)
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

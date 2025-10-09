@@ -59,7 +59,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             dialog = ErrDialog(self)
             dialog.exec()
 
-        print(self.vmSpecs)
+
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
         self.langDetect()
         self.timeUsageTrigger()
@@ -641,21 +641,18 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 pass
             elif self.comboBox_hook.currentText() == "模块级":
                 pass
-            
+
             if self.checkBox_debug.isChecked():
                 qemu_cmd = qemu_cmd + f" -s -S"
                 qemu_cmd_list.append(f"-s")
-                emu_cmd_list.append(f"-S")
+                qemu_cmd_list.append(f"-S")
+
             if mode == "固件托管仿真":
                 qemu_cmd = qemu_cmd + f" \"{self.vmSpecs[13]}\""
                 qemu_cmd_list.append(f"\"{self.vmSpecs[13]}\"")
                 
                 qemu_cmd = qemu_cmd + f" \"{self.vmSpecs[15]}\""
                 qemu_cmd_list.append(f"\"{self.vmSpecs[15]}\"")
-
-
-            
-            
 
             print(qemu_cmd)
             qemu_cmd_list = ["gnome-terminal", "--", "bash", "-c"] + [qemu_cmd + "; exec bash"]

@@ -15,10 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QListView, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QTabWidget,
-    QTextBrowser, QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QGraphicsView,
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QListView, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QTabWidget, QTextBrowser,
+    QTextEdit, QTreeWidget, QTreeWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -112,7 +114,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.pushButton_8.sizePolicy().hasHeightForWidth())
         self.pushButton_8.setSizePolicy(sizePolicy1)
-        self.pushButton_8.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_8.setMaximumSize(QSize(202, 32))
         self.pushButton_8.setStyleSheet(u"\n"
 "                QPushButton#pushButton_8 {\n"
 "                 min-width: 200px;\n"
@@ -128,7 +130,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.setObjectName(u"pushButton_9")
         sizePolicy1.setHeightForWidth(self.pushButton_9.sizePolicy().hasHeightForWidth())
         self.pushButton_9.setSizePolicy(sizePolicy1)
-        self.pushButton_9.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_9.setMaximumSize(QSize(202, 32))
         self.pushButton_9.setStyleSheet(u"\n"
 "                QPushButton#pushButton_9 {\n"
 "                 min-width: 200px;\n"
@@ -144,7 +146,7 @@ class Ui_MainWindow(object):
         self.pushButton_10.setObjectName(u"pushButton_10")
         sizePolicy1.setHeightForWidth(self.pushButton_10.sizePolicy().hasHeightForWidth())
         self.pushButton_10.setSizePolicy(sizePolicy1)
-        self.pushButton_10.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_10.setMaximumSize(QSize(202, 32))
         self.pushButton_10.setStyleSheet(u"\n"
 "                QPushButton#pushButton_10 {\n"
 "                 min-width: 200px;\n"
@@ -160,7 +162,7 @@ class Ui_MainWindow(object):
         self.pushButton_22.setObjectName(u"pushButton_22")
         sizePolicy1.setHeightForWidth(self.pushButton_22.sizePolicy().hasHeightForWidth())
         self.pushButton_22.setSizePolicy(sizePolicy1)
-        self.pushButton_22.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_22.setMaximumSize(QSize(202, 32))
         self.pushButton_22.setStyleSheet(u"\n"
 "                QPushButton#pushButton_22 {\n"
 "                 min-width: 200px;\n"
@@ -176,7 +178,7 @@ class Ui_MainWindow(object):
         self.pushButton_11.setObjectName(u"pushButton_11")
         sizePolicy1.setHeightForWidth(self.pushButton_11.sizePolicy().hasHeightForWidth())
         self.pushButton_11.setSizePolicy(sizePolicy1)
-        self.pushButton_11.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_11.setMaximumSize(QSize(202, 32))
         self.pushButton_11.setStyleSheet(u"\n"
 "                QPushButton#pushButton_11 {\n"
 "                 min-width: 200px;\n"
@@ -192,7 +194,7 @@ class Ui_MainWindow(object):
         self.pushButton_23.setObjectName(u"pushButton_23")
         sizePolicy1.setHeightForWidth(self.pushButton_23.sizePolicy().hasHeightForWidth())
         self.pushButton_23.setSizePolicy(sizePolicy1)
-        self.pushButton_23.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_23.setMaximumSize(QSize(202, 32))
         self.pushButton_23.setStyleSheet(u"\n"
 "                QPushButton#pushButton_23 {\n"
 "                 min-width: 200px;\n"
@@ -822,6 +824,32 @@ class Ui_MainWindow(object):
         self.textBrowser.setObjectName(u"textBrowser")
         self.textBrowser.setGeometry(QRect(0, 410, 771, 81))
         self.tabWidget.addTab(self.tab_7, "")
+        self.tab_8 = QWidget()
+        self.tab_8.setObjectName(u"tab_8")
+        self.graphicsView = QGraphicsView(self.tab_8)
+        self.graphicsView.setObjectName(u"graphicsView")
+        self.graphicsView.setGeometry(QRect(150, 0, 621, 431))
+        self.treeWidget = QTreeWidget(self.tab_8)
+        __qtreewidgetitem = QTreeWidgetItem(self.treeWidget)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        __qtreewidgetitem1 = QTreeWidgetItem(self.treeWidget)
+        QTreeWidgetItem(__qtreewidgetitem1)
+        QTreeWidgetItem(__qtreewidgetitem1)
+        QTreeWidgetItem(__qtreewidgetitem1)
+        QTreeWidgetItem(__qtreewidgetitem1)
+        QTreeWidgetItem(self.treeWidget)
+        QTreeWidgetItem(self.treeWidget)
+        QTreeWidgetItem(self.treeWidget)
+        QTreeWidgetItem(self.treeWidget)
+        self.treeWidget.setObjectName(u"treeWidget")
+        self.treeWidget.setGeometry(QRect(0, 0, 151, 501))
+        self.treeWidget.setDragEnabled(True)
+        self.treeWidget.setDragDropOverwriteMode(True)
+        self.treeWidget.setDragDropMode(QAbstractItemView.DragDropMode.DragDrop)
+        self.tabWidget.addTab(self.tab_8, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
@@ -979,7 +1007,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(5)
         self.tabWidget_2.setCurrentIndex(0)
 
 
@@ -1112,6 +1140,42 @@ class Ui_MainWindow(object):
         self.pushButton_31.setText(QCoreApplication.translate("MainWindow", u"\u793a\u4f8b\u4ee3\u78012", None))
         self.pushButton_32.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u884c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
+        ___qtreewidgetitem = self.treeWidget.headerItem()
+        ___qtreewidgetitem.setText(0, QCoreApplication.translate("MainWindow", u"\u4eff\u771f\u8bbe\u5907", None));
+
+        __sortingEnabled = self.treeWidget.isSortingEnabled()
+        self.treeWidget.setSortingEnabled(False)
+        ___qtreewidgetitem1 = self.treeWidget.topLevelItem(0)
+        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MainWindow", u"\u5904\u7406\u5668", None));
+        ___qtreewidgetitem2 = ___qtreewidgetitem1.child(0)
+        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MainWindow", u"i386", None));
+        ___qtreewidgetitem3 = ___qtreewidgetitem1.child(1)
+        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MainWindow", u"x86_64", None));
+        ___qtreewidgetitem4 = ___qtreewidgetitem1.child(2)
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
+        ___qtreewidgetitem5 = ___qtreewidgetitem1.child(3)
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"arm64", None));
+        ___qtreewidgetitem6 = self.treeWidget.topLevelItem(1)
+        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"USB", None));
+        ___qtreewidgetitem7 = ___qtreewidgetitem6.child(0)
+        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MainWindow", u"a", None));
+        ___qtreewidgetitem8 = ___qtreewidgetitem6.child(1)
+        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MainWindow", u"b", None));
+        ___qtreewidgetitem9 = ___qtreewidgetitem6.child(2)
+        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MainWindow", u"c", None));
+        ___qtreewidgetitem10 = ___qtreewidgetitem6.child(3)
+        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MainWindow", u"d", None));
+        ___qtreewidgetitem11 = self.treeWidget.topLevelItem(2)
+        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MainWindow", u"\u4e32\u53e3", None));
+        ___qtreewidgetitem12 = self.treeWidget.topLevelItem(3)
+        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"\u7f51\u5361", None));
+        ___qtreewidgetitem13 = self.treeWidget.topLevelItem(4)
+        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MainWindow", u"\u5b58\u50a8", None));
+        ___qtreewidgetitem14 = self.treeWidget.topLevelItem(5)
+        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MainWindow", u"\u6570\u6a21\u8f6c\u6362", None));
+        self.treeWidget.setSortingEnabled(__sortingEnabled)
+
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u4f5c\u56fe\u4eff\u771f\u5f00\u53d1", None))
         self.pushButton_68.setText(QCoreApplication.translate("MainWindow", u"QEMU\u76ee\u5f55", None))
         self.pushButton_71.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u5f55\u76ee\u5f55", None))
         self.pushButton_69.setText(QCoreApplication.translate("MainWindow", u"\u65e5\u5fd7\u76ee\u5f55", None))

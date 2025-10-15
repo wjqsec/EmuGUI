@@ -643,9 +643,14 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 pass
 
             if self.checkBox_debug.isChecked():
-                qemu_cmd = qemu_cmd + f" -s -S"
-                qemu_cmd_list.append(f"-s")
-                qemu_cmd_list.append(f"-S")
+               if mode == "固件托管仿真":
+                   qemu_cmd = qemu_cmd + f" -g 1234"
+                   qemu_cmd_list.append(f"-g")
+                   qemu_cmd_list.append(f"1234")
+               else:
+                   qemu_cmd = qemu_cmd + f" -s -S"
+                   qemu_cmd_list.append(f"-s")
+                   qemu_cmd_list.append(f"-S")
 
             if mode == "固件托管仿真":
                 qemu_cmd = qemu_cmd + f" \"{self.vmSpecs[13]}\""

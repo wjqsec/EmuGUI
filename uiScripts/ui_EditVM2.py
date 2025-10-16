@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -567,15 +567,15 @@ class Ui_Dialog(object):
         self.lbl_cpu.setText(QCoreApplication.translate("Dialog", u"CPU", None))
         self.lbl_ram.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
         self.lbl_machine.setText(QCoreApplication.translate("Dialog", u"Machine", None))
-        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
-        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"Machine", None))
         self.lbl_vhdp.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
         self.lbl_maxsize.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))
         self.lbl_cdc2.setText(QCoreApplication.translate("Dialog", u"CD controller 2", None))
-        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_cdc2.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc2.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc2.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
@@ -586,7 +586,7 @@ class Ui_Dialog(object):
 
         self.lbl_cdc1.setText(QCoreApplication.translate("Dialog", u"CD controller 1", None))
         self.btn_vhdp.setText(QCoreApplication.translate("Dialog", u"browse", None))
-        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_cdc1.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc1.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc1.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
@@ -608,23 +608,23 @@ class Ui_Dialog(object):
         self.cb_vhdf.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
 
         self.lbl_hddc.setText(QCoreApplication.translate("Dialog", u"HDD controller", None))
-        self.cb_hddc.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_hddc.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_hddc.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_hddc.setItemText(2, QCoreApplication.translate("Dialog", u"VirtIO SCSI", None))
         self.cb_hddc.setItemText(3, QCoreApplication.translate("Dialog", u"AHCI", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Dialog", u"virtual hard disks", None))
-        self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"USB Tablet Device (depreciated)", None))
-        self.cb_kbdtype.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 keyboard", None))
-        self.cb_kbdtype.setItemText(1, QCoreApplication.translate("Dialog", u"USB keyboard", None))
+        self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"USB \u5e73\u677f\u8bbe\u5907 (\u4e0d\u53ef\u7528)", None))
+        self.cb_kbdtype.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u952e\u76d8", None))
+        self.cb_kbdtype.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u952e\u76d8", None))
 
-        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 mouse", None))
-        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB mouse", None))
-        self.cb_mouse.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
+        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u9f20\u6807", None))
+        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u9f20\u6807", None))
+        self.cb_mouse.setItemText(2, QCoreApplication.translate("Dialog", u"USB \u5e73\u677f", None))
 
         self.lbl_mouse.setText(QCoreApplication.translate("Dialog", u"Mouse type", None))
-        self.lbl_kbdtype.setText(QCoreApplication.translate("Dialog", u"Keyboard type", None))
-        self.lbl_kbdlayout.setText(QCoreApplication.translate("Dialog", u"Keyboard layout", None))
+        self.lbl_kbdtype.setText(QCoreApplication.translate("Dialog", u"\u952e\u76d8\u7c7b\u578b", None))
+        self.lbl_kbdlayout.setText(QCoreApplication.translate("Dialog", u"\u952e\u76d8\u5e03\u5c40", None))
         self.cb_kbdlayout.setItemText(0, QCoreApplication.translate("Dialog", u"en-us", None))
         self.cb_kbdlayout.setItemText(1, QCoreApplication.translate("Dialog", u"en-gb", None))
         self.cb_kbdlayout.setItemText(2, QCoreApplication.translate("Dialog", u"de", None))
@@ -654,9 +654,9 @@ class Ui_Dialog(object):
 
         self.lbl_sound.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.chb_usb.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
-        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"\u5b89\u88c5 Windows 2000 (\u4e0d\u53ef\u7528)", None))
         self.lbl_addargs.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if necessary)", None))
-        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
         self.lbl_net.setText(QCoreApplication.translate("Dialog", u"\u7f51\u7edc\u9002\u914d\u5668", None))
         self.cb_sound.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))

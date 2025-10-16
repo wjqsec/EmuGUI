@@ -205,7 +205,7 @@
          <widget class="QComboBox" name="cb_cpu">
           <item>
            <property name="text">
-            <string>let QEMU decide</string>
+            <string>自动</string>
            </property>
           </item>
          </widget>
@@ -224,7 +224,7 @@
          <widget class="QComboBox" name="cb_machine">
           <item>
            <property name="text">
-            <string>let QEMU decide</string>
+            <string>自动</string>
            </property>
           </item>
          </widget>
@@ -273,7 +273,7 @@
        <widget class="QComboBox" name="cb_cdc2">
         <item>
          <property name="text">
-          <string>let QEMU decide</string>
+          <string>自动</string>
          </property>
         </item>
         <item>
@@ -330,7 +330,7 @@
        <widget class="QComboBox" name="cb_cdc1">
         <item>
          <property name="text">
-          <string>let QEMU decide</string>
+          <string>自动</string>
          </property>
         </item>
         <item>
@@ -453,7 +453,7 @@
        <widget class="QComboBox" name="cb_hddc">
         <item>
          <property name="text">
-          <string>let QEMU decide</string>
+          <string>自动</string>
          </property>
         </item>
         <item>
@@ -493,7 +493,7 @@
       <item row="3" column="0">
        <widget class="QCheckBox" name="checkBox_2">
         <property name="text">
-         <string>USB Tablet Device (depreciated)</string>
+         <string>USB 平板设备 (不可用)</string>
         </property>
        </widget>
       </item>
@@ -501,12 +501,12 @@
        <widget class="QComboBox" name="cb_kbdtype">
         <item>
          <property name="text">
-          <string>PS/2 keyboard</string>
+          <string>PS/2 键盘</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>USB keyboard</string>
+          <string>USB 键盘</string>
          </property>
         </item>
        </widget>
@@ -515,17 +515,17 @@
        <widget class="QComboBox" name="cb_mouse">
         <item>
          <property name="text">
-          <string>PS/2 mouse</string>
+          <string>PS/2 鼠标</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>USB mouse</string>
+          <string>USB 鼠标</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>USB Tablet Device</string>
+          <string>USB 平板</string>
          </property>
         </item>
        </widget>
@@ -540,14 +540,14 @@
       <item row="1" column="0">
        <widget class="QLabel" name="lbl_kbdtype">
         <property name="text">
-         <string>Keyboard type</string>
+         <string>键盘类型</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_kbdlayout">
         <property name="text">
-         <string>Keyboard layout</string>
+         <string>键盘布局</string>
         </property>
        </widget>
       </item>
@@ -779,7 +779,7 @@
       <item row="5" column="0">
        <widget class="QCheckBox" name="checkBox_3">
         <property name="text">
-         <string>I want to install Windows 2000 (depreciated)</string>
+         <string>安装 Windows 2000 (不可用)</string>
         </property>
        </widget>
       </item>
@@ -794,7 +794,7 @@
        <widget class="QComboBox" name="cb_vga">
         <item>
          <property name="text">
-          <string>let QEMU decide</string>
+          <string>自动</string>
          </property>
         </item>
        </widget>

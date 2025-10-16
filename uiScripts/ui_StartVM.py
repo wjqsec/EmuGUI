@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'StartVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -225,10 +225,10 @@ class Ui_Dialog(object):
         self.label_hook.setText(QCoreApplication.translate("Dialog", u"\u63d2\u6869", None))
         self.checkBox.setText(QCoreApplication.translate("Dialog", u"Use RTC option", None))
         self.label_log.setText(QCoreApplication.translate("Dialog", u"\u8bb0\u5f55", None))
-        self.pushButton_log.setText(QCoreApplication.translate("Dialog", u"Browse", None))
+        self.pushButton_log.setText(QCoreApplication.translate("Dialog", u"\u6d4f\u89c8", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Boot from", None))
         self.label_7.setText(QCoreApplication.translate("Dialog", u"Create the TPM from the terminal!", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Dialog", u"Set to system", None))
+        self.pushButton_5.setText(QCoreApplication.translate("Dialog", u"\u4f7f\u7528\u7cfb\u7edf\u65f6\u95f4", None))
         self.dateTimeEdit.setDisplayFormat(QCoreApplication.translate("Dialog", u"yyyy-MM-ddThh:mm:ss", None))
         self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Browse", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Browse", None))

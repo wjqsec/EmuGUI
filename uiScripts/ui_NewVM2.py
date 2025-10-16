@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'NewVM2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.2
+## Created by: Qt User Interface Compiler version 6.9.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1836,10 +1836,10 @@ class Ui_Dialog(object):
         self.pb_prev2.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pb_next2.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.pb_cancel2.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_machine.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
         self.cb_machine.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cpu.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
         self.cb_cpu.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
         self.btn_next3.setText(QCoreApplication.translate("Dialog", u"next >", None))
@@ -1870,7 +1870,7 @@ class Ui_Dialog(object):
         self.lbl_vhdU.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
         self.lbl_vhdP.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
         self.lbl_hddC.setText(QCoreApplication.translate("Dialog", u"HDD controller", None))
-        self.cb_hddC.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_hddC.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_hddC.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_hddC.setItemText(2, QCoreApplication.translate("Dialog", u"VirtIO SCSI", None))
         self.cb_hddC.setItemText(3, QCoreApplication.translate("Dialog", u"AHCI", None))
@@ -1882,15 +1882,15 @@ class Ui_Dialog(object):
         self.btn_prev4.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.btn_cancel4.setText(QCoreApplication.translate("Dialog", u"cancel", None))
         self.lbl_mouse.setText(QCoreApplication.translate("Dialog", u"mouse", None))
-        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_vga.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
 
         self.cb_vga.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a graphics adapter)", None))
         self.cb_net.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
 
         self.cb_net.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a network adapter)", None))
-        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Mouse", None))
-        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB Mouse", None))
-        self.cb_mouse.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
+        self.cb_mouse.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u9f20\u6807", None))
+        self.cb_mouse.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u9f20\u6807", None))
+        self.cb_mouse.setItemText(2, QCoreApplication.translate("Dialog", u"USB \u5e73\u677f\u8bbe\u5907", None))
 
         self.checkBox.setText(QCoreApplication.translate("Dialog", u"Yes, I want it (depreciated)", None))
         self.btn_cancel5.setText(QCoreApplication.translate("Dialog", u"cancel", None))
@@ -1911,8 +1911,8 @@ class Ui_Dialog(object):
         self.lbl_sound.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.cb_sound.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
 
-        self.cb_kbd.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
-        self.cb_kbd.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
+        self.cb_kbd.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 \u952e\u76d8", None))
+        self.cb_kbd.setItemText(1, QCoreApplication.translate("Dialog", u"USB \u952e\u76d8", None))
 
         self.cb_kbdlayout.setItemText(0, QCoreApplication.translate("Dialog", u"en-us", None))
         self.cb_kbdlayout.setItemText(1, QCoreApplication.translate("Dialog", u"en-gb", None))
@@ -1958,7 +1958,7 @@ class Ui_Dialog(object):
         self.pushButton_45.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_46.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.pushButton_47.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_23.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_23.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_23.setItemText(1, QCoreApplication.translate("Dialog", u"microvm", None))
         self.comboBox_23.setItemText(2, QCoreApplication.translate("Dialog", u"pc", None))
         self.comboBox_23.setItemText(3, QCoreApplication.translate("Dialog", u"q35", None))
@@ -1966,7 +1966,7 @@ class Ui_Dialog(object):
         self.comboBox_23.setItemText(5, QCoreApplication.translate("Dialog", u"none", None))
 
         self.comboBox_23.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.comboBox_24.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_24.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_24.setItemText(1, QCoreApplication.translate("Dialog", u"486", None))
         self.comboBox_24.setItemText(2, QCoreApplication.translate("Dialog", u"Broadwell", None))
         self.comboBox_24.setItemText(3, QCoreApplication.translate("Dialog", u"Cascadelake-Server", None))
@@ -2017,7 +2017,7 @@ class Ui_Dialog(object):
         self.pushButton_48.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_49.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.pushButton_50.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_25.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_25.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_25.setItemText(1, QCoreApplication.translate("Dialog", u"40p", None))
         self.comboBox_25.setItemText(2, QCoreApplication.translate("Dialog", u"bamboo", None))
         self.comboBox_25.setItemText(3, QCoreApplication.translate("Dialog", u"g3beige", None))
@@ -2034,7 +2034,7 @@ class Ui_Dialog(object):
         self.comboBox_25.setItemText(14, QCoreApplication.translate("Dialog", u"virtex-ml507", None))
 
         self.comboBox_25.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.comboBox_26.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_26.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_26.setItemText(1, QCoreApplication.translate("Dialog", u"603", None))
         self.comboBox_26.setItemText(2, QCoreApplication.translate("Dialog", u"604", None))
         self.comboBox_26.setItemText(3, QCoreApplication.translate("Dialog", u"603e", None))
@@ -2117,7 +2117,7 @@ class Ui_Dialog(object):
         self.pushButton_51.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_52.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.pushButton_53.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_27.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_27.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_27.setItemText(1, QCoreApplication.translate("Dialog", u"boston", None))
         self.comboBox_27.setItemText(2, QCoreApplication.translate("Dialog", u"fuloong2e", None))
         self.comboBox_27.setItemText(3, QCoreApplication.translate("Dialog", u"loongson3-virt", None))
@@ -2128,7 +2128,7 @@ class Ui_Dialog(object):
         self.comboBox_27.setItemText(8, QCoreApplication.translate("Dialog", u"pica61", None))
 
         self.comboBox_27.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.comboBox_28.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_28.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_28.setItemText(1, QCoreApplication.translate("Dialog", u"4Kc", None))
         self.comboBox_28.setItemText(2, QCoreApplication.translate("Dialog", u"4Km", None))
         self.comboBox_28.setItemText(3, QCoreApplication.translate("Dialog", u"4KEcR1", None))
@@ -2168,7 +2168,7 @@ class Ui_Dialog(object):
         self.pushButton_54.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_55.setText(QCoreApplication.translate("Dialog", u"next >", None))
         self.pushButton_56.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_29.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_29.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_29.setItemText(1, QCoreApplication.translate("Dialog", u"virt", None))
         self.comboBox_29.setItemText(2, QCoreApplication.translate("Dialog", u"akita", None))
         self.comboBox_29.setItemText(3, QCoreApplication.translate("Dialog", u"ast2500-evb", None))
@@ -2188,7 +2188,7 @@ class Ui_Dialog(object):
         self.comboBox_29.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
 
         self.comboBox_29.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.comboBox_30.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_30.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_30.setItemText(1, QCoreApplication.translate("Dialog", u"cortex-a57", None))
         self.comboBox_30.setItemText(2, QCoreApplication.translate("Dialog", u"cortex-a15", None))
         self.comboBox_30.setItemText(3, QCoreApplication.translate("Dialog", u"cortex-a9", None))
@@ -2228,7 +2228,7 @@ class Ui_Dialog(object):
         self.label_53.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.pushButton_58.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_59.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_31.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_31.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_31.setItemText(1, QCoreApplication.translate("Dialog", u"SPARCClassic", None))
         self.comboBox_31.setItemText(2, QCoreApplication.translate("Dialog", u"SPARCbook", None))
         self.comboBox_31.setItemText(3, QCoreApplication.translate("Dialog", u"SS-10", None))
@@ -2245,7 +2245,7 @@ class Ui_Dialog(object):
         self.label_55.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.pushButton_61.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_62.setText(QCoreApplication.translate("Dialog", u"cancel", None))
-        self.comboBox_32.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_32.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_32.setItemText(1, QCoreApplication.translate("Dialog", u"niagara", None))
         self.comboBox_32.setItemText(2, QCoreApplication.translate("Dialog", u"sun4u", None))
         self.comboBox_32.setItemText(3, QCoreApplication.translate("Dialog", u"sun4v", None))
@@ -2285,7 +2285,7 @@ class Ui_Dialog(object):
         self.pushButton_68.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.pushButton_69.setText(QCoreApplication.translate("Dialog", u"cancel", None))
         self.label_63.setText(QCoreApplication.translate("Dialog", u"mouse", None))
-        self.comboBox_36.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.comboBox_36.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.comboBox_36.setItemText(1, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_36.setItemText(2, QCoreApplication.translate("Dialog", u"std", None))
         self.comboBox_36.setItemText(3, QCoreApplication.translate("Dialog", u"vmware", None))
@@ -2393,7 +2393,7 @@ class Ui_Dialog(object):
         self.btn_prev8.setText(QCoreApplication.translate("Dialog", u"< previous", None))
         self.lbl_cdc2.setText(QCoreApplication.translate("Dialog", u"CD controller 2", None))
         self.lbl_cdc1.setText(QCoreApplication.translate("Dialog", u"CD controller 1", None))
-        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cdc1.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_cdc1.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc1.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc1.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
@@ -2406,7 +2406,7 @@ class Ui_Dialog(object):
         self.cb_accel.setItemText(4, QCoreApplication.translate("Dialog", u"WHPX (kernel-irqchip off)", None))
         self.cb_accel.setItemText(5, QCoreApplication.translate("Dialog", u"KVM", None))
 
-        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"let QEMU decide", None))
+        self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"\u81ea\u52a8", None))
         self.cb_cdc2.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
         self.cb_cdc2.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
         self.cb_cdc2.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))

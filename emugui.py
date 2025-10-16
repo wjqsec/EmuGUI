@@ -1390,7 +1390,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(debug_db_settings)
             connection.commit()
-            print(cursor.fetchall())
+            # print(cursor.fetchall())
             print("The query was executed successfully.")
         
         except sqlite3.Error as e:

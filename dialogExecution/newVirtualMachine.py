@@ -38,7 +38,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         
         # self.setWindowTitle("EmuGUI - Create new VM")
-        self.setWindowTitle("EmuGUI - 新建VM")
+        self.setWindowTitle("EmuGUI - 新建虚拟机")
         
         self.langDetect()
         
@@ -62,7 +62,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.cb_vhdU.count():
-            if self.cb_vhdU.itemText(i) == "Don't add a virtual hard drive":
+            if self.cb_vhdU.itemText(i) == "不使用虚拟硬盘":
                 self.cb_vhdU.setCurrentIndex(i)
                 break
 
@@ -72,7 +72,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.vhdAddingChange()
         self.hw_plugins = hwpr.read_hw_plugin()
         self.setupCB()
-
+        print(self.cb_machine.count())
         self.logman.writeToLogFile(
             f"{errors.errCodes.errCodes[48]}: GUI \"New virtual machine\" opened successfully"
             )

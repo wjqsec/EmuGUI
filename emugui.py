@@ -62,7 +62,8 @@ from dialogExecution.EditCode import EditCodeDialog
 from dialogExecution.DeviceInfo import DeviceInfoDialog
 from dialogExecution.DevConfig import DevConfigDialog
 from dialogExecution.settingsRequireRestart import *
-
+from plugins.pluginmgr.hw_reader import read_hw_plugin, add_new_hw_plugin, insert_line
+import services.pathfinder as pf
 try:
     import translations.en
     import locale
@@ -115,10 +116,15 @@ class DeviceButton(QPushButton):
         self.clicked.connect(self.on_click)
 
     def show_feature(self):
-        pass
+        config_data= [["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True]]
+        dialog = DevConfigDialog(config_data)
+        dialog.exec()
+        print(config_data)
+
     def remove_self(self):
         self.setParent(None)
         self.deleteLater()
+
     def on_click(self):
         pos = self.mapToGlobal(self.rect().bottomLeft())
         menu = QMenu()
@@ -4016,7 +4022,8 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         return mime_data
     
     def aaa(self):
-        pass
+        return
+        
     
     def show_bus1_menu(self):
         pos = self.pushButton_72.mapToGlobal(self.pushButton_72.rect().bottomLeft())
@@ -4180,10 +4187,41 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.disable_bus3()
         self.cpu_added = False
     def dev_config(self):
-        config_data= [["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True]]
-        dialog = DevConfigDialog(config_data)
-        dialog.exec()
-        print(config_data)
+        if self.pushButton_66.text() != "":
+            new_c_file = f"{self.lineEdit_14.text()}.c"
+            exec_folder = pf.retrieveExecFolder()
+            meson_dir = f"{exec_folder}qemu/qemu-10.1.0/hw/"
+            line_insert = 0
+            if self.pushButton_66.text() == "x86":
+                meson_dir += "i386/"
+                line_insert = 7
+            elif self.pushButton_66.text() == "mipsel":
+                meson_dir += "mips/"
+                line_insert = 6
+            elif self.pushButton_66.text() == "mips64el":
+                meson_dir += "mips/"
+            elif self.pushButton_66.text() == "ppc":
+                meson_dir += "ppc/"
+            elif self.pushButton_66.text() == "arm":
+                meson_dir += "arm/"
+            elif self.pushButton_66.text() == "aarch64":
+                meson_dir += "arm/"
+            elif self.pushButton_66.text() == "riscv32":
+                meson_dir += "riscv/"
+            elif self.pushButton_66.text() == "riscv64":
+                meson_dir += "riscv/"
+            meson_dir += "meson.build"
+            insert_line(meson_dir, line_insert, f"'{new_c_file}',")
+
+            name = self.lineEdit_14.text()
+            ret = add_new_hw_plugin(self.pushButton_66.text(),name)
+            msgBox = QMessageBox()
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            if ret:
+                msgBox.setText("配置成功！")
+            else:
+                msgBox.setText("配置失败！")
+            msgBox.exec()
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

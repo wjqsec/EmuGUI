@@ -72,7 +72,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.vhdAddingChange()
         self.hw_plugins = hwpr.read_hw_plugin()
         self.setupCB()
-        print(self.cb_machine.count())
+
         self.logman.writeToLogFile(
             f"{errors.errCodes.errCodes[48]}: GUI \"New virtual machine\" opened successfully"
             )

@@ -839,8 +839,6 @@ class Ui_MainWindow(object):
         QTreeWidgetItem(__qtreewidgetitem)
         QTreeWidgetItem(__qtreewidgetitem)
         QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
         __qtreewidgetitem1 = QTreeWidgetItem(self.treeWidget)
         QTreeWidgetItem(__qtreewidgetitem1)
         QTreeWidgetItem(__qtreewidgetitem1)
@@ -1292,137 +1290,133 @@ class Ui_MainWindow(object):
         ___qtreewidgetitem1 = self.treeWidget.topLevelItem(0)
         ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MainWindow", u"\u5904\u7406\u5668", None));
         ___qtreewidgetitem2 = ___qtreewidgetitem1.child(0)
-        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MainWindow", u"i386", None));
+        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MainWindow", u"x86", None));
         ___qtreewidgetitem3 = ___qtreewidgetitem1.child(1)
-        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MainWindow", u"x86_64", None));
+        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MainWindow", u"mipsel", None));
         ___qtreewidgetitem4 = ___qtreewidgetitem1.child(2)
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"mipsel", None));
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"mips64el", None));
         ___qtreewidgetitem5 = ___qtreewidgetitem1.child(3)
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"mips64el", None));
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"ppc", None));
         ___qtreewidgetitem6 = ___qtreewidgetitem1.child(4)
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"ppc", None));
+        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
         ___qtreewidgetitem7 = ___qtreewidgetitem1.child(5)
-        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MainWindow", u"ppc64", None));
+        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MainWindow", u"aarch64", None));
         ___qtreewidgetitem8 = ___qtreewidgetitem1.child(6)
-        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
+        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MainWindow", u"riscv32", None));
         ___qtreewidgetitem9 = ___qtreewidgetitem1.child(7)
-        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MainWindow", u"aarch64", None));
-        ___qtreewidgetitem10 = ___qtreewidgetitem1.child(8)
-        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MainWindow", u"riscv32", None));
-        ___qtreewidgetitem11 = ___qtreewidgetitem1.child(9)
-        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MainWindow", u"riscv64", None));
-        ___qtreewidgetitem12 = self.treeWidget.topLevelItem(1)
-        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"\u603b\u7ebf", None));
-        ___qtreewidgetitem13 = ___qtreewidgetitem12.child(0)
-        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MainWindow", u"pci", None));
-        ___qtreewidgetitem14 = ___qtreewidgetitem12.child(1)
-        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MainWindow", u"sys", None));
-        ___qtreewidgetitem15 = ___qtreewidgetitem12.child(2)
-        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MainWindow", u"pcie", None));
-        ___qtreewidgetitem16 = self.treeWidget.topLevelItem(2)
-        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MainWindow", u"USB", None));
-        ___qtreewidgetitem17 = ___qtreewidgetitem16.child(0)
-        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-ehci1", None));
-        ___qtreewidgetitem18 = ___qtreewidgetitem16.child(1)
-        ___qtreewidgetitem18.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-ehci2", None));
-        ___qtreewidgetitem19 = ___qtreewidgetitem16.child(2)
-        ___qtreewidgetitem19.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-uhci1", None));
-        ___qtreewidgetitem20 = ___qtreewidgetitem16.child(3)
-        ___qtreewidgetitem20.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-uhci2", None));
-        ___qtreewidgetitem21 = ___qtreewidgetitem16.child(4)
-        ___qtreewidgetitem21.setText(0, QCoreApplication.translate("MainWindow", u"nec-usb-xhci", None));
-        ___qtreewidgetitem22 = ___qtreewidgetitem16.child(5)
-        ___qtreewidgetitem22.setText(0, QCoreApplication.translate("MainWindow", u"piix3-usb-uhci", None));
-        ___qtreewidgetitem23 = ___qtreewidgetitem16.child(6)
-        ___qtreewidgetitem23.setText(0, QCoreApplication.translate("MainWindow", u"piix4-usb-uhci", None));
-        ___qtreewidgetitem24 = ___qtreewidgetitem16.child(7)
-        ___qtreewidgetitem24.setText(0, QCoreApplication.translate("MainWindow", u"qemu-xhci", None));
-        ___qtreewidgetitem25 = ___qtreewidgetitem16.child(8)
-        ___qtreewidgetitem25.setText(0, QCoreApplication.translate("MainWindow", u"usb-ehci", None));
-        ___qtreewidgetitem26 = self.treeWidget.topLevelItem(3)
-        ___qtreewidgetitem26.setText(0, QCoreApplication.translate("MainWindow", u"\u4e32\u53e3", None));
-        ___qtreewidgetitem27 = ___qtreewidgetitem26.child(0)
-        ___qtreewidgetitem27.setText(0, QCoreApplication.translate("MainWindow", u"i8042", None));
-        ___qtreewidgetitem28 = ___qtreewidgetitem26.child(1)
-        ___qtreewidgetitem28.setText(0, QCoreApplication.translate("MainWindow", u"pci-serial", None));
-        ___qtreewidgetitem29 = ___qtreewidgetitem26.child(2)
-        ___qtreewidgetitem29.setText(0, QCoreApplication.translate("MainWindow", u"tpci200", None));
-        ___qtreewidgetitem30 = ___qtreewidgetitem26.child(3)
-        ___qtreewidgetitem30.setText(0, QCoreApplication.translate("MainWindow", u"usb-serial", None));
-        ___qtreewidgetitem31 = ___qtreewidgetitem26.child(4)
-        ___qtreewidgetitem31.setText(0, QCoreApplication.translate("MainWindow", u"virtio-serial-pci", None));
-        ___qtreewidgetitem32 = self.treeWidget.topLevelItem(4)
-        ___qtreewidgetitem32.setText(0, QCoreApplication.translate("MainWindow", u"\u7f51\u5361", None));
-        ___qtreewidgetitem33 = ___qtreewidgetitem32.child(0)
-        ___qtreewidgetitem33.setText(0, QCoreApplication.translate("MainWindow", u"e1000", None));
-        ___qtreewidgetitem34 = ___qtreewidgetitem32.child(1)
-        ___qtreewidgetitem34.setText(0, QCoreApplication.translate("MainWindow", u"e1000e", None));
-        ___qtreewidgetitem35 = ___qtreewidgetitem32.child(2)
-        ___qtreewidgetitem35.setText(0, QCoreApplication.translate("MainWindow", u"i82550", None));
-        ___qtreewidgetitem36 = ___qtreewidgetitem32.child(3)
-        ___qtreewidgetitem36.setText(0, QCoreApplication.translate("MainWindow", u"virtio-net-pci", None));
-        ___qtreewidgetitem37 = ___qtreewidgetitem32.child(4)
-        ___qtreewidgetitem37.setText(0, QCoreApplication.translate("MainWindow", u"i82558a", None));
-        ___qtreewidgetitem38 = ___qtreewidgetitem32.child(5)
-        ___qtreewidgetitem38.setText(0, QCoreApplication.translate("MainWindow", u"igb", None));
-        ___qtreewidgetitem39 = ___qtreewidgetitem32.child(6)
-        ___qtreewidgetitem39.setText(0, QCoreApplication.translate("MainWindow", u"ne2k_isa", None));
-        ___qtreewidgetitem40 = ___qtreewidgetitem32.child(7)
-        ___qtreewidgetitem40.setText(0, QCoreApplication.translate("MainWindow", u"ne2k_pci", None));
-        ___qtreewidgetitem41 = ___qtreewidgetitem32.child(8)
-        ___qtreewidgetitem41.setText(0, QCoreApplication.translate("MainWindow", u"rtl8139", None));
-        ___qtreewidgetitem42 = ___qtreewidgetitem32.child(9)
-        ___qtreewidgetitem42.setText(0, QCoreApplication.translate("MainWindow", u"usb-net", None));
-        ___qtreewidgetitem43 = self.treeWidget.topLevelItem(5)
-        ___qtreewidgetitem43.setText(0, QCoreApplication.translate("MainWindow", u"\u5b58\u50a8", None));
-        ___qtreewidgetitem44 = ___qtreewidgetitem43.child(0)
-        ___qtreewidgetitem44.setText(0, QCoreApplication.translate("MainWindow", u"am53c974", None));
-        ___qtreewidgetitem45 = ___qtreewidgetitem43.child(1)
-        ___qtreewidgetitem45.setText(0, QCoreApplication.translate("MainWindow", u"dc390", None));
-        ___qtreewidgetitem46 = ___qtreewidgetitem43.child(2)
-        ___qtreewidgetitem46.setText(0, QCoreApplication.translate("MainWindow", u"floppy", None));
-        ___qtreewidgetitem47 = ___qtreewidgetitem43.child(3)
-        ___qtreewidgetitem47.setText(0, QCoreApplication.translate("MainWindow", u"ich9-ahci", None));
-        ___qtreewidgetitem48 = ___qtreewidgetitem43.child(4)
-        ___qtreewidgetitem48.setText(0, QCoreApplication.translate("MainWindow", u"ide-cd", None));
-        ___qtreewidgetitem49 = ___qtreewidgetitem43.child(5)
-        ___qtreewidgetitem49.setText(0, QCoreApplication.translate("MainWindow", u"ide-cf", None));
-        ___qtreewidgetitem50 = ___qtreewidgetitem43.child(6)
-        ___qtreewidgetitem50.setText(0, QCoreApplication.translate("MainWindow", u"ide-hd", None));
-        ___qtreewidgetitem51 = ___qtreewidgetitem43.child(7)
-        ___qtreewidgetitem51.setText(0, QCoreApplication.translate("MainWindow", u"isa-fdc", None));
-        ___qtreewidgetitem52 = ___qtreewidgetitem43.child(8)
-        ___qtreewidgetitem52.setText(0, QCoreApplication.translate("MainWindow", u"isa-ide", None));
-        ___qtreewidgetitem53 = ___qtreewidgetitem43.child(9)
-        ___qtreewidgetitem53.setText(0, QCoreApplication.translate("MainWindow", u"sd-card", None));
-        ___qtreewidgetitem54 = ___qtreewidgetitem43.child(10)
-        ___qtreewidgetitem54.setText(0, QCoreApplication.translate("MainWindow", u"usb-uas", None));
-        ___qtreewidgetitem55 = ___qtreewidgetitem43.child(11)
-        ___qtreewidgetitem55.setText(0, QCoreApplication.translate("MainWindow", u"virtio-blk-pci", None));
-        ___qtreewidgetitem56 = self.treeWidget.topLevelItem(6)
-        ___qtreewidgetitem56.setText(0, QCoreApplication.translate("MainWindow", u"\u663e\u793a\u8bbe\u5907", None));
-        ___qtreewidgetitem57 = ___qtreewidgetitem56.child(0)
-        ___qtreewidgetitem57.setText(0, QCoreApplication.translate("MainWindow", u"ati-vga", None));
-        ___qtreewidgetitem58 = ___qtreewidgetitem56.child(1)
-        ___qtreewidgetitem58.setText(0, QCoreApplication.translate("MainWindow", u"cirrus-vga", None));
-        ___qtreewidgetitem59 = ___qtreewidgetitem56.child(2)
-        ___qtreewidgetitem59.setText(0, QCoreApplication.translate("MainWindow", u"VGA", None));
-        ___qtreewidgetitem60 = ___qtreewidgetitem56.child(3)
-        ___qtreewidgetitem60.setText(0, QCoreApplication.translate("MainWindow", u"virtio-gpu-pci", None));
-        ___qtreewidgetitem61 = self.treeWidget.topLevelItem(7)
-        ___qtreewidgetitem61.setText(0, QCoreApplication.translate("MainWindow", u"\u58f0\u5361", None));
-        ___qtreewidgetitem62 = ___qtreewidgetitem61.child(0)
-        ___qtreewidgetitem62.setText(0, QCoreApplication.translate("MainWindow", u"AC97", None));
-        ___qtreewidgetitem63 = ___qtreewidgetitem61.child(1)
-        ___qtreewidgetitem63.setText(0, QCoreApplication.translate("MainWindow", u"adlib", None));
-        ___qtreewidgetitem64 = ___qtreewidgetitem61.child(2)
-        ___qtreewidgetitem64.setText(0, QCoreApplication.translate("MainWindow", u"cs4231a", None));
-        ___qtreewidgetitem65 = ___qtreewidgetitem61.child(3)
-        ___qtreewidgetitem65.setText(0, QCoreApplication.translate("MainWindow", u"ES1370", None));
-        ___qtreewidgetitem66 = self.treeWidget.topLevelItem(8)
-        ___qtreewidgetitem66.setText(0, QCoreApplication.translate("MainWindow", u"\u81ea\u5b9a\u4e49", None));
-        ___qtreewidgetitem67 = ___qtreewidgetitem66.child(0)
-        ___qtreewidgetitem67.setText(0, QCoreApplication.translate("MainWindow", u"\u81ea\u5b9a\u4e49\u8bbe\u5907", None));
+        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MainWindow", u"riscv64", None));
+        ___qtreewidgetitem10 = self.treeWidget.topLevelItem(1)
+        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MainWindow", u"\u603b\u7ebf", None));
+        ___qtreewidgetitem11 = ___qtreewidgetitem10.child(0)
+        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MainWindow", u"pci", None));
+        ___qtreewidgetitem12 = ___qtreewidgetitem10.child(1)
+        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"sys", None));
+        ___qtreewidgetitem13 = ___qtreewidgetitem10.child(2)
+        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MainWindow", u"pcie", None));
+        ___qtreewidgetitem14 = self.treeWidget.topLevelItem(2)
+        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MainWindow", u"USB", None));
+        ___qtreewidgetitem15 = ___qtreewidgetitem14.child(0)
+        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-ehci1", None));
+        ___qtreewidgetitem16 = ___qtreewidgetitem14.child(1)
+        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-ehci2", None));
+        ___qtreewidgetitem17 = ___qtreewidgetitem14.child(2)
+        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-uhci1", None));
+        ___qtreewidgetitem18 = ___qtreewidgetitem14.child(3)
+        ___qtreewidgetitem18.setText(0, QCoreApplication.translate("MainWindow", u"ich9-usb-uhci2", None));
+        ___qtreewidgetitem19 = ___qtreewidgetitem14.child(4)
+        ___qtreewidgetitem19.setText(0, QCoreApplication.translate("MainWindow", u"nec-usb-xhci", None));
+        ___qtreewidgetitem20 = ___qtreewidgetitem14.child(5)
+        ___qtreewidgetitem20.setText(0, QCoreApplication.translate("MainWindow", u"piix3-usb-uhci", None));
+        ___qtreewidgetitem21 = ___qtreewidgetitem14.child(6)
+        ___qtreewidgetitem21.setText(0, QCoreApplication.translate("MainWindow", u"piix4-usb-uhci", None));
+        ___qtreewidgetitem22 = ___qtreewidgetitem14.child(7)
+        ___qtreewidgetitem22.setText(0, QCoreApplication.translate("MainWindow", u"qemu-xhci", None));
+        ___qtreewidgetitem23 = ___qtreewidgetitem14.child(8)
+        ___qtreewidgetitem23.setText(0, QCoreApplication.translate("MainWindow", u"usb-ehci", None));
+        ___qtreewidgetitem24 = self.treeWidget.topLevelItem(3)
+        ___qtreewidgetitem24.setText(0, QCoreApplication.translate("MainWindow", u"\u4e32\u53e3", None));
+        ___qtreewidgetitem25 = ___qtreewidgetitem24.child(0)
+        ___qtreewidgetitem25.setText(0, QCoreApplication.translate("MainWindow", u"i8042", None));
+        ___qtreewidgetitem26 = ___qtreewidgetitem24.child(1)
+        ___qtreewidgetitem26.setText(0, QCoreApplication.translate("MainWindow", u"pci-serial", None));
+        ___qtreewidgetitem27 = ___qtreewidgetitem24.child(2)
+        ___qtreewidgetitem27.setText(0, QCoreApplication.translate("MainWindow", u"tpci200", None));
+        ___qtreewidgetitem28 = ___qtreewidgetitem24.child(3)
+        ___qtreewidgetitem28.setText(0, QCoreApplication.translate("MainWindow", u"usb-serial", None));
+        ___qtreewidgetitem29 = ___qtreewidgetitem24.child(4)
+        ___qtreewidgetitem29.setText(0, QCoreApplication.translate("MainWindow", u"virtio-serial-pci", None));
+        ___qtreewidgetitem30 = self.treeWidget.topLevelItem(4)
+        ___qtreewidgetitem30.setText(0, QCoreApplication.translate("MainWindow", u"\u7f51\u5361", None));
+        ___qtreewidgetitem31 = ___qtreewidgetitem30.child(0)
+        ___qtreewidgetitem31.setText(0, QCoreApplication.translate("MainWindow", u"e1000", None));
+        ___qtreewidgetitem32 = ___qtreewidgetitem30.child(1)
+        ___qtreewidgetitem32.setText(0, QCoreApplication.translate("MainWindow", u"e1000e", None));
+        ___qtreewidgetitem33 = ___qtreewidgetitem30.child(2)
+        ___qtreewidgetitem33.setText(0, QCoreApplication.translate("MainWindow", u"i82550", None));
+        ___qtreewidgetitem34 = ___qtreewidgetitem30.child(3)
+        ___qtreewidgetitem34.setText(0, QCoreApplication.translate("MainWindow", u"virtio-net-pci", None));
+        ___qtreewidgetitem35 = ___qtreewidgetitem30.child(4)
+        ___qtreewidgetitem35.setText(0, QCoreApplication.translate("MainWindow", u"i82558a", None));
+        ___qtreewidgetitem36 = ___qtreewidgetitem30.child(5)
+        ___qtreewidgetitem36.setText(0, QCoreApplication.translate("MainWindow", u"igb", None));
+        ___qtreewidgetitem37 = ___qtreewidgetitem30.child(6)
+        ___qtreewidgetitem37.setText(0, QCoreApplication.translate("MainWindow", u"ne2k_isa", None));
+        ___qtreewidgetitem38 = ___qtreewidgetitem30.child(7)
+        ___qtreewidgetitem38.setText(0, QCoreApplication.translate("MainWindow", u"ne2k_pci", None));
+        ___qtreewidgetitem39 = ___qtreewidgetitem30.child(8)
+        ___qtreewidgetitem39.setText(0, QCoreApplication.translate("MainWindow", u"rtl8139", None));
+        ___qtreewidgetitem40 = ___qtreewidgetitem30.child(9)
+        ___qtreewidgetitem40.setText(0, QCoreApplication.translate("MainWindow", u"usb-net", None));
+        ___qtreewidgetitem41 = self.treeWidget.topLevelItem(5)
+        ___qtreewidgetitem41.setText(0, QCoreApplication.translate("MainWindow", u"\u5b58\u50a8", None));
+        ___qtreewidgetitem42 = ___qtreewidgetitem41.child(0)
+        ___qtreewidgetitem42.setText(0, QCoreApplication.translate("MainWindow", u"am53c974", None));
+        ___qtreewidgetitem43 = ___qtreewidgetitem41.child(1)
+        ___qtreewidgetitem43.setText(0, QCoreApplication.translate("MainWindow", u"dc390", None));
+        ___qtreewidgetitem44 = ___qtreewidgetitem41.child(2)
+        ___qtreewidgetitem44.setText(0, QCoreApplication.translate("MainWindow", u"floppy", None));
+        ___qtreewidgetitem45 = ___qtreewidgetitem41.child(3)
+        ___qtreewidgetitem45.setText(0, QCoreApplication.translate("MainWindow", u"ich9-ahci", None));
+        ___qtreewidgetitem46 = ___qtreewidgetitem41.child(4)
+        ___qtreewidgetitem46.setText(0, QCoreApplication.translate("MainWindow", u"ide-cd", None));
+        ___qtreewidgetitem47 = ___qtreewidgetitem41.child(5)
+        ___qtreewidgetitem47.setText(0, QCoreApplication.translate("MainWindow", u"ide-cf", None));
+        ___qtreewidgetitem48 = ___qtreewidgetitem41.child(6)
+        ___qtreewidgetitem48.setText(0, QCoreApplication.translate("MainWindow", u"ide-hd", None));
+        ___qtreewidgetitem49 = ___qtreewidgetitem41.child(7)
+        ___qtreewidgetitem49.setText(0, QCoreApplication.translate("MainWindow", u"isa-fdc", None));
+        ___qtreewidgetitem50 = ___qtreewidgetitem41.child(8)
+        ___qtreewidgetitem50.setText(0, QCoreApplication.translate("MainWindow", u"isa-ide", None));
+        ___qtreewidgetitem51 = ___qtreewidgetitem41.child(9)
+        ___qtreewidgetitem51.setText(0, QCoreApplication.translate("MainWindow", u"sd-card", None));
+        ___qtreewidgetitem52 = ___qtreewidgetitem41.child(10)
+        ___qtreewidgetitem52.setText(0, QCoreApplication.translate("MainWindow", u"usb-uas", None));
+        ___qtreewidgetitem53 = ___qtreewidgetitem41.child(11)
+        ___qtreewidgetitem53.setText(0, QCoreApplication.translate("MainWindow", u"virtio-blk-pci", None));
+        ___qtreewidgetitem54 = self.treeWidget.topLevelItem(6)
+        ___qtreewidgetitem54.setText(0, QCoreApplication.translate("MainWindow", u"\u663e\u793a\u8bbe\u5907", None));
+        ___qtreewidgetitem55 = ___qtreewidgetitem54.child(0)
+        ___qtreewidgetitem55.setText(0, QCoreApplication.translate("MainWindow", u"ati-vga", None));
+        ___qtreewidgetitem56 = ___qtreewidgetitem54.child(1)
+        ___qtreewidgetitem56.setText(0, QCoreApplication.translate("MainWindow", u"cirrus-vga", None));
+        ___qtreewidgetitem57 = ___qtreewidgetitem54.child(2)
+        ___qtreewidgetitem57.setText(0, QCoreApplication.translate("MainWindow", u"VGA", None));
+        ___qtreewidgetitem58 = ___qtreewidgetitem54.child(3)
+        ___qtreewidgetitem58.setText(0, QCoreApplication.translate("MainWindow", u"virtio-gpu-pci", None));
+        ___qtreewidgetitem59 = self.treeWidget.topLevelItem(7)
+        ___qtreewidgetitem59.setText(0, QCoreApplication.translate("MainWindow", u"\u58f0\u5361", None));
+        ___qtreewidgetitem60 = ___qtreewidgetitem59.child(0)
+        ___qtreewidgetitem60.setText(0, QCoreApplication.translate("MainWindow", u"AC97", None));
+        ___qtreewidgetitem61 = ___qtreewidgetitem59.child(1)
+        ___qtreewidgetitem61.setText(0, QCoreApplication.translate("MainWindow", u"adlib", None));
+        ___qtreewidgetitem62 = ___qtreewidgetitem59.child(2)
+        ___qtreewidgetitem62.setText(0, QCoreApplication.translate("MainWindow", u"cs4231a", None));
+        ___qtreewidgetitem63 = ___qtreewidgetitem59.child(3)
+        ___qtreewidgetitem63.setText(0, QCoreApplication.translate("MainWindow", u"ES1370", None));
+        ___qtreewidgetitem64 = self.treeWidget.topLevelItem(8)
+        ___qtreewidgetitem64.setText(0, QCoreApplication.translate("MainWindow", u"\u81ea\u5b9a\u4e49", None));
+        ___qtreewidgetitem65 = ___qtreewidgetitem64.child(0)
+        ___qtreewidgetitem65.setText(0, QCoreApplication.translate("MainWindow", u"\u81ea\u5b9a\u4e49\u8bbe\u5907", None));
         self.treeWidget.setSortingEnabled(__sortingEnabled)
 
         self.pushButton_66.setText("")

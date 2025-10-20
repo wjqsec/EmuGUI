@@ -6,6 +6,7 @@ def retrieveExecFolder():
     exec_dir = ""
 
     if platform.system() == "Windows":
+        print("Windows detected")
         if __file__.endswith(".py"):
             exec_dir = re.sub(r"services\\pathfinder.py$", "", __file__)
 

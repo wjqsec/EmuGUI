@@ -1891,12 +1891,7 @@
           </property>
           <item>
            <property name="text">
-            <string>i386</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>x86_64</string>
+            <string>x86</string>
            </property>
           </item>
           <item>
@@ -1912,11 +1907,6 @@
           <item>
            <property name="text">
             <string>ppc</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ppc64</string>
            </property>
           </item>
           <item>

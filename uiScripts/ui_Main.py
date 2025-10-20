@@ -835,6 +835,12 @@ class Ui_MainWindow(object):
         QTreeWidgetItem(__qtreewidgetitem)
         QTreeWidgetItem(__qtreewidgetitem)
         QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
+        QTreeWidgetItem(__qtreewidgetitem)
         __qtreewidgetitem1 = QTreeWidgetItem(self.treeWidget)
         QTreeWidgetItem(__qtreewidgetitem1)
         QTreeWidgetItem(__qtreewidgetitem1)
@@ -922,6 +928,27 @@ class Ui_MainWindow(object):
         self.pushButton_92.setObjectName(u"pushButton_92")
         self.pushButton_92.setEnabled(False)
         self.pushButton_92.setGeometry(QRect(170, 330, 61, 31))
+        self.horizontalWidget_0 = QWidget(self.tab_8)
+        self.horizontalWidget_0.setObjectName(u"horizontalWidget_0")
+        self.horizontalWidget_0.setGeometry(QRect(190, 440, 551, 61))
+        self.horizontalLayout_5 = QHBoxLayout(self.horizontalWidget_0)
+        self.horizontalLayout_5.setSpacing(100)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.lineEdit_14 = QLineEdit(self.horizontalWidget_0)
+        self.lineEdit_14.setObjectName(u"lineEdit_14")
+
+        self.horizontalLayout_5.addWidget(self.lineEdit_14)
+
+        self.pushButton_95 = QPushButton(self.horizontalWidget_0)
+        self.pushButton_95.setObjectName(u"pushButton_95")
+
+        self.horizontalLayout_5.addWidget(self.pushButton_95)
+
+        self.pushButton_93 = QPushButton(self.horizontalWidget_0)
+        self.pushButton_93.setObjectName(u"pushButton_93")
+
+        self.horizontalLayout_5.addWidget(self.pushButton_93)
+
         self.tabWidget.addTab(self.tab_8, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
@@ -1225,33 +1252,45 @@ class Ui_MainWindow(object):
         ___qtreewidgetitem3 = ___qtreewidgetitem1.child(1)
         ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MainWindow", u"x86_64", None));
         ___qtreewidgetitem4 = ___qtreewidgetitem1.child(2)
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
+        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"mipsel", None));
         ___qtreewidgetitem5 = ___qtreewidgetitem1.child(3)
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"arm64", None));
-        ___qtreewidgetitem6 = self.treeWidget.topLevelItem(1)
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"\u603b\u7ebf", None));
-        ___qtreewidgetitem7 = ___qtreewidgetitem6.child(0)
-        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MainWindow", u"pci", None));
-        ___qtreewidgetitem8 = ___qtreewidgetitem6.child(1)
-        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MainWindow", u"pcie", None));
-        ___qtreewidgetitem9 = self.treeWidget.topLevelItem(2)
-        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MainWindow", u"USB", None));
-        ___qtreewidgetitem10 = ___qtreewidgetitem9.child(0)
-        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MainWindow", u"a", None));
-        ___qtreewidgetitem11 = ___qtreewidgetitem9.child(1)
-        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MainWindow", u"b", None));
-        ___qtreewidgetitem12 = ___qtreewidgetitem9.child(2)
-        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"c", None));
-        ___qtreewidgetitem13 = ___qtreewidgetitem9.child(3)
-        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MainWindow", u"d", None));
-        ___qtreewidgetitem14 = self.treeWidget.topLevelItem(3)
-        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MainWindow", u"\u4e32\u53e3", None));
-        ___qtreewidgetitem15 = self.treeWidget.topLevelItem(4)
-        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MainWindow", u"\u7f51\u5361", None));
-        ___qtreewidgetitem16 = self.treeWidget.topLevelItem(5)
-        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MainWindow", u"\u5b58\u50a8", None));
-        ___qtreewidgetitem17 = self.treeWidget.topLevelItem(6)
-        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MainWindow", u"\u6570\u6a21\u8f6c\u6362", None));
+        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"mips64el", None));
+        ___qtreewidgetitem6 = ___qtreewidgetitem1.child(4)
+        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"ppc", None));
+        ___qtreewidgetitem7 = ___qtreewidgetitem1.child(5)
+        ___qtreewidgetitem7.setText(0, QCoreApplication.translate("MainWindow", u"ppc64", None));
+        ___qtreewidgetitem8 = ___qtreewidgetitem1.child(6)
+        ___qtreewidgetitem8.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
+        ___qtreewidgetitem9 = ___qtreewidgetitem1.child(7)
+        ___qtreewidgetitem9.setText(0, QCoreApplication.translate("MainWindow", u"aarch64", None));
+        ___qtreewidgetitem10 = ___qtreewidgetitem1.child(8)
+        ___qtreewidgetitem10.setText(0, QCoreApplication.translate("MainWindow", u"riscv32", None));
+        ___qtreewidgetitem11 = ___qtreewidgetitem1.child(9)
+        ___qtreewidgetitem11.setText(0, QCoreApplication.translate("MainWindow", u"riscv64", None));
+        ___qtreewidgetitem12 = self.treeWidget.topLevelItem(1)
+        ___qtreewidgetitem12.setText(0, QCoreApplication.translate("MainWindow", u"\u603b\u7ebf", None));
+        ___qtreewidgetitem13 = ___qtreewidgetitem12.child(0)
+        ___qtreewidgetitem13.setText(0, QCoreApplication.translate("MainWindow", u"pci", None));
+        ___qtreewidgetitem14 = ___qtreewidgetitem12.child(1)
+        ___qtreewidgetitem14.setText(0, QCoreApplication.translate("MainWindow", u"pcie", None));
+        ___qtreewidgetitem15 = self.treeWidget.topLevelItem(2)
+        ___qtreewidgetitem15.setText(0, QCoreApplication.translate("MainWindow", u"USB", None));
+        ___qtreewidgetitem16 = ___qtreewidgetitem15.child(0)
+        ___qtreewidgetitem16.setText(0, QCoreApplication.translate("MainWindow", u"a", None));
+        ___qtreewidgetitem17 = ___qtreewidgetitem15.child(1)
+        ___qtreewidgetitem17.setText(0, QCoreApplication.translate("MainWindow", u"b", None));
+        ___qtreewidgetitem18 = ___qtreewidgetitem15.child(2)
+        ___qtreewidgetitem18.setText(0, QCoreApplication.translate("MainWindow", u"c", None));
+        ___qtreewidgetitem19 = ___qtreewidgetitem15.child(3)
+        ___qtreewidgetitem19.setText(0, QCoreApplication.translate("MainWindow", u"d", None));
+        ___qtreewidgetitem20 = self.treeWidget.topLevelItem(3)
+        ___qtreewidgetitem20.setText(0, QCoreApplication.translate("MainWindow", u"\u4e32\u53e3", None));
+        ___qtreewidgetitem21 = self.treeWidget.topLevelItem(4)
+        ___qtreewidgetitem21.setText(0, QCoreApplication.translate("MainWindow", u"\u7f51\u5361", None));
+        ___qtreewidgetitem22 = self.treeWidget.topLevelItem(5)
+        ___qtreewidgetitem22.setText(0, QCoreApplication.translate("MainWindow", u"\u5b58\u50a8", None));
+        ___qtreewidgetitem23 = self.treeWidget.topLevelItem(6)
+        ___qtreewidgetitem23.setText(0, QCoreApplication.translate("MainWindow", u"\u6570\u6a21\u8f6c\u6362", None));
         self.treeWidget.setSortingEnabled(__sortingEnabled)
 
         self.pushButton_66.setText("")
@@ -1259,6 +1298,8 @@ class Ui_MainWindow(object):
         self.pushButton_72.setText("")
         self.pushButton_75.setText("")
         self.pushButton_92.setText("")
+        self.pushButton_95.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58", None))
+        self.pushButton_93.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u9664", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u4f5c\u56fe\u4eff\u771f\u5f00\u53d1", None))
         self.pushButton_68.setText(QCoreApplication.translate("MainWindow", u"QEMU\u76ee\u5f55", None))
         self.pushButton_71.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u5f55\u76ee\u5f55", None))

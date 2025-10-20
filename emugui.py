@@ -60,6 +60,7 @@ from dialogExecution.CompileQemuDialog import CompileQemuDialog
 from dialogExecution.ShowCode import ShowCodeDialog
 from dialogExecution.EditCode import EditCodeDialog
 from dialogExecution.DeviceInfo import DeviceInfoDialog
+from dialogExecution.DevConfig import DevConfigDialog
 from dialogExecution.settingsRequireRestart import *
 
 try:
@@ -369,6 +370,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_21.clicked.connect(self.editInsCode)
         
         self.pushButton_33.clicked.connect(self.showDeviceInfo)
+        self.pushButton_93.clicked.connect(self.clear_all_devices)
+
+        self.pushButton_95.clicked.connect(self.dev_config)
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
         good_saturday_delta = datetime.timedelta(days=-1)
@@ -4168,6 +4172,18 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             return
         print(f"Category: {category}, Item: {item}")
         self.add_device(self.horizontalWidget_3, item)
+    def clear_all_devices(self):
+        self.pushButton_66.setText("")
+        self.pushButton_66.setStyleSheet("color: rgb(184, 184, 184);")
+        self.disable_bus1()
+        self.disable_bus2()
+        self.disable_bus3()
+        self.cpu_added = False
+    def dev_config(self):
+        config_data= [["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True]]
+        dialog = DevConfigDialog(config_data)
+        dialog.exec()
+        print(config_data)
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

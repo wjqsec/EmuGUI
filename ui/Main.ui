@@ -1951,6 +1951,11 @@
           </item>
           <item>
            <property name="text">
+            <string>sys</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>pcie</string>
            </property>
           </item>
@@ -1961,22 +1966,47 @@
           </property>
           <item>
            <property name="text">
-            <string>a</string>
+            <string>ich9-usb-ehci1</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>b</string>
+            <string>ich9-usb-ehci2</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>c</string>
+            <string>ich9-usb-uhci1</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>d</string>
+            <string>ich9-usb-uhci2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>nec-usb-xhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>piix3-usb-uhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>piix4-usb-uhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qemu-xhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-ehci</string>
            </property>
           </item>
          </item>
@@ -1984,21 +2014,211 @@
           <property name="text">
            <string>串口</string>
           </property>
+          <item>
+           <property name="text">
+            <string>i8042</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pci-serial</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>tpci200</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-serial</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-serial-pci</string>
+           </property>
+          </item>
          </item>
          <item>
           <property name="text">
            <string>网卡</string>
           </property>
+          <item>
+           <property name="text">
+            <string>e1000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e1000e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82550</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82558a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>igb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ne2k_isa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ne2k_pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>rtl8139</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-net</string>
+           </property>
+          </item>
          </item>
          <item>
           <property name="text">
            <string>存储</string>
           </property>
+          <item>
+           <property name="text">
+            <string>am53c974</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dc390</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>floppy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ich9-ahci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-cd</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-cf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-hd</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isa-fdc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isa-ide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sd-card</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-uas</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-blk-pci</string>
+           </property>
+          </item>
          </item>
          <item>
           <property name="text">
-           <string>数模转换</string>
+           <string>显示设备</string>
           </property>
+          <item>
+           <property name="text">
+            <string>ati-vga</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cirrus-vga</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>VGA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-gpu-pci</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>声卡</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>AC97</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>adlib</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cs4231a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ES1370</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>自定义</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>自定义设备</string>
+           </property>
+          </item>
          </item>
         </widget>
         <widget class="QPushButton" name="pushButton_66">

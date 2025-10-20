@@ -1,106 +1,2733 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>477</width>
-    <height>405</height>
+    <width>1002</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>461</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>457</width>
-         <height>357</height>
-        </rect>
-       </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>0</y>
+      <width>781</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="tabWidget">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <widget class="QWidget" name="verticalWidget_2" native="true">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>131</width>
-          <height>361</height>
-         </rect>
+       <property name="styleSheet">
+        <string notr="true">
+         QTabWidget#tabWidget::pane {
+         background: transparent;
+         border: none;
+         }
+
+         QTabWidget#tabWidget QTabBar {
+         qproperty-expanding: true;
+         spacing: 6px;
+         }
+
+         QTabWidget#tabWidget QTabBar::tab {
+         height: 45px;
+         background: #223a7d;
+         color: #ffffff;
+         font-size: 15px;
+         min-width: 125px;
+         qproperty-expanding: true;
+         padding: 8px 16px;
+         }
+
+        QTabWidget#tabWidget QTabBar::tab:hover {
+         background: rgba(3, 9, 26, 0.25);
+        }
+
+        QTabWidget#tabWidget QTabBar::tab:selected {
+         background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #223a7d, stop:1 #223a7d);
+         color: #A4B5ED;
+         font-weight: 700;
+         font-family: &quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;;
+         text-decoration: underline;
+        }
+        </string>
+       </property>
+       <property name="currentIndex">
+        <number>5</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <property name="locale">
+         <locale language="English" country="UnitedStates"/>
         </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
-          <number>10</number>
+        <attribute name="title">
+         <string>Main</string>
+        </attribute>
+        <widget class="QWidget" name="gridWidget_4" native="true">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>771</width>
+           <height>491</height>
+          </rect>
          </property>
-        </layout>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignRight">
+           <widget class="QListView" name="listView">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>500</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+               QListView#listView::item:selected {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               QListView#listView::item:selected:!active {
+                    background: #3f6e9cff;
+                    color: #000000;
+               }
+               </string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" rowspan="2">
+           <widget class="QWidget" name="widget" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>50</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="topMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>20</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="pushButton_8">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_8 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>New Virtual Machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_9">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_9 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>Start Selected Virtual Machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_10">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_10 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>Edit Selected Virtual Machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_22">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_22 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>Export selected virtual machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_11">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_11 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>Delete Selected Virtual Machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_23">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>202</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+                QPushButton#pushButton_23 {
+                 min-width: 200px;
+                 max-width: 200px;
+                 min-height: 30px;
+                 max-height: 30px;
+                }
+               </string>
+               </property>
+               <property name="text">
+                <string>Import virtual machine</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
-       <widget class="QWidget" name="verticalWidget_3" native="true">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>0</y>
-          <width>321</width>
-          <height>361</height>
-         </rect>
+       <widget class="QWidget" name="tab_2">
+        <property name="enabled">
+         <bool>true</bool>
         </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <property name="spacing">
-          <number>10</number>
+        <attribute name="title">
+         <string>Settings</string>
+        </attribute>
+        <widget class="QTabWidget" name="tabWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>781</width>
+           <height>521</height>
+          </rect>
          </property>
-        </layout>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>QEMU (1)</string>
+          </attribute>
+          <widget class="QWidget" name="gridWidget_2" native="true">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>771</width>
+             <height>431</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="1">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>qemu-img Path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="3">
+             <widget class="QPushButton" name="pushButton_19">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3">
+             <widget class="QPushButton" name="pushButton_7">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>qemu-system-sparc path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="1">
+             <widget class="QLabel" name="lbl_alpha">
+              <property name="text">
+               <string>qemu-system-alpha path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>qemu-system-mips64el path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLineEdit" name="lineEdit_5"/>
+            </item>
+            <item row="11" column="2">
+             <widget class="QLineEdit" name="lineEdit_10"/>
+            </item>
+            <item row="9" column="3">
+             <widget class="QPushButton" name="pushButton_16">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="2">
+             <widget class="QLineEdit" name="lineEdit_12"/>
+            </item>
+            <item row="14" column="2">
+             <widget class="QLineEdit" name="lineEdit_13"/>
+            </item>
+            <item row="6" column="2">
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="2">
+             <widget class="QLineEdit" name="lineEdit_11"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>qemu-system-ppc path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QLineEdit" name="lineEdit_8"/>
+            </item>
+            <item row="8" column="3">
+             <widget class="QPushButton" name="pushButton_12">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>qemu-system-arm path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="3">
+             <widget class="QPushButton" name="pushButton_17">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>qemu-system-x86_64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+            <item row="16" column="1">
+             <widget class="QLabel" name="lbl_riscv32">
+              <property name="text">
+               <string>qemu-system-riscv32 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>qemu-system-mips path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>qemu-system-i386 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>qemu-system-mips64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>qemu-system-mipsel path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="3">
+             <widget class="QPushButton" name="btn_alpha">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="3">
+             <widget class="QPushButton" name="btn_riscv32">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="2">
+             <widget class="QLineEdit" name="le_riscv32"/>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="14" column="1">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>qemu-system-sparc64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="2">
+             <widget class="QLineEdit" name="lineEdit_7"/>
+            </item>
+            <item row="11" column="3">
+             <widget class="QPushButton" name="pushButton_18">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QLineEdit" name="lineEdit_6"/>
+            </item>
+            <item row="6" column="3">
+             <widget class="QPushButton" name="pushButton_5">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="2">
+             <widget class="QLineEdit" name="lineEdit_9"/>
+            </item>
+            <item row="13" column="3">
+             <widget class="QPushButton" name="pushButton_13">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="2">
+             <widget class="QLineEdit" name="le_alpha"/>
+            </item>
+            <item row="14" column="3">
+             <widget class="QPushButton" name="pushButton_14">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="lineEdit_4"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>qemu-system-ppc64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="17" column="3">
+             <widget class="QPushButton" name="pushButton_6">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>qemu-system-aarch64 path</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>QEMU (2)</string>
+          </attribute>
+          <widget class="QWidget" name="gridWidget_5" native="true">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>711</width>
+             <height>421</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="2" column="3">
+             <widget class="QPushButton" name="btn_riscv64">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lbl_riscv64">
+              <property name="text">
+               <string>qemu-system-riscv64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="btn_apply_qemu2">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="le_riscv64"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_4">
+        <attribute name="title">
+         <string>Hook</string>
+        </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>80</y>
+           <width>121</width>
+           <height>371</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_21">
+            <property name="text">
+             <string>编辑源代码</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_20">
+            <property name="text">
+             <string>编辑源代码</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_15">
+            <property name="text">
+             <string>编辑源代码</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_24">
+            <property name="text">
+             <string>编辑源代码</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>500</x>
+           <y>80</y>
+           <width>121</width>
+           <height>371</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QPushButton" name="pushButton_25">
+            <property name="text">
+             <string>应用</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_26">
+            <property name="text">
+             <string>应用</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_27">
+            <property name="text">
+             <string>应用</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_28">
+            <property name="text">
+             <string>应用</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>130</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>指令级</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::PlainText</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>210</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>基本块级</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>290</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>函数级</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>370</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>模块级</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_14">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>20</y>
+           <width>661</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>自主插桩定制，需要选修改对源代码，然后应用到该框架上，下次模拟固件即可使用</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::AutoText</enum>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>170</y>
+           <width>811</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>250</y>
+           <width>811</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_3">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>330</y>
+           <width>811</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_4">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>410</y>
+           <width>811</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>100</y>
+           <width>811</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_6">
+        <attribute name="title">
+         <string>Peripheral Info</string>
+        </attribute>
+        <widget class="QPushButton" name="pushButton_64">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>290</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>digic-timer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_45">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>100</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>virtio-blk</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_84">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>420</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>xilinx-axidma</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_55">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>210</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sungem</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_86">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>390</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>i82500</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_67">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>340</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>stm32f2xx-adc</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_33">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>20</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ich9-usb-echi1</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_74">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>340</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>npcm7xx-adc</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_52">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>180</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ne2k</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_43">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>100</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>cd</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_79">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>390</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>bcm2835-dma</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_78">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>390</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>pl080</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_20">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>54</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>USB</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="Line" name="line_16">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>160</y>
+           <width>721</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_35">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>20</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>pci-ohci</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_51">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>180</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>i82500</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>400</y>
+           <width>54</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>DMA</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_48">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>210</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>virtio-net</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_56">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>210</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sunhme</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_36">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>20</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>piix3-usb-uhci</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_42">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>100</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>fdc</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_77">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>420</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sparc32-dma</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_83">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>420</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>rc4030</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_46">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>130</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>scsi</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_82">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>420</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sifive-pdma</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_44">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>100</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ide</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_33">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>370</y>
+           <width>721</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_37">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>20</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>qemu-xhci</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_41">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>130</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sata</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_23">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>240</y>
+           <width>731</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_57">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>260</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>allwinner-a10</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_85">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>420</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>pxa2xx-dma</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_60">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>260</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ne2k</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_76">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>340</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>zynq-xadc</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_21">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>54</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>存储</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_38">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>50</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>usb-ehci</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_28">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>320</y>
+           <width>721</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_73">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>340</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>max111x</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>3</x>
+           <y>340</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>数模转换</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_34">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>20</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>nec-usb-xhci</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_54">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>210</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>tulip</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_11">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>80</y>
+           <width>721</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_47">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>180</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>igb</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_70">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>340</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>aspeed-adc</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_63">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>290</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>aspeed-timer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_61">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>290</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>bcm2835-syst</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_53">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>180</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>e1000</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_49">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>210</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>pcnet</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_58">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>260</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>nrf51-timer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_39">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>50</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>nec-usb-ehci</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>190</y>
+           <width>54</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>网卡</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_23">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>270</y>
+           <width>54</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>定时器</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_65">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>290</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>arm-timer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_62">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>260</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>a9gtimer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_59">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>260</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>i8254</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_50">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>180</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>virtio-blk</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_40">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>100</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>pflash</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_81">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>390</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>i8257</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_80">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>390</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>etraxfs-dma</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_34">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>450</y>
+           <width>721</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_87">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>470</y>
+           <width>111</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>virtio-console</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_88">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>470</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>imx-serial</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_89">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>470</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>bcm2835-aux</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_90">
+         <property name="geometry">
+          <rect>
+           <x>370</x>
+           <y>470</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>omap-uart</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_91">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>470</y>
+           <width>121</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>sifive-uart</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>460</y>
+           <width>54</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>串口</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_7">
+        <attribute name="title">
+         <string>Programming</string>
+        </attribute>
+        <widget class="QPushButton" name="pushButton_29">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>10</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>API 手册</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_30">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>10</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>示例代码1</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_31">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>10</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>示例代码2</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_32">
+         <property name="geometry">
+          <rect>
+           <x>620</x>
+           <y>10</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>运行</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>50</y>
+           <width>771</width>
+           <height>361</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextBrowser" name="textBrowser">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>410</y>
+           <width>771</width>
+           <height>81</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_8">
+        <attribute name="title">
+         <string>作图仿真开发</string>
+        </attribute>
+        <widget class="QGraphicsView" name="graphicsView">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>0</y>
+           <width>621</width>
+           <height>441</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTreeWidget" name="treeWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>151</width>
+           <height>501</height>
+          </rect>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDropMode::DragDrop</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>仿真设备</string>
+          </property>
+         </column>
+         <item>
+          <property name="text">
+           <string>处理器</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>i386</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x86_64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mipsel</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips64el</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppc64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>aarch64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>riscv32</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>riscv64</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>总线</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sys</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pcie</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>USB</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>ich9-usb-ehci1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ich9-usb-ehci2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ich9-usb-uhci1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ich9-usb-uhci2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>nec-usb-xhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>piix3-usb-uhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>piix4-usb-uhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qemu-xhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-ehci</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>串口</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>i8042</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pci-serial</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>tpci200</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-serial</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-serial-pci</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>网卡</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>e1000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e1000e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82550</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82558a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>igb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ne2k_isa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ne2k_pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>rtl8139</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-net</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>存储</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>am53c974</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dc390</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>floppy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ich9-ahci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-cd</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-cf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ide-hd</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isa-fdc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isa-ide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sd-card</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-uas</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-blk-pci</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>显示设备</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>ati-vga</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cirrus-vga</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>VGA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-gpu-pci</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>声卡</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>AC97</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>adlib</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cs4231a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ES1370</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>自定义</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>自定义设备</string>
+           </property>
+          </item>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="pushButton_66">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>30</y>
+           <width>71</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_28">
+         <property name="geometry">
+          <rect>
+           <x>430</x>
+           <y>10</y>
+           <width>49</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>CPU</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="Line" name="line_6">
+         <property name="geometry">
+          <rect>
+           <x>450</x>
+           <y>90</y>
+           <width>16</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_9">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>120</y>
+           <width>581</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(184, 184, 184);</string>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_10">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>240</y>
+           <width>581</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_12">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>360</y>
+           <width>581</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="horizontalWidget_1" native="true">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>130</y>
+           <width>581</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(207, 207, 207);
+color: rgb(182, 255, 169);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="horizontalWidget_2" native="true">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>250</y>
+           <width>581</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(207, 207, 207);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="horizontalWidget_3" native="true">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>370</y>
+           <width>581</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(207, 207, 207);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+         </layout>
+        </widget>
+        <widget class="QPushButton" name="pushButton_72">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>90</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_75">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>210</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_92">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>330</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QWidget" name="horizontalWidget_0" native="true">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>440</y>
+           <width>551</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>100</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_14"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_95">
+            <property name="text">
+             <string>保存</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_93">
+            <property name="text">
+             <string>清除</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </widget>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>OK</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalWidget2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>221</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(21, 56, 91);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton_68">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>QEMU目录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_71">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>记录目录</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_69">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: transparent;
+    border: none;   /* optional, removes button border */
+    color: #999999;   /* set text color since background is gone */
+}
+QPushButton:hover {
+    color: #ffffff;  /* force white text */
+}
+
+QPushButton:pressed {
+    color: #ffffff;  /* force white text */
+}</string>
+       </property>
+       <property name="text">
+        <string>日志目录</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalWidget1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>221</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(21, 56, 91);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5"/>
+   </widget>
+   <widget class="QWidget" name="horizontalWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>221</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(34, 58, 125);</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_27">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>logo.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_15">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>网络安全学科专业建设
+某安全教学演训分系统</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1002</width>
+     <height>21</height>
+    </rect>
+   </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>listView</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>lineEdit_8</tabstop>
+  <tabstop>pushButton_16</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>pushButton_17</tabstop>
+  <tabstop>lineEdit_10</tabstop>
+  <tabstop>pushButton_18</tabstop>
+  <tabstop>lineEdit_11</tabstop>
+  <tabstop>pushButton_19</tabstop>
+  <tabstop>lineEdit_12</tabstop>
+  <tabstop>pushButton_13</tabstop>
+  <tabstop>lineEdit_13</tabstop>
+  <tabstop>pushButton_14</tabstop>
+  <tabstop>le_alpha</tabstop>
+  <tabstop>btn_alpha</tabstop>
+  <tabstop>le_riscv32</tabstop>
+  <tabstop>btn_riscv32</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>btn_riscv64</tabstop>
+  <tabstop>btn_apply_qemu2</tabstop>
+  <tabstop>le_riscv64</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

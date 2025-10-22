@@ -31,7 +31,7 @@ class DevConfigDialog(QDialog, Ui_Dialog):
         self.config = config_data
         self.setupUi(self)
         for i in config_data:
-            key = i[0] + i[1]
+            key = i[1]
             item_key = QLabel(key)
             item_key.setFixedHeight(30)
             item_key.setAlignment(Qt.AlignCenter)

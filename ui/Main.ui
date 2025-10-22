@@ -1891,22 +1891,7 @@
           </property>
           <item>
            <property name="text">
-            <string>x86</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>mipsel</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>mips64el</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ppc</string>
+            <string>i386</string>
            </property>
           </item>
           <item>
@@ -1916,17 +1901,17 @@
           </item>
           <item>
            <property name="text">
-            <string>aarch64</string>
+            <string>ppc</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>riscv32</string>
+            <string>mips</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>riscv64</string>
+            <string>riscv</string>
            </property>
           </item>
          </item>

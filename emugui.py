@@ -62,7 +62,8 @@ from dialogExecution.EditCode import EditCodeDialog
 from dialogExecution.DeviceInfo import DeviceInfoDialog
 from dialogExecution.DevConfig import DevConfigDialog
 from dialogExecution.settingsRequireRestart import *
-from plugins.pluginmgr.hw_reader import read_hw_plugin, add_new_hw_plugin, insert_line
+from devices.devices import *
+from plugins.pluginmgr.hw_reader import read_hw_plugin, add_new_hw_plugin, insert_line, insert_line_to_file
 import services.pathfinder as pf
 try:
     import translations.en
@@ -114,12 +115,29 @@ class DeviceButton(QPushButton):
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         self.setMaximumWidth(80)
         self.clicked.connect(self.on_click)
+        self.config = []
+        self.source_add = ""
 
     def show_feature(self):
-        config_data= [["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True],["1","2",True]]
-        dialog = DevConfigDialog(config_data)
+        config = generate_config(self.text())
+        dialog = DevConfigDialog(config)
         dialog.exec()
-        print(config_data)
+        source_add = f'''
+                dev = qdev_new({config_i[0]});
+                qdev_realize_and_unref(dev, pcms->pcibus, &error_fatal);
+                '''
+        for config_i in config:
+            if type(i[2]) is int:
+                source_add += f"qdev_prop_set_uint64(dev, \"{config_i[0]}\", {i[2]});\n"
+            elif type(i[2]) is bool:
+                source_add += f"qdev_prop_set_bit(dev, \"{config_i[0]}\", {i[2]});\n"
+            elif type(i[2]) is str:
+                source_add += f"qdev_prop_set_string(dev, \"{config_i[0]}\", \"{i[2]}\");\n"
+            elif type(i[2]) is list:
+                if type(i[2][0]) is int:
+                    source_add += f"qdev_prop_set_uint64(dev, \"{config_i[0]}\", {i[2][0]});\n"
+                elif type(i[2][0]) is str:
+                    source_add += f"qdev_prop_set_string(dev, \"{config_i[0]}\", \"{i[2][0]}\");\n"
 
     def remove_self(self):
         self.setParent(None)
@@ -4186,42 +4204,82 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.disable_bus2()
         self.disable_bus3()
         self.cpu_added = False
+    
+    def create_board_file_from_template(self, new_c_file, arch, config):
+        exec_folder = pf.retrieveExecFolder()
+        template_file = f"{exec_folder}plugins/templates/{arch}.c"
+        template_content = ""
+        with open(template_file, "r") as tf:
+            template_content = tf.read()
+        for config_i in config:
+            insert_line(template_content, 114, config_i)
+        with open(new_c_file, "w") as nf:
+            nf.write(template_content)
+            
     def dev_config(self):
-        if self.pushButton_66.text() != "":
-            new_c_file = f"{self.lineEdit_14.text()}.c"
-            exec_folder = pf.retrieveExecFolder()
-            meson_dir = f"{exec_folder}qemu/qemu-10.1.0/hw/"
-            line_insert = 0
-            if self.pushButton_66.text() == "x86":
-                meson_dir += "i386/"
-                line_insert = 7
-            elif self.pushButton_66.text() == "mipsel":
-                meson_dir += "mips/"
-                line_insert = 6
-            elif self.pushButton_66.text() == "mips64el":
-                meson_dir += "mips/"
-            elif self.pushButton_66.text() == "ppc":
-                meson_dir += "ppc/"
-            elif self.pushButton_66.text() == "arm":
-                meson_dir += "arm/"
-            elif self.pushButton_66.text() == "aarch64":
-                meson_dir += "arm/"
-            elif self.pushButton_66.text() == "riscv32":
-                meson_dir += "riscv/"
-            elif self.pushButton_66.text() == "riscv64":
-                meson_dir += "riscv/"
-            meson_dir += "meson.build"
-            insert_line(meson_dir, line_insert, f"'{new_c_file}',")
-
-            name = self.lineEdit_14.text()
-            ret = add_new_hw_plugin(self.pushButton_66.text(),name)
+        if self.pushButton_66.text() == "":
             msgBox = QMessageBox()
             msgBox.setStandardButtons(QMessageBox.Ok)
-            if ret:
-                msgBox.setText("配置成功！")
-            else:
-                msgBox.setText("配置失败！")
+            msgBox.setText("未选择处理器架构，请先选择处理器架构。")
             msgBox.exec()
+            return
+        name = self.lineEdit_14.text()
+        if name == "":
+            msgBox = QMessageBox()
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.setText("请输入配置名称。")
+            msgBox.exec()
+            return
+        ret = add_new_hw_plugin(self.pushButton_66.text(),name)
+        if ret == False:
+            msgBox = QMessageBox()
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.setText("配置名称已存在，请选择其他名称。")
+            msgBox.exec()
+            return
+        new_c_file = f"{name}.c"
+        exec_folder = pf.retrieveExecFolder()
+
+        meson_dir = f"{exec_folder}qemu/qemu-10.1.0/hw/"
+        line_no_insert = 0
+        line_insert = ""
+
+        if self.pushButton_66.text() == "i386":
+            meson_dir += "i386/"
+            line_insert = f"i386_ss.add(when: 'CONFIG_Q35', if_true: files('{new_c_file}'))"
+            line_no_insert = 45
+        elif self.pushButton_66.text() == "mips":
+            meson_dir += "mips/"
+            line_insert = f"mips_ss.add(when: 'CONFIG_MALTA', if_true: files('{new_c_file}'))"
+            line_no_insert = 18
+        elif self.pushButton_66.text() == "ppc":
+            meson_dir += "ppc/"
+            line_insert = f"ppc_ss.add(when: 'CONFIG_PPC440', if_true: files('{new_c_file}'))"
+            line_no_insert = 94
+        elif self.pushButton_66.text() == "arm":
+            meson_dir += "arm/"
+            line_insert = f"arm_common_ss.add(when: 'CONFIG_ARM_V7M', if_true: files('{new_c_file}'))"
+            line_no_insert = 88
+        elif self.pushButton_66.text() == "riscv":
+            meson_dir += "riscv/"
+            line_insert = f"riscv_ss.add(when: 'CONFIG_RISCV_VIRT', if_true: files('{new_c_file}'))"
+            line_no_insert = 19
+
+        insert_line_to_file(f"{meson_dir}meson.build", line_no_insert, line_insert)
+        config = []
+        for widget in self.horizontalWidget_1.children():
+            if isinstance(widget, DeviceButton):
+                print("eeeeeeeeeeeee" + widget.source_add)
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_2.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_3.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        self.create_board_file_from_template(f"{meson_dir}{new_c_file}", self.pushButton_66.text(), config)
+        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.0")
+        dialog.exec()
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

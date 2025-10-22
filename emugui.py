@@ -115,17 +115,12 @@ class DeviceButton(QPushButton):
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         self.setMaximumWidth(80)
         self.clicked.connect(self.on_click)
-        self.config = []
-        self.source_add = ""
+        self.source_add = generate_dev_header(self.text())
 
     def show_feature(self):
-        config = generate_config(self.text())
+        config = generate_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        source_add = f'''
-                dev = qdev_new({config_i[0]});
-                qdev_realize_and_unref(dev, pcms->pcibus, &error_fatal);
-                '''
         for config_i in config:
             if type(i[2]) is int:
                 source_add += f"qdev_prop_set_uint64(dev, \"{config_i[0]}\", {i[2]});\n"
@@ -3651,7 +3646,7 @@ class Window(QMainWindow, Ui_MainWindow):
     def toGuilded(self):
         webbrowser.open_new_tab("https://www.guilded.gg/i/pBAY6BAk")
     def compileQemu(self):
-        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.0")
+        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.2")
         dialog.exec()
     def runPythonScript(self):
         import subprocess
@@ -4211,10 +4206,10 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         template_content = ""
         with open(template_file, "r") as tf:
             template_content = tf.read()
-        for config_i in config:
-            insert_line(template_content, 114, config_i)
         with open(new_c_file, "w") as nf:
             nf.write(template_content)
+        for config_i in config:
+            insert_line_to_file(new_c_file, 114, config_i)
             
     def dev_config(self):
         if self.pushButton_66.text() == "":
@@ -4240,7 +4235,7 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         new_c_file = f"{name}.c"
         exec_folder = pf.retrieveExecFolder()
 
-        meson_dir = f"{exec_folder}qemu/qemu-10.1.0/hw/"
+        meson_dir = f"{exec_folder}qemu/qemu-10.1.2/hw/"
         line_no_insert = 0
         line_insert = ""
 
@@ -4269,7 +4264,6 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         config = []
         for widget in self.horizontalWidget_1.children():
             if isinstance(widget, DeviceButton):
-                print("eeeeeeeeeeeee" + widget.source_add)
                 config.append(widget.source_add)
         for widget in self.horizontalWidget_2.children():
             if isinstance(widget, DeviceButton):
@@ -4278,7 +4272,7 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             if isinstance(widget, DeviceButton):
                 config.append(widget.source_add)
         self.create_board_file_from_template(f"{meson_dir}{new_c_file}", self.pushButton_66.text(), config)
-        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.0")
+        dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.2")
         dialog.exec()
 if __name__ == "__main__":
     app = QApplication(sys.argv)

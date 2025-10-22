@@ -108,12 +108,11 @@ static void xx_board_init(MachineState *machine)
     X86MachineState *x86ms = X86_MACHINE(machine);
     PCMachineState *pcms = PC_MACHINE(machine);
     pc_i440fx_init(machine);
-    DeviceState *dev = qdev_new("AC97");
-    qdev_realize_and_unref(dev, pcms->pcibus, &error_fatal);
     DeviceState *dev;
 
 
-    
+    // DeviceState *dev = qdev_new("AC97");
+    // qdev_realize_and_unref(dev, pcms->pcibus, &error_fatal);
     // DeviceState *dev2 = qdev_new("hpet");
     // qdev_prop_set_uint32(dev2, "hpet-intcap", 2);
     // sysbus_realize_and_unref(dev2, &error_fatal);

@@ -121,18 +121,8 @@ class DeviceButton(QPushButton):
         config = generate_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        for config_i in config:
-            if type(i[2]) is int:
-                source_add += f"qdev_prop_set_uint64(dev, \"{config_i[0]}\", {i[2]});\n"
-            elif type(i[2]) is bool:
-                source_add += f"qdev_prop_set_bit(dev, \"{config_i[0]}\", {i[2]});\n"
-            elif type(i[2]) is str:
-                source_add += f"qdev_prop_set_string(dev, \"{config_i[0]}\", \"{i[2]}\");\n"
-            elif type(i[2]) is list:
-                if type(i[2][0]) is int:
-                    source_add += f"qdev_prop_set_uint64(dev, \"{config_i[0]}\", {i[2][0]});\n"
-                elif type(i[2][0]) is str:
-                    source_add += f"qdev_prop_set_string(dev, \"{config_i[0]}\", \"{i[2][0]}\");\n"
+        self.source_add += generate_dev_body(config)
+        
 
     def remove_self(self):
         self.setParent(None)

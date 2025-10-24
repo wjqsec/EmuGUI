@@ -31,20 +31,22 @@ class DevConfigDialog(QDialog, Ui_Dialog):
         self.config = config_data
         self.setupUi(self)
         for i in config_data:
-            key = i[1]
+            key = i[0]
             item_key = QLabel(key)
             item_key.setFixedHeight(30)
             item_key.setAlignment(Qt.AlignCenter)
             self.verticalWidget_2.layout().addWidget(item_key)
 
-
             if type(i[2]) is int or type(i[2]) is str:
                 item_value = QLineEdit()
+                item_value.setText(str(i[2]))
             elif type(i[2]) is bool:
                 item_value = QCheckBox()
+                item_value.setChecked(i[2])
             elif type(i[2]) is list:
                 item_value = QComboBox()
                 item_value.addItems(i[2])
+                item_value.setCurrentText(i[2][0])
             item_value.setFixedHeight(30)
             self.verticalWidget_3.layout().addWidget(item_value)
         self.pushButton.clicked.connect(self.accept)
@@ -58,5 +60,8 @@ class DevConfigDialog(QDialog, Ui_Dialog):
             elif type(self.config[i][2]) is bool:
                 self.config[i][2] = widget.isChecked()
             elif type(self.config[i][2]) is list:
-                self.config[i][2] = widget.currentText()
+                if type(self.config[i][2][0]) is int:
+                    self.config[i][2] = [int(widget.currentText())]
+                elif type(self.config[i][2][0]) is str:
+                    self.config[i][2] = [widget.currentText()]
         self.close()

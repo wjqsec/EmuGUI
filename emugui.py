@@ -121,8 +121,8 @@ class DeviceButton(QPushButton):
         config = generate_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        self.source_add += generate_dev_body(config)
-        
+        self.source_add += generate_dev_body(self.text(),config)
+        self.source_add += generate_dev_tail(self.text())
 
     def remove_self(self):
         self.setParent(None)
@@ -4148,6 +4148,10 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         item = event.mimeData().text().split("/")[1] 
         if category == "处理器":
             self.add_cpu(item)
+        self.add_bus1("sysbus")
+        if item == "i386":
+            self.add_bus2("pci") 
+            self.add_bus3("isa")
         print(f"Category: {category}, Item: {item}")
     def drop_device1(self, event):
         if event.mimeData().hasText() == False:
@@ -4199,7 +4203,7 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         with open(new_c_file, "w") as nf:
             nf.write(template_content)
         for config_i in config:
-            insert_line_to_file(new_c_file, 114, config_i)
+            insert_line_to_file(new_c_file, 140, config_i)
             
     def dev_config(self):
         if self.pushButton_66.text() == "":

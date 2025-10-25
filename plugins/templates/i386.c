@@ -80,7 +80,7 @@
 #include "hw/uefi/var-service-api.h"
 #include "hw/i386/acpi-build.h"
 #include "target/i386/cpu.h"
-
+#include "qemu/option.h"
 
 typedef struct XXMachineClass
 {
@@ -92,6 +92,8 @@ typedef struct XXMachineState
     /*< private >*/
     PCMachineState parent_obj;
 } XXMachineState;
+extern QemuOptsList qemu_netdev_opts;
+extern QemuOptsList qemu_chardev_opts;
 
 #define TYPE_XX_MACHINE MACHINE_TYPE_NAME("xx")
 DECLARE_OBJ_CHECKERS(XXMachineState, XXMachineClass,
@@ -109,6 +111,31 @@ static void xx_board_init(MachineState *machine)
     PCMachineState *pcms = PC_MACHINE(machine);
     pc_i440fx_init(machine);
     DeviceState *dev;
+    QemuOpts *opts;
+    DriveInfo *pnor;
+    BlockBackend *blkbackend;
+    char *arg;
+    ISABus *isabus = isa_bus_from_device(pcms->pcspk);
+    PCIBus *pcibus = pcms->pcibus;
+    IDEBus *idebus = IDE_BUS(pcms->idebus[0]);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // DeviceState *dev = qdev_new("AC97");

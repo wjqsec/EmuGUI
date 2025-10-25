@@ -1926,11 +1926,6 @@
           </item>
           <item>
            <property name="text">
-            <string>sys</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
             <string>pcie</string>
            </property>
           </item>
@@ -1991,6 +1986,11 @@
           </property>
           <item>
            <property name="text">
+            <string>chardev</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>i8042</string>
            </property>
           </item>
@@ -2019,6 +2019,11 @@
           <property name="text">
            <string>网卡</string>
           </property>
+          <item>
+           <property name="text">
+            <string>netdev</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>e1000</string>
@@ -2076,7 +2081,7 @@
           </property>
           <item>
            <property name="text">
-            <string>am53c974</string>
+            <string>drive</string>
            </property>
           </item>
           <item>
@@ -2086,22 +2091,7 @@
           </item>
           <item>
            <property name="text">
-            <string>floppy</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ich9-ahci</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
             <string>ide-cd</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ide-cf</string>
            </property>
           </item>
           <item>
@@ -2177,6 +2167,11 @@
           <item>
            <property name="text">
             <string>cs4231a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>intel-hda</string>
            </property>
           </item>
           <item>

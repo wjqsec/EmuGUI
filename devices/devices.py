@@ -466,4 +466,7 @@ def get_dev_bus_type(dev_name):
     if dev_name == "ide-cd" or dev_name == "ide-hd":
         return "ide"
     return "pci"
+
+def get_devices_by_arch(arch_name):
+    pass
     

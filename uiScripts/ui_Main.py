@@ -15,12 +15,12 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QGraphicsView,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QListView, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QTabWidget, QTextBrowser,
-    QTextEdit, QTreeWidget, QTreeWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFrame,
+    QGraphicsView, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QListView, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QTabWidget,
+    QTextBrowser, QTextEdit, QTreeWidget, QTreeWidgetItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -828,7 +828,7 @@ class Ui_MainWindow(object):
         self.tab_8.setObjectName(u"tab_8")
         self.graphicsView = QGraphicsView(self.tab_8)
         self.graphicsView.setObjectName(u"graphicsView")
-        self.graphicsView.setGeometry(QRect(150, 0, 621, 441))
+        self.graphicsView.setGeometry(QRect(150, 0, 621, 451))
         self.treeWidget = QTreeWidget(self.tab_8)
         __qtreewidgetitem = QTreeWidgetItem(self.treeWidget)
         QTreeWidgetItem(__qtreewidgetitem)
@@ -898,40 +898,40 @@ class Ui_MainWindow(object):
         self.treeWidget.setDragDropMode(QAbstractItemView.DragDropMode.DragDrop)
         self.pushButton_66 = QPushButton(self.tab_8)
         self.pushButton_66.setObjectName(u"pushButton_66")
-        self.pushButton_66.setGeometry(QRect(420, 30, 71, 61))
+        self.pushButton_66.setGeometry(QRect(430, 20, 51, 41))
         self.pushButton_66.setAcceptDrops(True)
         self.label_28 = QLabel(self.tab_8)
         self.label_28.setObjectName(u"label_28")
-        self.label_28.setGeometry(QRect(430, 10, 49, 16))
+        self.label_28.setGeometry(QRect(430, 0, 49, 16))
         self.label_28.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.line_6 = QFrame(self.tab_8)
         self.line_6.setObjectName(u"line_6")
-        self.line_6.setGeometry(QRect(450, 90, 16, 341))
+        self.line_6.setGeometry(QRect(450, 60, 20, 381))
         self.line_6.setFrameShadow(QFrame.Shadow.Sunken)
         self.line_6.setLineWidth(3)
         self.line_6.setFrameShape(QFrame.Shape.VLine)
         self.line_9 = QFrame(self.tab_8)
         self.line_9.setObjectName(u"line_9")
-        self.line_9.setGeometry(QRect(170, 120, 581, 16))
+        self.line_9.setGeometry(QRect(170, 80, 581, 16))
         self.line_9.setStyleSheet(u"color: rgb(184, 184, 184);")
         self.line_9.setLineWidth(3)
         self.line_9.setFrameShape(QFrame.Shape.HLine)
         self.line_9.setFrameShadow(QFrame.Shadow.Sunken)
         self.line_10 = QFrame(self.tab_8)
         self.line_10.setObjectName(u"line_10")
-        self.line_10.setGeometry(QRect(170, 240, 581, 16))
+        self.line_10.setGeometry(QRect(170, 180, 581, 16))
         self.line_10.setLineWidth(3)
         self.line_10.setFrameShape(QFrame.Shape.HLine)
         self.line_10.setFrameShadow(QFrame.Shadow.Sunken)
         self.line_12 = QFrame(self.tab_8)
         self.line_12.setObjectName(u"line_12")
-        self.line_12.setGeometry(QRect(170, 360, 581, 16))
+        self.line_12.setGeometry(QRect(170, 280, 581, 16))
         self.line_12.setLineWidth(3)
         self.line_12.setFrameShape(QFrame.Shape.HLine)
         self.line_12.setFrameShadow(QFrame.Shadow.Sunken)
         self.horizontalWidget_1 = QWidget(self.tab_8)
         self.horizontalWidget_1.setObjectName(u"horizontalWidget_1")
-        self.horizontalWidget_1.setGeometry(QRect(170, 130, 581, 71))
+        self.horizontalWidget_1.setGeometry(QRect(170, 90, 581, 51))
         self.horizontalWidget_1.setAcceptDrops(True)
         self.horizontalWidget_1.setStyleSheet(u"background-color: rgb(207, 207, 207);\n"
 "color: rgb(182, 255, 169);")
@@ -940,7 +940,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalWidget_2 = QWidget(self.tab_8)
         self.horizontalWidget_2.setObjectName(u"horizontalWidget_2")
-        self.horizontalWidget_2.setGeometry(QRect(170, 250, 581, 71))
+        self.horizontalWidget_2.setGeometry(QRect(170, 190, 581, 51))
         self.horizontalWidget_2.setAcceptDrops(True)
         self.horizontalWidget_2.setStyleSheet(u"background-color: rgb(207, 207, 207);")
         self.horizontalLayout_3 = QHBoxLayout(self.horizontalWidget_2)
@@ -948,7 +948,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalWidget_3 = QWidget(self.tab_8)
         self.horizontalWidget_3.setObjectName(u"horizontalWidget_3")
-        self.horizontalWidget_3.setGeometry(QRect(170, 370, 581, 61))
+        self.horizontalWidget_3.setGeometry(QRect(170, 290, 581, 51))
         self.horizontalWidget_3.setAcceptDrops(True)
         self.horizontalWidget_3.setStyleSheet(u"background-color: rgb(207, 207, 207);")
         self.horizontalLayout_4 = QHBoxLayout(self.horizontalWidget_3)
@@ -957,18 +957,18 @@ class Ui_MainWindow(object):
         self.pushButton_72 = QPushButton(self.tab_8)
         self.pushButton_72.setObjectName(u"pushButton_72")
         self.pushButton_72.setEnabled(False)
-        self.pushButton_72.setGeometry(QRect(170, 90, 61, 31))
+        self.pushButton_72.setGeometry(QRect(170, 50, 61, 31))
         self.pushButton_75 = QPushButton(self.tab_8)
         self.pushButton_75.setObjectName(u"pushButton_75")
         self.pushButton_75.setEnabled(False)
-        self.pushButton_75.setGeometry(QRect(170, 210, 61, 31))
+        self.pushButton_75.setGeometry(QRect(170, 150, 61, 31))
         self.pushButton_92 = QPushButton(self.tab_8)
         self.pushButton_92.setObjectName(u"pushButton_92")
         self.pushButton_92.setEnabled(False)
-        self.pushButton_92.setGeometry(QRect(170, 330, 61, 31))
+        self.pushButton_92.setGeometry(QRect(170, 250, 61, 31))
         self.horizontalWidget_0 = QWidget(self.tab_8)
         self.horizontalWidget_0.setObjectName(u"horizontalWidget_0")
-        self.horizontalWidget_0.setGeometry(QRect(190, 440, 551, 61))
+        self.horizontalWidget_0.setGeometry(QRect(150, 440, 631, 61))
         self.horizontalLayout_5 = QHBoxLayout(self.horizontalWidget_0)
         self.horizontalLayout_5.setSpacing(100)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -982,11 +982,37 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.pushButton_95)
 
-        self.pushButton_93 = QPushButton(self.horizontalWidget_0)
+        self.comboBox = QComboBox(self.horizontalWidget_0)
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.horizontalLayout_5.addWidget(self.comboBox)
+
+        self.pushButton_96 = QPushButton(self.horizontalWidget_0)
+        self.pushButton_96.setObjectName(u"pushButton_96")
+
+        self.horizontalLayout_5.addWidget(self.pushButton_96)
+
+        self.pushButton_93 = QPushButton(self.tab_8)
         self.pushButton_93.setObjectName(u"pushButton_93")
-
-        self.horizontalLayout_5.addWidget(self.pushButton_93)
-
+        self.pushButton_93.setGeometry(QRect(680, 10, 80, 24))
+        self.line_13 = QFrame(self.tab_8)
+        self.line_13.setObjectName(u"line_13")
+        self.line_13.setGeometry(QRect(170, 380, 581, 16))
+        self.line_13.setLineWidth(3)
+        self.line_13.setFrameShape(QFrame.Shape.HLine)
+        self.line_13.setFrameShadow(QFrame.Shadow.Sunken)
+        self.horizontalWidget_4 = QWidget(self.tab_8)
+        self.horizontalWidget_4.setObjectName(u"horizontalWidget_4")
+        self.horizontalWidget_4.setGeometry(QRect(170, 390, 581, 51))
+        self.horizontalWidget_4.setAcceptDrops(True)
+        self.horizontalWidget_4.setStyleSheet(u"background-color: rgb(207, 207, 207);")
+        self.horizontalLayout_7 = QHBoxLayout(self.horizontalWidget_4)
+        self.horizontalLayout_7.setSpacing(20)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.pushButton_94 = QPushButton(self.tab_8)
+        self.pushButton_94.setObjectName(u"pushButton_94")
+        self.pushButton_94.setEnabled(False)
+        self.pushButton_94.setGeometry(QRect(170, 350, 61, 31))
         self.tabWidget.addTab(self.tab_8, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
@@ -1413,7 +1439,9 @@ class Ui_MainWindow(object):
         self.pushButton_75.setText("")
         self.pushButton_92.setText("")
         self.pushButton_95.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58", None))
+        self.pushButton_96.setText(QCoreApplication.translate("MainWindow", u"\u5220\u9664", None))
         self.pushButton_93.setText(QCoreApplication.translate("MainWindow", u"\u6e05\u9664", None))
+        self.pushButton_94.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u4f5c\u56fe\u4eff\u771f\u5f00\u53d1", None))
         self.pushButton_68.setText(QCoreApplication.translate("MainWindow", u"QEMU\u76ee\u5f55", None))
         self.pushButton_71.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u5f55\u76ee\u5f55", None))

@@ -63,7 +63,7 @@ from dialogExecution.DeviceInfo import DeviceInfoDialog
 from dialogExecution.DevConfig import DevConfigDialog
 from dialogExecution.settingsRequireRestart import *
 from devices.devices import *
-from plugins.pluginmgr.hw_reader import read_hw_plugin, add_new_hw_plugin, insert_line, insert_line_to_file
+from plugins.pluginmgr.hw_reader import *
 import services.pathfinder as pf
 try:
     import translations.en
@@ -381,7 +381,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_33.clicked.connect(self.showDeviceInfo)
         self.pushButton_93.clicked.connect(self.clear_all_devices)
 
-        self.pushButton_95.clicked.connect(self.dev_config)
+        self.pushButton_95.clicked.connect(self.save_machine)
+        self.pushButton_96.clicked.connect(self.delete_machine)
+        
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
         good_saturday_delta = datetime.timedelta(days=-1)
@@ -4146,9 +4148,11 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             return
         category = event.mimeData().text().split("/")[0]
         item = event.mimeData().text().split("/")[1] 
-        if category == "处理器":
-            self.add_cpu(item)
+        if category != "处理器":
+            return
+        self.add_cpu(item)
         self.add_bus1("sysbus")
+        self.update_machine_list(item)
         if item == "i386":
             self.add_bus2("pci") 
             self.add_bus3("isa")
@@ -4204,22 +4208,53 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             nf.write(template_content)
         for config_i in config:
             insert_line_to_file(new_c_file, 140, config_i)
-            
-    def dev_config(self):
-        if self.pushButton_66.text() == "":
+
+    def update_machine_list(self, arch):
+        machines = get_arch_machines(arch)
+        self.comboBox.clear()
+        self.comboBox.addItems([x for x in machines if "emu-" in x])
+    def delete_machine(self):
+        machine = self.comboBox.currentText()
+        if machine == "":
+            msgBox = QMessageBox()
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.setText("未选择机器，请先选择。")
+            msgBox.exec()
+            return
+        arch = self.pushButton_66.text()
+        delete_arch_machine(arch, machine)
+        c_file = f"{machine}.c"
+        exec_folder = pf.retrieveExecFolder()
+        meson_dir = f"{exec_folder}qemu/qemu-10.1.2/hw/"
+        if arch == "i386":
+            meson_dir += "i386/"
+        elif arch == "mips":
+            meson_dir += "mips/"
+        elif arch == "ppc":
+            meson_dir += "ppc/"
+        elif arch == "arm":
+            meson_dir += "arm/"
+        elif arch == "riscv":
+            meson_dir += "riscv/"
+        delete_line_contains(f"{meson_dir}meson.build", f"'{c_file}'")
+        os.remove(f"{meson_dir}{c_file}")
+        self.update_machine_list(arch)
+    def save_machine(self):
+        arch = self.pushButton_66.text()
+        if arch == "":
             msgBox = QMessageBox()
             msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.setText("未选择处理器架构，请先选择处理器架构。")
             msgBox.exec()
             return
-        name = self.lineEdit_14.text()
+        name = f"emu-{self.lineEdit_14.text()}"
         if name == "":
             msgBox = QMessageBox()
             msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.setText("请输入配置名称。")
             msgBox.exec()
             return
-        ret = add_new_hw_plugin(self.pushButton_66.text(),name)
+        ret = add_arch_machine(arch,name)
         if ret == False:
             msgBox = QMessageBox()
             msgBox.setStandardButtons(QMessageBox.Ok)
@@ -4232,24 +4267,23 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         meson_dir = f"{exec_folder}qemu/qemu-10.1.2/hw/"
         line_no_insert = 0
         line_insert = ""
-
-        if self.pushButton_66.text() == "i386":
+        if arch == "i386":
             meson_dir += "i386/"
             line_insert = f"i386_ss.add(when: 'CONFIG_Q35', if_true: files('{new_c_file}'))"
             line_no_insert = 45
-        elif self.pushButton_66.text() == "mips":
+        elif arch == "mips":
             meson_dir += "mips/"
             line_insert = f"mips_ss.add(when: 'CONFIG_MALTA', if_true: files('{new_c_file}'))"
             line_no_insert = 18
-        elif self.pushButton_66.text() == "ppc":
+        elif arch == "ppc":
             meson_dir += "ppc/"
             line_insert = f"ppc_ss.add(when: 'CONFIG_PPC440', if_true: files('{new_c_file}'))"
             line_no_insert = 94
-        elif self.pushButton_66.text() == "arm":
+        elif arch == "arm":
             meson_dir += "arm/"
             line_insert = f"arm_common_ss.add(when: 'CONFIG_ARM_V7M', if_true: files('{new_c_file}'))"
             line_no_insert = 88
-        elif self.pushButton_66.text() == "riscv":
+        elif arch == "riscv":
             meson_dir += "riscv/"
             line_insert = f"riscv_ss.add(when: 'CONFIG_RISCV_VIRT', if_true: files('{new_c_file}'))"
             line_no_insert = 19
@@ -4265,9 +4299,10 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         for widget in self.horizontalWidget_3.children():
             if isinstance(widget, DeviceButton):
                 config.append(widget.source_add)
-        self.create_board_file_from_template(f"{meson_dir}{new_c_file}", self.pushButton_66.text(), config)
+        self.create_board_file_from_template(f"{meson_dir}{new_c_file}", arch, config)
         dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.2")
         dialog.exec()
+        self.update_machine_list(arch)
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

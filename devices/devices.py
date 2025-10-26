@@ -467,6 +467,185 @@ def get_dev_bus_type(dev_name):
         return "ide"
     return "pci"
 
-def get_devices_by_arch(arch_name):
-    pass
+def get_devices_info():
+    return {
+        "i386" : {
+            "USB" : [
+                ["ich9-usb-ehci1", "pci"],
+                ["ich9-usb-ehci2", "pci"],
+                ["ich9-usb-uhci1", "pci"],
+                ["ich9-usb-uhci2", "pci"],
+                ["piix3-usb-uhci", "pci"],
+                ["piix4-usb-uhci", "pci"],
+                ["usb-ehci", "pci"],
+                ["nec-usb-xhci", "pci"],
+                ["qemu-xhci", "pci"],
+            ],
+            "串口" : [
+                ["chardev", "none"],
+                ["i8042", "pci"],
+                ["pci-serial", "pci"],
+                ["tpci200", "pci"],
+                ["usb-serial", "usb"],
+                ["virtio-serial-pci", "pci"],
+            ],
+            "网卡" : [
+                ["netdev", "none"],
+                ["e1000", "pci"],
+                ["e1000e", "ide"],
+                ["i82550", "ide"],
+                ["i82558a", "isa"],
+                ["igb", "isa"],
+                ["ne2k_pci", "sd"],
+                ["rtl8139", "usb"],
+                ["virtio-net-pci", "pci"],
+                ["ne2k_isa", "isa"],
+                ["usb-net", "usb"],
+            ],
+            "存储" : [
+                ["drive", "none"],
+                ["dc390", "pci"],
+                ["ide-cd", "ide"],
+                ["ide-hd", "ide"],
+                ["isa-fdc", "isa"],
+                ["isa-ide", "isa"],
+                ["sd-card", "sd"],
+                ["usb-uas", "usb"],
+                ["virtio-blk-pci", "pci"],
+            ],
+            "显示设备" : [
+                ["ati-vga", "pci"],
+                ["cirrus-vga", "pci"],
+                ["VGA", "pci"],
+                ["virtio-gpu-pci", "pci"],
+            ],
+            "声卡" : [
+                ["adlib", "isa"],
+                ["cs4231a", "isa"],
+                ["ES1370", "pci"],
+                ["intel-hda", "pci"],
+            ],
+            "自定义" : [
+                ["自定义", "pci"],
+            ]
+        },
+        "arm" : {
+            "USB" : [
+
+            ],
+            "串口" : [
+
+            ],
+            "网卡" : [
+
+            ],
+            "存储" : [
+
+            ],
+            "显示设备" : [
+
+            ],
+            "声卡" : [
+
+            ],
+            "自定义" : [
+
+            ]
+        },
+        "ppc" : {
+            "USB" : [
+                
+            ],
+            "串口" : [
+
+            ],
+            "网卡" : [
+
+            ],
+            "存储" : [
+
+            ],
+            "显示设备" : [
+
+            ],
+            "声卡" : [
+
+            ],
+            "自定义" : [
+
+            ]
+        },
+        "mips" : {
+            "USB" : [
+                
+            ],
+            "串口" : [
+
+            ],
+            "网卡" : [
+
+            ],
+            "存储" : [
+
+            ],
+            "显示设备" : [
+
+            ],
+            "声卡" : [
+
+            ],
+            "自定义" : [
+
+            ]
+        },
+        "riscv" : {
+            "USB" : [
+
+            ],
+            "串口" : [
+
+            ],
+            "网卡" : [
+
+            ],
+            "存储" : [
+
+            ],
+            "显示设备" : [
+
+            ],
+            "声卡" : [
+
+            ],
+            "自定义" : [
+
+            ]
+        }
+    }
+
+def get_devs_by_arch(arch):
+    info = get_devices_info()
+    return info[arch]
+def get_bus_by_arch_dev(arch, dev_name):
+    info = get_devices_info()
+    devs = info[arch]
+    for dev in devs:
+        if dev[0] == dev_name:
+            return dev[1]
+    return None
+def get_buses_by_arch(arch):
+    info = get_devices_info()
+    dev_types = info[arch]
+    ret = set()
+    for dev_type, devs in dev_types.items():
+        for dev in devs:
+            if dev[1] != "none":
+                ret.add(dev[1])
+    return ret
+
+def validate_bus_type(arch, dev_name, assgined_bus):
+    valid_bus = get_bus_by_arch_dev(arch, dev_name)
+    if valid_bus == assgined_bus:
+        return True
+    return False
     

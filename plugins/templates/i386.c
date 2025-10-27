@@ -115,9 +115,9 @@ static void xx_board_init(MachineState *machine)
     DriveInfo *pnor;
     BlockBackend *blkbackend;
     char *arg;
-    ISABus *isabus = isa_bus_from_device(pcms->pcspk);
-    PCIBus *pcibus = pcms->pcibus;
-    IDEBus *idebus = IDE_BUS(pcms->idebus[0]);
+    ISABus *isabus = isa_bus_from_device(pcms->pcspk);  #注册到isa总线进行io，无需board初始化，有限io地址
+    PCIBus *pcibus = pcms->pcibus;                      #dev注册到pci空间，无需board初始化
+    IDEBus *idebus = IDE_BUS(pcms->idebus[0]);          #idebus进行io，ide dev不io
 
     
 

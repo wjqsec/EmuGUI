@@ -830,12 +830,6 @@ class Ui_MainWindow(object):
         self.graphicsView.setObjectName(u"graphicsView")
         self.graphicsView.setGeometry(QRect(150, 0, 621, 451))
         self.treeWidget = QTreeWidget(self.tab_8)
-        __qtreewidgetitem = QTreeWidgetItem(self.treeWidget)
-        QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
-        QTreeWidgetItem(__qtreewidgetitem)
         self.treeWidget.setObjectName(u"treeWidget")
         self.treeWidget.setGeometry(QRect(0, 0, 151, 501))
         self.treeWidget.setDragEnabled(True)
@@ -1244,23 +1238,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Programming", None))
         ___qtreewidgetitem = self.treeWidget.headerItem()
         ___qtreewidgetitem.setText(0, QCoreApplication.translate("MainWindow", u"\u4eff\u771f\u8bbe\u5907", None));
-
-        __sortingEnabled = self.treeWidget.isSortingEnabled()
-        self.treeWidget.setSortingEnabled(False)
-        ___qtreewidgetitem1 = self.treeWidget.topLevelItem(0)
-        ___qtreewidgetitem1.setText(0, QCoreApplication.translate("MainWindow", u"\u5904\u7406\u5668", None));
-        ___qtreewidgetitem2 = ___qtreewidgetitem1.child(0)
-        ___qtreewidgetitem2.setText(0, QCoreApplication.translate("MainWindow", u"i386", None));
-        ___qtreewidgetitem3 = ___qtreewidgetitem1.child(1)
-        ___qtreewidgetitem3.setText(0, QCoreApplication.translate("MainWindow", u"arm", None));
-        ___qtreewidgetitem4 = ___qtreewidgetitem1.child(2)
-        ___qtreewidgetitem4.setText(0, QCoreApplication.translate("MainWindow", u"ppc", None));
-        ___qtreewidgetitem5 = ___qtreewidgetitem1.child(3)
-        ___qtreewidgetitem5.setText(0, QCoreApplication.translate("MainWindow", u"mips", None));
-        ___qtreewidgetitem6 = ___qtreewidgetitem1.child(4)
-        ___qtreewidgetitem6.setText(0, QCoreApplication.translate("MainWindow", u"riscv", None));
-        self.treeWidget.setSortingEnabled(__sortingEnabled)
-
         self.pushButton_66.setText(QCoreApplication.translate("MainWindow", u"cpu", None))
         self.pushButton_72.setText("")
         self.pushButton_75.setText("")

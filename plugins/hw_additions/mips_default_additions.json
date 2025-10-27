@@ -1,9 +1,29 @@
 {
     "mips_cpus": [
-        "base", "max", "host", "4Kc", "4Km", "4KEcR1", "4KEc", "4KEm", "24Kc", "24KEc", "24Kf", "34Kf", "74Kf", "XBurstR2", "M14K", "M14Kc", "P5600",
-        "mips32r6-generic", "I7200", "XBurstR1"
+        "base",
+        "max",
+        "host",
+        "4Kc",
+        "4Km",
+        "4KEcR1",
+        "4KEc",
+        "4KEm",
+        "24Kc",
+        "24KEc",
+        "24Kf",
+        "34Kf",
+        "74Kf",
+        "XBurstR2",
+        "M14K",
+        "M14Kc",
+        "P5600",
+        "mips32r6-generic",
+        "I7200",
+        "XBurstR1"
     ],
     "mips_machines": [
-        "none", "malta", "mipssim"
+        "none",
+        "malta",
+        "mipssim"
     ]
 }

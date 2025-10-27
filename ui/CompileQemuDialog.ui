@@ -39,7 +39,7 @@
        <bool>false</bool>
       </property>
       <property name="text">
-       <string>OK</string>
+       <string>确定</string>
       </property>
      </widget>
     </item>

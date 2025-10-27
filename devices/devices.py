@@ -482,7 +482,7 @@ def get_devices_info():
                 ["qemu-xhci", "pci"],
             ],
             "串口" : [
-                ["chardev", "none"],
+                ["chardev", "pci"],
                 ["i8042", "pci"],
                 ["pci-serial", "pci"],
                 ["tpci200", "pci"],
@@ -490,26 +490,26 @@ def get_devices_info():
                 ["virtio-serial-pci", "pci"],
             ],
             "网卡" : [
-                ["netdev", "none"],
+                ["netdev", "pci"],
                 ["e1000", "pci"],
                 ["e1000e", "ide"],
                 ["i82550", "ide"],
                 ["i82558a", "isa"],
                 ["igb", "isa"],
-                ["ne2k_pci", "sd"],
+                ["ne2k_pci", "pci"],
                 ["rtl8139", "usb"],
                 ["virtio-net-pci", "pci"],
                 ["ne2k_isa", "isa"],
                 ["usb-net", "usb"],
             ],
             "存储" : [
-                ["drive", "none"],
+                ["drive", "pci"],
                 ["dc390", "pci"],
                 ["ide-cd", "ide"],
                 ["ide-hd", "ide"],
                 ["isa-fdc", "isa"],
                 ["isa-ide", "isa"],
-                ["sd-card", "sd"],
+                # ["sd-card", "sd"],
                 ["usb-uas", "usb"],
                 ["virtio-blk-pci", "pci"],
             ],
@@ -628,10 +628,11 @@ def get_devs_by_arch(arch):
     return info[arch]
 def get_bus_by_arch_dev(arch, dev_name):
     info = get_devices_info()
-    devs = info[arch]
-    for dev in devs:
-        if dev[0] == dev_name:
-            return dev[1]
+    dev_types = info[arch]
+    for dev_type, devs in dev_types.items():
+        for dev in devs:
+            if dev[0] == dev_name:
+                return dev[1]
     return None
 def get_buses_by_arch(arch):
     info = get_devices_info()

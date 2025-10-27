@@ -1,8 +1,22 @@
 {
     "riscv32_cpus": [
-        "base", "max", "host", "any", "lowrisc-ibex", "rv32", "sifive-e31", "sifive-e34", "sifive-u34"
+        "base",
+        "max",
+        "host",
+        "any",
+        "lowrisc-ibex",
+        "rv32",
+        "sifive-e31",
+        "sifive-e34",
+        "sifive-u34"
     ],
     "riscv32_machines": [
-        "none", "opentitan", "sifive_e", "sifive_u", "spike", "virt"
+        "none",
+        "opentitan",
+        "sifive_e",
+        "sifive_u",
+        "spike",
+        "virt",
+        "emu-aaa"
     ]
 }

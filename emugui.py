@@ -116,13 +116,15 @@ class DeviceButton(QPushButton):
         self.setMaximumWidth(80)
         self.clicked.connect(self.on_click)
         self.source_add = generate_dev_header(self.text())
+        self.source_add += "\n\n\n\n\n"
+        self.source_add += generate_dev_tail(self.text())
 
     def show_feature(self):
         config = generate_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        self.source_add += generate_dev_body(self.text(),config)
-        self.source_add += generate_dev_tail(self.text())
+        self.source_add.replace("\n\n\n", generate_dev_body(self.text(),config))
+        
 
     def remove_self(self):
         self.setParent(None)
@@ -297,6 +299,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.horizontalWidget_1.dragEnterEvent = self.drag
         self.horizontalWidget_2.dragEnterEvent = self.drag
         self.horizontalWidget_3.dragEnterEvent = self.drag
+        self.horizontalWidget_4.dragEnterEvent = self.drag
         
         
         self.pushButton_66.dropEvent = self.drop_cpu
@@ -306,6 +309,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.horizontalWidget_4.dropEvent = self.drop_device4
 
         self.current_show_menu_button = None
+        self.add_init_arches()
+
         if platform.system() == "Windows":
             winvers = sys.getwindowsversion()
             if winvers.major <= 6 and winvers.minor <= 3:
@@ -4093,6 +4098,20 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.horizontalWidget_4.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
         self.remove_bus4_devices()
 
+    def add_init_arches(self):
+        top_item = QTreeWidgetItem(self.treeWidget, ["处理器"])
+        child_item = QTreeWidgetItem(top_item, ["i386"])
+        top_item.addChild(child_item)
+        child_item = QTreeWidgetItem(top_item, [ "arm"])
+        top_item.addChild(child_item)
+        child_item = QTreeWidgetItem(top_item, ["riscv"])
+        top_item.addChild(child_item)
+        child_item = QTreeWidgetItem(top_item, ["ppc"])
+        top_item.addChild(child_item)
+        child_item = QTreeWidgetItem(top_item, ["riscv"])
+        top_item.addChild(child_item)
+        top_item.setExpanded(True)
+        self.treeWidget.addTopLevelItem(top_item)
     def add_cpu(self, cpu_name):
         if self.pushButton_66.text() == cpu_name:
             return
@@ -4111,6 +4130,8 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             self.add_bus3(buses.pop())
         if len(buses) >= 1:
             self.add_bus4(buses.pop())
+        self.treeWidget.clear()
+        self.add_init_arches()
         devs = get_devs_by_arch(cpu_name)
         for dev_type, devs in devs.items():
             top_item = QTreeWidgetItem(self.treeWidget, [dev_type])

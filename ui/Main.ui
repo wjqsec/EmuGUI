@@ -1885,36 +1885,6 @@
            <string>仿真设备</string>
           </property>
          </column>
-         <item>
-          <property name="text">
-           <string>处理器</string>
-          </property>
-          <item>
-           <property name="text">
-            <string>i386</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>arm</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>ppc</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>mips</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>riscv</string>
-           </property>
-          </item>
-         </item>
         </widget>
         <widget class="QPushButton" name="pushButton_66">
          <property name="geometry">

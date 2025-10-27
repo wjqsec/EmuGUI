@@ -157,8 +157,8 @@ static void xx_machine_class_init(ObjectClass *oc, const void *data)
 static const TypeInfo xx_machine_info = {
     .name = TYPE_XX_MACHINE,
     .parent = TYPE_PC_MACHINE,
-    // .instance_size = sizeof(XXMachineState),
-    // .instance_init = xx_machine_initfn,
+    .instance_size = sizeof(XXMachineState),
+    .instance_init = xx_machine_initfn,
     .class_size = sizeof(XXMachineClass),
     .class_init = xx_machine_class_init,
 };

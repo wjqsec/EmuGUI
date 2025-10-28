@@ -99,6 +99,9 @@ extern QemuOptsList qemu_chardev_opts;
 DECLARE_OBJ_CHECKERS(XXMachineState, XXMachineClass,
                      XX_MACHINE, TYPE_XX_MACHINE)
 void pc_i440fx_init(MachineState *machine);
+BusState *qbus_find_recursive(BusState *bus, const char *name,
+                                     const char *bus_typename);
+bool qbus_is_full(BusState *bus);
 static void xx_machine_initfn(Object *obj)
 {
     XXMachineState *pcms = XX_MACHINE(obj);
@@ -115,14 +118,16 @@ static void xx_board_init(MachineState *machine)
     DriveInfo *pnor;
     BlockBackend *blkbackend;
     char *arg;
-    ISABus *isabus = isa_bus_from_device(pcms->pcspk);  #注册到isa总线进行io，无需board初始化，有限io地址
-    PCIBus *pcibus = pcms->pcibus;                      #dev注册到pci空间，无需board初始化
-    IDEBus *idebus = IDE_BUS(pcms->idebus[0]);          #idebus进行io，ide dev不io
-
+    BusState *pcibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_PCI_BUS);
+    BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
+    BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, "SSI");
+    BusState *idebus =  qbus_find_recursive(sysbus_get_default(), NULL, TYPE_IDE_BUS);
+    BusState *isabus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
+    BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
+    BusState *scsibus = qbus_find_recursive(sysbus_get_default(), NULL, "SCSI");
+    BusState *virtiobus = qbus_find_recursive(sysbus_get_default(), NULL, "virtio-bus");
     
-
-
-
+    printf("%p %p %p %p %p %p %p %p\n", pcibus, i2cbus, ssibus, idebus, isabus, usbbus, scsibus, virtiobus);
 
 
 

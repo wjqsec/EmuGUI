@@ -79,7 +79,9 @@ extern QemuOptsList qemu_chardev_opts;
 #define TYPE_XX_MACHINE MACHINE_TYPE_NAME("xx")
 DECLARE_OBJ_CHECKERS(XXMachineState, XXMachineClass,
                      XX_MACHINE, TYPE_XX_MACHINE)
-
+BusState *qbus_find_recursive(BusState *bus, const char *name,
+                                     const char *bus_typename);
+bool qbus_is_full(BusState *bus);
 static void xx_machine_initfn(Object *obj)
 {
     XXMachineState *pcms = XX_MACHINE(obj);
@@ -92,6 +94,12 @@ static void xx_board_init(MachineState *machine)
     XXMachineClass *pcmc = XX_MACHINE_GET_CLASS(pcms);
     MachineClass *mc = MACHINE_CLASS(pcmc);
     MemoryRegion *system_memory = get_system_memory();
+    BusState *pcibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_PCI_BUS);
+    BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
+    BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_SSI_BUS);
+    BusState *idebus =  qbus_find_recursive(sysbus_get_default(), NULL, TYPE_IDE_BUS);
+    BusState *isabus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
+    BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
 }
 static void xx_machine_class_init(ObjectClass *oc, const void *data)
 {

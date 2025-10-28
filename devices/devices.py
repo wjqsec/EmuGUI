@@ -626,6 +626,7 @@ def get_devices_info():
 def get_devs_by_arch(arch):
     info = get_devices_info()
     return info[arch]
+
 def get_bus_by_arch_dev(arch, dev_name):
     info = get_devices_info()
     dev_types = info[arch]
@@ -634,15 +635,26 @@ def get_bus_by_arch_dev(arch, dev_name):
             if dev[0] == dev_name:
                 return dev[1]
     return None
-def get_buses_by_arch(arch):
-    info = get_devices_info()
-    dev_types = info[arch]
-    ret = set()
-    for dev_type, devs in dev_types.items():
-        for dev in devs:
-            if dev[1] != "none":
-                ret.add(dev[1])
-    return ret
+
+def get_init_buses_by_arch(arch):
+    init_buses = {
+        "i386" : 
+            ["sysbus", "pci", "isa", "ide"]
+        ,
+        "arm" : [
+
+        ],
+        "ppc" : [
+
+        ],
+        "mips" : [
+
+        ],
+        "riscv" : [
+
+        ],
+    }
+    return init_buses[arch]
 
 def validate_bus_type(arch, dev_name, assgined_bus):
     valid_bus = get_bus_by_arch_dev(arch, dev_name)

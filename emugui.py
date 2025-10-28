@@ -294,19 +294,28 @@ class Window(QMainWindow, Ui_MainWindow):
         self.prepareDatabase(self.connection)
         self.updateVmList()
         self.treeWidget.mimeData = self.set_drag_mime
-        self.graphicsView.dragEnterEvent = self.drag
+
         self.pushButton_66.dragEnterEvent = self.drag
         self.horizontalWidget_1.dragEnterEvent = self.drag
         self.horizontalWidget_2.dragEnterEvent = self.drag
         self.horizontalWidget_3.dragEnterEvent = self.drag
         self.horizontalWidget_4.dragEnterEvent = self.drag
-        
+        self.horizontalWidget_5.dragEnterEvent = self.drag
+        self.horizontalWidget_6.dragEnterEvent = self.drag
+        self.horizontalWidget_7.dragEnterEvent = self.drag
+        self.horizontalWidget_8.dragEnterEvent = self.drag
+        self.horizontalWidget_9.dragEnterEvent = self.drag
         
         self.pushButton_66.dropEvent = self.drop_cpu
         self.horizontalWidget_1.dropEvent = self.drop_device1
         self.horizontalWidget_2.dropEvent = self.drop_device2
         self.horizontalWidget_3.dropEvent = self.drop_device3
         self.horizontalWidget_4.dropEvent = self.drop_device4
+        self.horizontalWidget_5.dropEvent = self.drop_device5
+        self.horizontalWidget_6.dropEvent = self.drop_device6
+        self.horizontalWidget_7.dropEvent = self.drop_device7
+        self.horizontalWidget_8.dropEvent = self.drop_device8
+        self.horizontalWidget_9.dropEvent = self.drop_device9
 
         self.current_show_menu_button = None
         self.add_init_arches()
@@ -4022,81 +4031,80 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         mime_data.setText(items[0].parent().text(0) + "/" + items[0].text(0))
         return mime_data
 
-        
+    def show_bus_menu(self, widget, func):
+        pos = widget.mapToGlobal(widget.rect().bottomLeft())
+        menu = QMenu()
+        menu.addAction("移除所有设备", func)
+        menu.exec(pos)
     def show_bus1_menu(self):
-        pos = self.pushButton_72.mapToGlobal(self.pushButton_72.rect().bottomLeft())
-        menu = QMenu()
-        menu.addAction("移除所有设备", self.remove_bus1_devices)
-        menu.exec(pos)
+        self.show_bus_menu(self.pushButton_72, self.remove_bus1_devices)
     def show_bus2_menu(self):
-        pos = self.pushButton_75.mapToGlobal(self.pushButton_75.rect().bottomLeft())
-        menu = QMenu()
-        menu.addAction("移除所有设备", self.remove_bus2_devices)
-        menu.exec(pos)
+        self.show_bus_menu(self.pushButton_75, self.remove_bus2_devices)
     def show_bus3_menu(self):
-        pos = self.pushButton_92.mapToGlobal(self.pushButton_92.rect().bottomLeft())
-        menu = QMenu()
-        menu.addAction("移除所有设备", self.remove_bus3_devices)
-        menu.exec(pos)
+        self.show_bus_menu(self.pushButton_92, self.remove_bus3_devices)
     def show_bus4_menu(self):
-        pos = self.pushButton_94.mapToGlobal(self.pushButton_94.rect().bottomLeft())
-        menu = QMenu()
-        menu.addAction("移除所有设备", self.remove_bus4_devices)
-        menu.exec(pos)
+        self.show_bus_menu(self.pushButton_94, self.remove_bus4_devices)
+    def show_bus5_menu(self):
+        self.show_bus_menu(self.pushButton_97, self.remove_bus4_devices)
+    def show_bus6_menu(self):
+        self.show_bus_menu(self.pushButton_100, self.remove_bus4_devices)
+    def show_bus7_menu(self):
+        self.show_bus_menu(self.pushButton_101, self.remove_bus4_devices)
+    def show_bus8_menu(self):
+        self.show_bus_menu(self.pushButton_102, self.remove_bus4_devices)
+    def show_bus9_menu(self):
+        self.show_bus_menu(self.pushButton_103, self.remove_bus4_devices)
     
+    def remove_bus_devices(self, widget_to_remove):
+        while widget_to_remove.layout().count() > 0:
+            item = widget_to_remove.layout().takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.deleteLater()
     def remove_bus1_devices(self):
-        while self.horizontalWidget_1.layout().count() > 0:
-            item = self.horizontalWidget_1.layout().takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
+        self.remove_bus_devices(self.horizontalWidget_1)
     def remove_bus2_devices(self):
-        while self.horizontalWidget_2.layout().count() > 0:
-            item = self.horizontalWidget_2.layout().takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
+        self.remove_bus_devices(self.horizontalWidget_2)
     def remove_bus3_devices(self):
-        while self.horizontalWidget_3.layout().count() > 0:
-            item = self.horizontalWidget_3.layout().takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
+        self.remove_bus_devices(self.horizontalWidget_3)
     def remove_bus4_devices(self):
-        while self.horizontalWidget_4.layout().count() > 0:
-            item = self.horizontalWidget_4.layout().takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                widget.deleteLater()
+        self.remove_bus_devices(self.horizontalWidget_4)
+    def remove_bus5_devices(self):
+        self.remove_bus_devices(self.horizontalWidget_5)
+    def remove_bus6_devices(self):
+        self.remove_bus_devices(self.horizontalWidget_6)
+    def remove_bus7_devices(self):
+        self.remove_bus_devices(self.horizontalWidget_7)
+    def remove_bus8_devices(self):
+        self.remove_bus_devices(self.horizontalWidget_8)
+    def remove_bus9_devices(self):
+        self.remove_bus_devices(self.horizontalWidget_9)
 
+    def remove_bus(self, button, line, horizontal_widget, remove_bus_devices):
+        button.setText("")
+        button.setStyleSheet("color: rgb(184, 184, 184);")
+        button.setEnabled(False)
+        line.setStyleSheet("color: rgb(184, 184, 184);")
+        horizontal_widget.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
+        remove_bus_devices()
     def remove_bus1(self):
-        self.pushButton_72.setText("")
-        self.pushButton_72.setStyleSheet("color: rgb(184, 184, 184);")
-        self.pushButton_72.setEnabled(False)
-        self.line_9.setStyleSheet("color: rgb(184, 184, 184);")
-        self.horizontalWidget_1.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
-        self.remove_bus1_devices()
+        self.remove_bus(self.pushButton_72, self.line_9, self.horizontalWidget_1, self.remove_bus1_devices)
     def remove_bus2(self):
-        self.pushButton_75.setText("")
-        self.pushButton_75.setStyleSheet("color: rgb(184, 184, 184);")
-        self.pushButton_75.setEnabled(False)
-        self.line_10.setStyleSheet("color: rgb(184, 184, 184);")
-        self.horizontalWidget_2.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
-        self.remove_bus2_devices()
+        self.remove_bus(self.pushButton_75, self.line_10, self.horizontalWidget_2, self.remove_bus2_devices)
     def remove_bus3(self):
-        self.pushButton_92.setText("")
-        self.pushButton_92.setStyleSheet("color: rgb(184, 184, 184);")
-        self.pushButton_92.setEnabled(False)
-        self.line_12.setStyleSheet("color: rgb(184, 184, 184);")
-        self.horizontalWidget_3.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
-        self.remove_bus3_devices()
+        self.remove_bus(self.pushButton_92, self.line_12, self.horizontalWidget_3, self.remove_bus3_devices)
     def remove_bus4(self):
-        self.pushButton_94.setText("")
-        self.pushButton_94.setStyleSheet("color: rgb(184, 184, 184);")
-        self.pushButton_94.setEnabled(False)
-        self.line_13.setStyleSheet("color: rgb(184, 184, 184);")
-        self.horizontalWidget_4.setStyleSheet("background-color: rgb(207, 207, 207); color: rgb(182, 255, 169);")
-        self.remove_bus4_devices()
+        self.remove_bus(self.pushButton_94, self.line_13, self.horizontalWidget_4, self.remove_bus4_devices)
+    def remove_bus5(self):
+        self.remove_bus(self.pushButton_97, self.line_14, self.horizontalWidget_5, self.remove_bus5_devices)
+    def remove_bus6(self):
+        self.remove_bus(self.pushButton_100, self.line_15, self.horizontalWidget_6, self.remove_bus6_devices)
+    def remove_bus7(self):
+        self.remove_bus(self.pushButton_101, self.line_17, self.horizontalWidget_7, self.remove_bus7_devices)
+    def remove_bus8(self):
+        self.remove_bus(self.pushButton_102, self.line_18, self.horizontalWidget_8, self.remove_bus8_devices)
+    def remove_bus9(self):
+        self.remove_bus(self.pushButton_103, self.line_19, self.horizontalWidget_9, self.remove_bus9_devices)
 
     def add_init_arches(self):
         top_item = QTreeWidgetItem(self.treeWidget, ["处理器"])
@@ -4121,15 +4129,25 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.remove_bus2()
         self.remove_bus3()
         self.remove_bus4()
-        buses = get_buses_by_arch(cpu_name)
+        buses = get_init_buses_by_arch(cpu_name)
         if len(buses) >= 1:
-            self.add_bus1(buses.pop())
+            self.add_bus1(buses.pop(0))
         if len(buses) >= 1:
-            self.add_bus2(buses.pop())
+            self.add_bus2(buses.pop(0))
         if len(buses) >= 1:
-            self.add_bus3(buses.pop())
+            self.add_bus3(buses.pop(0))
         if len(buses) >= 1:
-            self.add_bus4(buses.pop())
+            self.add_bus4(buses.pop(0))
+        if len(buses) >= 1:
+            self.add_bus5(buses.pop(0))
+        if len(buses) >= 1:
+            self.add_bus6(buses.pop(0))
+        if len(buses) >= 1:
+            self.add_bus7(buses.pop(0))
+        if len(buses) >= 1:
+            self.add_bus8(buses.pop(0))
+        if len(buses) >= 1:
+            self.add_bus9(buses.pop(0))
         self.treeWidget.clear()
         self.add_init_arches()
         devs = get_devs_by_arch(cpu_name)
@@ -4140,36 +4158,50 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
                 top_item.addChild(child_item)
             self.treeWidget.addTopLevelItem(top_item)
             
-
+    def add_bus(self, bus_name, line, horizontal_widget, button, show_menu_func):
+        line.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
+        horizontal_widget.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
+        button.setText(bus_name)
+        button.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
+        button.setEnabled(True)
+        button.clicked.connect(show_menu_func)
     def add_bus1(self, bus_name):
-        self.line_9.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
-        self.horizontalWidget_1.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
-        self.pushButton_72.setText(bus_name)
-        self.pushButton_72.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
-        self.pushButton_72.setEnabled(True)
-        self.pushButton_72.clicked.connect(self.show_bus1_menu)
+        self.add_bus(bus_name, self.line_9, self.horizontalWidget_1, self.pushButton_72, self.show_bus1_menu)
     def add_bus2(self, bus_name):
-        self.line_10.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
-        self.horizontalWidget_2.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
-        self.pushButton_75.setText(bus_name)
-        self.pushButton_75.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
-        self.pushButton_75.setEnabled(True)
-        self.pushButton_75.clicked.connect(self.show_bus2_menu)
+        self.add_bus(bus_name, self.line_10, self.horizontalWidget_2, self.pushButton_75, self.show_bus2_menu)
     def add_bus3(self, bus_name):
-        self.line_12.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
-        self.horizontalWidget_3.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
-        self.pushButton_92.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
-        self.pushButton_92.setText(bus_name)
-        self.pushButton_92.setEnabled(True)
-        self.pushButton_92.clicked.connect(self.show_bus3_menu)
+        self.add_bus(bus_name, self.line_12, self.horizontalWidget_3, self.pushButton_92, self.show_bus3_menu)
     def add_bus4(self, bus_name):
-        self.line_13.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
-        self.horizontalWidget_4.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
-        self.pushButton_94.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
-        self.pushButton_94.setText(bus_name)
-        self.pushButton_94.setEnabled(True)
-        self.pushButton_94.clicked.connect(self.show_bus4_menu)
-    
+        self.add_bus(bus_name, self.line_13, self.horizontalWidget_4, self.pushButton_94, self.show_bus4_menu)
+    def add_bus5(self, bus_name):
+        self.add_bus(bus_name, self.line_14, self.horizontalWidget_5, self.pushButton_97, self.show_bus5_menu)
+    def add_bus6(self, bus_name):
+        self.add_bus(bus_name, self.line_15, self.horizontalWidget_6, self.pushButton_100, self.show_bus6_menu)
+    def add_bus7(self, bus_name):
+        self.add_bus(bus_name, self.line_17, self.horizontalWidget_7, self.pushButton_101, self.show_bus7_menu)
+    def add_bus8(self, bus_name):
+        self.add_bus(bus_name, self.line_18, self.horizontalWidget_8, self.pushButton_102, self.show_bus8_menu)
+    def add_bus9(self, bus_name):
+        self.add_bus(bus_name, self.line_19, self.horizontalWidget_9, self.pushButton_103, self.show_bus9_menu)
+    def add_hotplug_bus(self,bus_name):
+        if self.pushButton_72.text() == "":
+            self.add_bus1(bus_name)
+        if self.pushButton_75.text() == "":
+            self.add_bus2(bus_name)
+        if self.pushButton_92.text() == "":
+            self.add_bus3(bus_name)
+        if self.pushButton_94.text() == "":
+            self.add_bus4(bus_name)
+        if self.pushButton_97.text() == "":
+            self.add_bus5(bus_name)
+        if self.pushButton_100.text() == "":
+            self.add_bus6(bus_name)
+        if self.pushButton_101.text() == "":
+            self.add_bus7(bus_name)
+        if self.pushButton_102.text() == "":
+            self.add_bus8(bus_name)
+        if self.pushButton_103.text() == "":
+            self.add_bus9(bus_name)
 
     def drag(self, event):
         event.acceptProposedAction()
@@ -4215,7 +4247,21 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
     def drop_device4(self, event):
         bus = self.pushButton_94.text()
         self.drop_device(event, bus, self.horizontalWidget_4)
-
+    def drop_device5(self, event):
+        bus = self.pushButton_97.text()
+        self.drop_device(event, bus, self.horizontalWidget_5)
+    def drop_device6(self, event):
+        bus = self.pushButton_100.text()
+        self.drop_device(event, bus, self.horizontalWidget_6)
+    def drop_device7(self, event):
+        bus = self.pushButton_101.text()
+        self.drop_device(event, bus, self.horizontalWidget_7)
+    def drop_device8(self, event):
+        bus = self.pushButton_102.text()
+        self.drop_device(event, bus, self.horizontalWidget_8)
+    def drop_device9(self, event):
+        bus = self.pushButton_103.text()
+        self.drop_device(event, bus, self.horizontalWidget_9)
     
     def create_board_file_from_template(self, new_c_file, arch, config):
         exec_folder = pf.retrieveExecFolder()
@@ -4319,6 +4365,21 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             if isinstance(widget, DeviceButton):
                 config.append(widget.source_add)
         for widget in self.horizontalWidget_4.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_5.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_6.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_7.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_8.children():
+            if isinstance(widget, DeviceButton):
+                config.append(widget.source_add)
+        for widget in self.horizontalWidget_9.children():
             if isinstance(widget, DeviceButton):
                 config.append(widget.source_add)
         self.create_board_file_from_template(f"{meson_dir}{new_c_file}", arch, config)

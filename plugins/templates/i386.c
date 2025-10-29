@@ -126,8 +126,8 @@ static void xx_board_init(MachineState *machine)
     BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
     BusState *scsibus = qbus_find_recursive(sysbus_get_default(), NULL, "SCSI");
     BusState *virtiobus = qbus_find_recursive(sysbus_get_default(), NULL, "virtio-bus");
-    
-    printf("%p %p %p %p %p %p %p %p\n", pcibus, i2cbus, ssibus, idebus, isabus, usbbus, scsibus, virtiobus);
+     
+    // printf("%p %p %p %p %p %p %p %p\n", pcibus, i2cbus, ssibus, idebus, isabus, usbbus, scsibus, virtiobus);
 
 
 

@@ -109,7 +109,7 @@ except:
     print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
 
 class DeviceButton(QPushButton):
-    def __init__(self, text="", parent=None):
+    def __init__(self, text="", delete_cb = None, parent=None):
         super().__init__(text, parent)
         self.setStyleSheet("QPushButton {border: 2px dashed rgb(66, 161, 49); color: rgb(66, 161, 49);} QPushButton:pressed {background-color: rgb(186, 186, 186);}")
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
@@ -118,17 +118,19 @@ class DeviceButton(QPushButton):
         self.source_add = generate_dev_header(self.text())
         self.source_add += "\n\n\n\n\n"
         self.source_add += generate_dev_tail(self.text())
+        self.delete_cb = delete_cb
 
     def show_feature(self):
-        config = generate_dev_config(self.text())
+        config = get_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        self.source_add.replace("\n\n\n", generate_dev_body(self.text(),config))
-        
+        self.source_add = self.source_add.replace("\n\n\n", generate_dev_body(self.text(),config))
 
     def remove_self(self):
         self.setParent(None)
         self.deleteLater()
+        if self.delete_cb != None:
+            self.delete_cb()
 
     def on_click(self):
         pos = self.mapToGlobal(self.rect().bottomLeft())
@@ -319,6 +321,18 @@ class Window(QMainWindow, Ui_MainWindow):
 
         self.current_show_menu_button = None
         self.add_init_arches()
+        self.bus_count = {
+            "sysbus" : 0,
+            "isa" : 0,
+            "pci" : 0,
+            "ide" : 0,
+            "usb" : 0,
+            "i2c" : 0,
+            "ssi" : 0,
+            "virtio" : 0,
+            "scsi" : 0,
+            "backend" : 0,
+        }
 
         if platform.system() == "Windows":
             winvers = sys.getwindowsversion()
@@ -4081,6 +4095,9 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.remove_bus_devices(self.horizontalWidget_9)
 
     def remove_bus(self, button, line, horizontal_widget, remove_bus_devices):
+        bus = button.text().split(".")[0]
+        if bus != "" and self.bus_count[bus] > 1:
+            self.bus_count[bus] -= 1
         button.setText("")
         button.setStyleSheet("color: rgb(184, 184, 184);")
         button.setEnabled(False)
@@ -4129,6 +4146,11 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         self.remove_bus2()
         self.remove_bus3()
         self.remove_bus4()
+        self.remove_bus5()
+        self.remove_bus6()
+        self.remove_bus7()
+        self.remove_bus8()
+        self.remove_bus9()
         buses = get_init_buses_by_arch(cpu_name)
         if len(buses) >= 1:
             self.add_bus1(buses.pop(0))
@@ -4150,15 +4172,18 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             self.add_bus9(buses.pop(0))
         self.treeWidget.clear()
         self.add_init_arches()
-        devs = get_devs_by_arch(cpu_name)
+        devs = get_devices_list_by_arch(cpu_name)
+        print(devs)
         for dev_type, devs in devs.items():
             top_item = QTreeWidgetItem(self.treeWidget, [dev_type])
             for name in devs:
-                child_item = QTreeWidgetItem(top_item, [name[0]])
+                child_item = QTreeWidgetItem(top_item, [name])
                 top_item.addChild(child_item)
             self.treeWidget.addTopLevelItem(top_item)
             
     def add_bus(self, bus_name, line, horizontal_widget, button, show_menu_func):
+        self.bus_count[bus_name] += 1
+        bus_name = f"{bus_name}.{self.bus_count[bus_name] -1}"
         line.setStyleSheet("color: rgb(66, 161, 49); background-color: rgb(66, 161, 49);")
         horizontal_widget.setStyleSheet("border: 2px dotted rgb(66, 161, 49);")
         button.setText(bus_name)
@@ -4167,41 +4192,50 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         button.clicked.connect(show_menu_func)
     def add_bus1(self, bus_name):
         self.add_bus(bus_name, self.line_9, self.horizontalWidget_1, self.pushButton_72, self.show_bus1_menu)
+        return self.remove_bus1
     def add_bus2(self, bus_name):
         self.add_bus(bus_name, self.line_10, self.horizontalWidget_2, self.pushButton_75, self.show_bus2_menu)
+        return self.remove_bus2
     def add_bus3(self, bus_name):
         self.add_bus(bus_name, self.line_12, self.horizontalWidget_3, self.pushButton_92, self.show_bus3_menu)
+        return self.remove_bus3
     def add_bus4(self, bus_name):
         self.add_bus(bus_name, self.line_13, self.horizontalWidget_4, self.pushButton_94, self.show_bus4_menu)
+        return self.remove_bus4
     def add_bus5(self, bus_name):
         self.add_bus(bus_name, self.line_14, self.horizontalWidget_5, self.pushButton_97, self.show_bus5_menu)
+        return self.remove_bus5
     def add_bus6(self, bus_name):
         self.add_bus(bus_name, self.line_15, self.horizontalWidget_6, self.pushButton_100, self.show_bus6_menu)
+        return self.remove_bus6
     def add_bus7(self, bus_name):
         self.add_bus(bus_name, self.line_17, self.horizontalWidget_7, self.pushButton_101, self.show_bus7_menu)
+        return self.remove_bus7
     def add_bus8(self, bus_name):
         self.add_bus(bus_name, self.line_18, self.horizontalWidget_8, self.pushButton_102, self.show_bus8_menu)
+        return self.remove_bus8
     def add_bus9(self, bus_name):
         self.add_bus(bus_name, self.line_19, self.horizontalWidget_9, self.pushButton_103, self.show_bus9_menu)
+        return self.remove_bus9
     def add_hotplug_bus(self,bus_name):
         if self.pushButton_72.text() == "":
-            self.add_bus1(bus_name)
+            return self.add_bus1(bus_name)
         if self.pushButton_75.text() == "":
-            self.add_bus2(bus_name)
+            return self.add_bus2(bus_name)
         if self.pushButton_92.text() == "":
-            self.add_bus3(bus_name)
+            return self.add_bus3(bus_name)
         if self.pushButton_94.text() == "":
-            self.add_bus4(bus_name)
+            return self.add_bus4(bus_name)
         if self.pushButton_97.text() == "":
-            self.add_bus5(bus_name)
+            return self.add_bus5(bus_name)
         if self.pushButton_100.text() == "":
-            self.add_bus6(bus_name)
+            return self.add_bus6(bus_name)
         if self.pushButton_101.text() == "":
-            self.add_bus7(bus_name)
+            return self.add_bus7(bus_name)
         if self.pushButton_102.text() == "":
-            self.add_bus8(bus_name)
+            return self.add_bus8(bus_name)
         if self.pushButton_103.text() == "":
-            self.add_bus9(bus_name)
+            return self.add_bus9(bus_name)
 
     def drag(self, event):
         event.acceptProposedAction()
@@ -4225,15 +4259,18 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         if category == "处理器":
             return
         arch = self.pushButton_66.text()
-        if not validate_bus_type(arch, item, bus):
+        if not validate_bus_type(item, bus):
             msgBox = QMessageBox()
             msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.setText("总线不匹配！")
             msgBox.exec()
             return
-        button = DeviceButton(item, parent = self.graphicsView)
+        new_bus = get_dev_generate_bus_type(item)
+        delete_cb = None
+        if new_bus != None:
+            delete_cb = self.add_hotplug_bus(new_bus)
+        button = DeviceButton(item, delete_cb = delete_cb)
         device_container.layout().addWidget(button)
-        print(f"Category: {category}, Item: {item}")
 
     def drop_device1(self, event):
         bus = self.pushButton_72.text()
@@ -4355,33 +4392,16 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
 
         insert_line_to_file(f"{meson_dir}meson.build", line_no_insert, line_insert)
         config = []
-        for widget in self.horizontalWidget_1.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_2.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_3.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_4.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_5.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_6.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_7.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_8.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
-        for widget in self.horizontalWidget_9.children():
-            if isinstance(widget, DeviceButton):
-                config.append(widget.source_add)
+        devices = self.horizontalWidget_1.children() + self.horizontalWidget_2.children() + self.horizontalWidget_3.children() + self.horizontalWidget_4.children() + self.horizontalWidget_5.children() +self.horizontalWidget_6.children() + self.horizontalWidget_7.children() + self.horizontalWidget_8.children() + self.horizontalWidget_9.children()
+        for device in devices:
+            if isinstance(device, DeviceButton) and get_dev_generate_bus_type(device.text()) != None:
+                config.append(device.source_add)
+        for device in devices:
+            if isinstance(device, DeviceButton) and get_dev_bus_type(device.text()) == "backend":
+                config.append(device.source_add)
+        for device in devices:
+            if isinstance(device, DeviceButton) and get_dev_generate_bus_type(device.text()) == None and (not get_dev_bus_type(device.text()) == "backend"):
+                config.append(device.source_add)
         self.create_board_file_from_template(f"{meson_dir}{new_c_file}", arch, config)
         dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.2")
         dialog.exec()

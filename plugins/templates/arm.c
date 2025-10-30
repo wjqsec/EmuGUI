@@ -4,7 +4,6 @@
 #include "hw/arm/boot.h"
 #include "system/system.h"
 #include "system/address-spaces.h"
-
 #include "hw/arm/nrf51_soc.h"
 #include "hw/i2c/microbit_i2c.h"
 #include "hw/qdev-properties.h"
@@ -24,6 +23,10 @@
 #include "hw/arm/boot.h"
 #include "hw/intc/armv7m_nvic.h"
 
+#include "hw/pci/pci.h"
+#include "hw/i2c/i2c.h"
+#include "hw/ide/ide-bus.h"
+#include "hw/usb.h"
 typedef struct XXMachineClass
 {
     /*< private >*/
@@ -34,8 +37,8 @@ typedef struct XXMachineState
     /*< private >*/
     MachineState parent_obj;
     ARMv7MState armv7m;
-    SSIBus *ssibus;
-    I2CBus *i2cbus;
+    Clock *sysclk;
+    Clock *refclk;
 } XXMachineState;
 extern QemuOptsList qemu_netdev_opts;
 extern QemuOptsList qemu_chardev_opts;
@@ -50,8 +53,6 @@ static void xx_machine_initfn(Object *obj)
     XXMachineState *pcms = XX_MACHINE(obj);
     XXMachineClass *pcmc = XX_MACHINE_GET_CLASS(pcms);
     MachineClass *mc = MACHINE_CLASS(pcmc);
-    pcms->ssibus = ssi_create_bus(pcms, "ssi");
-    pcms->i2cbus = i2c_init_bus(pcms, "i2c");
 }
 static void xx_board_init(MachineState *machine)
 {
@@ -59,13 +60,28 @@ static void xx_board_init(MachineState *machine)
     XXMachineClass *pcmc = XX_MACHINE_GET_CLASS(pcms);
     MachineClass *mc = MACHINE_CLASS(pcmc);
     MemoryRegion *system_memory = get_system_memory();
-    BusState *pcibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_PCI_BUS);
-    BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
-    BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_SSI_BUS);
-    BusState *idebus =  qbus_find_recursive(sysbus_get_default(), NULL, TYPE_IDE_BUS);
-    BusState *isabus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
-    BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
+    object_initialize_child(OBJECT(pcms), "armv7m", &pcms->armv7m, TYPE_ARMV7M);
+    pcms->sysclk = clock_new(OBJECT(machine), "SYSCLK");
+    clock_set_hz(pcms->sysclk, 25000000);
+    pcms->refclk = clock_new(OBJECT(machine), "REFCLK");
+    clock_set_hz(pcms->refclk, 1000000);
+    qdev_connect_clock_in(OBJECT(&pcms->armv7m), "cpuclk", pcms->sysclk);
+    qdev_connect_clock_in(OBJECT(&pcms->armv7m), "refclk", pcms->refclk);
+    qdev_prop_set_string(&pcms->armv7m, "cpu-type",ARM_CPU_TYPE_NAME("cortex-m7"));
+    object_property_set_link(OBJECT(&pcms->armv7m), "memory",
+                             OBJECT(system_memory), &error_fatal);
+    sysbus_realize(SYS_BUS_DEVICE(&pcms->armv7m), &error_fatal);
 
+
+    // BusState *pcibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_PCI_BUS);
+    // BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
+    // BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, "SSI");
+    // BusState *idebus =  qbus_find_recursive(sysbus_get_default(), NULL, TYPE_IDE_BUS);
+    // BusState *isabus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
+    // BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
+    // BusState *scsibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
+    // BusState *virtiobus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
+    // printf("pci:%p i2c:%p ssi:%p ide:%p isa:%p usb:%p scsi:%p virt:%p\n", pcibus, i2cbus, ssibus, idebus, isabus, usbbus, scsibus, virtiobus);
     
 
 
@@ -74,12 +90,9 @@ static void xx_board_init(MachineState *machine)
 
 
 
-    object_property_set_link(OBJECT(&pcms->armv7m), "memory",
-                             OBJECT(system_memory), &error_fatal);
-    object_initialize_child(OBJECT(pcms), "armv7m", &pcms->armv7m, TYPE_ARMV7M);
-    sysbus_realize(SYS_BUS_DEVICE(&pcms->armv7m), &error_fatal);
-    armv7m_load_kernel(pcms->armv7m.cpu, machine->kernel_filename,
-                       0, 0x2000000);
+
+    // armv7m_load_kernel(pcms->armv7m.cpu, machine->kernel_filename,
+    //                    0, 0x2000000);
 } 
 static void xx_machine_class_init(ObjectClass *oc, const void *data)
 {

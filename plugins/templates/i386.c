@@ -119,13 +119,13 @@ static void xx_board_init(MachineState *machine)
     BlockBackend *blkbackend;
     char *arg;
     BusState *pcibus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_PCI_BUS);
-    BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
-    BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, "SSI");
+    // BusState *i2cbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_I2C_BUS);
+    // BusState *ssibus = qbus_find_recursive(sysbus_get_default(), NULL, "SSI");
     BusState *idebus =  qbus_find_recursive(sysbus_get_default(), NULL, TYPE_IDE_BUS);
     BusState *isabus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_ISA_BUS);
-    BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
-    BusState *scsibus = qbus_find_recursive(sysbus_get_default(), NULL, "SCSI");
-    BusState *virtiobus = qbus_find_recursive(sysbus_get_default(), NULL, "virtio-bus");
+    // BusState *usbbus = qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS);
+    // BusState *scsibus = qbus_find_recursive(sysbus_get_default(), NULL, "SCSI");
+    // BusState *virtiobus = qbus_find_recursive(sysbus_get_default(), NULL, "virtio-bus");
      
     // printf("%p %p %p %p %p %p %p %p\n", pcibus, i2cbus, ssibus, idebus, isabus, usbbus, scsibus, virtiobus);
 

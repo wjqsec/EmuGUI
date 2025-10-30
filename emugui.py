@@ -115,16 +115,16 @@ class DeviceButton(QPushButton):
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         self.setMaximumWidth(80)
         self.clicked.connect(self.on_click)
-        self.source_add = generate_dev_header(self.text())
-        self.source_add += "\n\n\n\n\n"
-        self.source_add += generate_dev_tail(self.text())
+        self.source_add = [generate_dev_header(self.text())]
+        self.source_add += [""]
+        self.source_add += [generate_dev_tail(self.text())]
         self.delete_cb = delete_cb
 
     def show_feature(self):
         config = get_dev_config(self.text())
         dialog = DevConfigDialog(config)
         dialog.exec()
-        self.source_add = self.source_add.replace("\n\n\n", generate_dev_body(self.text(),config))
+        self.source_add[1] = generate_dev_body(self.text(),config)
 
     def remove_self(self):
         self.setParent(None)
@@ -4096,7 +4096,7 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
 
     def remove_bus(self, button, line, horizontal_widget, remove_bus_devices):
         bus = button.text().split(".")[0]
-        if bus != "" and self.bus_count[bus] > 1:
+        if bus != "" and self.bus_count[bus] >= 1:
             self.bus_count[bus] -= 1
         button.setText("")
         button.setStyleSheet("color: rgb(184, 184, 184);")
@@ -4129,11 +4129,11 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         top_item.addChild(child_item)
         child_item = QTreeWidgetItem(top_item, [ "arm"])
         top_item.addChild(child_item)
-        child_item = QTreeWidgetItem(top_item, ["riscv"])
-        top_item.addChild(child_item)
-        child_item = QTreeWidgetItem(top_item, ["ppc"])
-        top_item.addChild(child_item)
-        child_item = QTreeWidgetItem(top_item, ["riscv"])
+        # child_item = QTreeWidgetItem(top_item, ["riscv"])
+        # top_item.addChild(child_item)
+        # child_item = QTreeWidgetItem(top_item, ["ppc"])
+        # top_item.addChild(child_item)
+        # child_item = QTreeWidgetItem(top_item, ["riscv"])
         top_item.addChild(child_item)
         top_item.setExpanded(True)
         self.treeWidget.addTopLevelItem(top_item)
@@ -4308,8 +4308,8 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
             template_content = tf.read()
         with open(new_c_file, "w") as nf:
             nf.write(template_content)
-        for config_i in config:
-            insert_line_to_file(new_c_file, 140, config_i)
+        while len(config) > 0:
+            insert_line_to_file(new_c_file, 140, config.pop(-1))
 
     def update_machine_list(self, arch):
         machines = get_arch_machines(arch)
@@ -4395,19 +4395,19 @@ uc_err uc_query(uc_engine *uc, uc_query_type type, size_t *result);
         devices = self.horizontalWidget_1.children() + self.horizontalWidget_2.children() + self.horizontalWidget_3.children() + self.horizontalWidget_4.children() + self.horizontalWidget_5.children() +self.horizontalWidget_6.children() + self.horizontalWidget_7.children() + self.horizontalWidget_8.children() + self.horizontalWidget_9.children()
         for device in devices:
             if isinstance(device, DeviceButton) and get_dev_generate_bus_type(device.text()) != None:
-                config.append(device.source_add)
+                config.append("".join(device.source_add))
         for device in devices:
             if isinstance(device, DeviceButton) and get_dev_bus_type(device.text()) == "backend":
-                config.append(device.source_add)
+                config.append("".join(device.source_add))
         for device in devices:
             if isinstance(device, DeviceButton) and get_dev_generate_bus_type(device.text()) == None and (not get_dev_bus_type(device.text()) == "backend"):
-                config.append(device.source_add)
+                config.append("".join(device.source_add))
         self.create_board_file_from_template(f"{meson_dir}{new_c_file}", arch, config)
         dialog = CompileQemuDialog(self,qemu_dir="/home/w/Desktop/EmuGUI/qemu/qemu-10.1.2")
         dialog.exec()
         self.update_machine_list(arch)
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app = QApplication(sys.argv) 
 
     try:
         if platform.system() == "Linux":

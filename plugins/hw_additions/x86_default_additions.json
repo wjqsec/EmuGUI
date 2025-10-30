@@ -47,6 +47,7 @@
         "pc",
         "q35",
         "isapc",
-        "none"
+        "none",
+        "emu-aaa"
     ]
 }

@@ -49,7 +49,7 @@ def get_devices_info(dev_name):
             ["y分辨","yres",0]
         ]
     elif dev_name == "virtio-gpu-pci":
-        return "pci", "virtiop-gpu",[
+        return "pci", None,[
             ["启用AER", "aer", False],
             ["启用ATS", "ats", False],
             ["启用EDID", "edid", True],
@@ -310,18 +310,20 @@ def generate_dev_body(dev_name, dev_config):
     qemu_chr_new_from_opts(opts, NULL, &error_fatal);
     '''
         return source_add
+
     for config in dev_config:
         if type(config[2]) is int:
             source_add += f"qdev_prop_set_uint64(dev, \"{config[1]}\", {config[2]});\n"
         elif type(config[2]) is bool:
             source_add += f"qdev_prop_set_bit(dev, \"{config[1]}\", {str(config[2]).lower()});\n"
-        elif type(config[2]) is str:
+        elif type(config[2]) is str and config[2] != "":
             source_add += f"qdev_prop_set_string(dev, \"{config[1]}\", \"{config[2]}\");\n"
         elif type(config[2]) is list:
             if type(config[2][0]) is int:
                 source_add += f"qdev_prop_set_uint64(dev, \"{config[1]}\", {config[2][0]});\n"
-            elif type(config[2][0]) is str:
+            elif type(config[2][0]) is str and config[2][0] != "":
                 source_add += f"qdev_prop_set_string(dev, \"{config[1]}\", \"{config[2][0]}\");\n"  
+
     return source_add
 
 def generate_dev_tail(dev_name):
@@ -339,6 +341,10 @@ def generate_dev_tail(dev_name):
         return '''
     qdev_realize_and_unref(dev, pcibus, &error_fatal);
     '''
+    if get_dev_bus_type(dev_name) == "usb":
+        return '''
+    qdev_realize_and_unref(dev, qbus_find_recursive(sysbus_get_default(), NULL, TYPE_USB_BUS), &error_fatal);
+    '''
 
 
 
@@ -351,18 +357,24 @@ def get_devices_list():
                     "ich9-usb-ehci2", 
                     "ich9-usb-uhci1", 
                     "ich9-usb-uhci2", 
+                    "nec-usb-xhci", 
                     "piix3-usb-uhci", 
                     "piix4-usb-uhci", 
-                    "usb-ehci", 
-                    "nec-usb-xhci", 
-                    "qemu-xhci", 
+                    "qemu-xhci",
+                    "usb-ehci"
                 ],
             "串口" :
                 [
                     "i8042", 
+                    "isa-serial"
                     "pci-serial", 
                     "tpci200", 
+                    "usb-braille",
+                    "usb-ccid",
+                    "usb-kbd",
+                    "usb-mouse",
                     "usb-serial", 
+                    "usb-tablet",
                     "virtio-serial-pci"
                 ],
             "网卡" : 
@@ -374,9 +386,9 @@ def get_devices_list():
                     "igb", 
                     "ne2k_pci", 
                     "rtl8139", 
-                    "virtio-net-pci", 
                     "ne2k_isa", 
-                    "usb-net"
+                    "usb-net",
+                    "virtio-net-pci"
                 ],
             "存储" : 
                 [
@@ -385,7 +397,7 @@ def get_devices_list():
                     "ide-hd", 
                     "isa-fdc", 
                     "isa-ide", 
-                    "usb-uas", 
+                    "usb-storage",
                     "virtio-blk-pci"
                 ],
             "显示设备" : 
@@ -397,7 +409,7 @@ def get_devices_list():
                 ],
             "声卡" :
                 [
-                    "adlib", 
+                    "AC97", 
                     "cs4231a", 
                     "ES1370", 
                     "intel-hda"
@@ -406,7 +418,7 @@ def get_devices_list():
                 [
                     "drive",
                     "chardev",
-                    "netdev",
+                    "netdev"
                 ],
             "自定义" :
                 [
@@ -508,14 +520,16 @@ def get_devices_list():
     }
 def get_init_buses_by_arch(arch):
     init_buses = {
-        "i386" : 
-            ["sysbus", "pci", "isa", "ide", "i2c", "backend"]
+        "i386" : [
+            "sysbus", "pci", "isa", "ide", "backend"
+        ]
         ,
         "arm" : [
-
-        ],
+            "sysbus", "backend"
+        ]
+        ,
         "ppc" : [
-
+            "sysbus", "pci", "isa", "ide", "i2c", "backend"
         ],
         "mips" : [
 
